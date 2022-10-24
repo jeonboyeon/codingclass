@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gmark {
+            font-family: "GmarketSans";
+            font-weight: 500;
+        }
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            /*line height auto는 1을 의미*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        .gray {
+            background-color: #F5F5F5;
+        }
+        /* ir 효과 (이미지 대체 효과 == alt) */
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px; /*들여쓰기*/
+        }
+        /* cardType02 */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            width: 24%;
+            position: relative; /*relative 기준점*/
+        }
+        .card img {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .card .tit {
+            font-size: 28px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+        .card .desc {
+            font-size: 18px;
+            color: #666;
+            font-weight: 300;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;  /*설명이 3줄이상 되면 ...으로 처리함*/
+            -webkit-box-orient: vertical;
+        }
+        .card .more {
+            width: 24px;
+            height: 24px;
+            background-image: url(img/arrow.svg);
+            background-color: #ffa908;
+            display: block; /*a tag는 inline구조라 일단, block으로 모양만듬*/
+            position: absolute; /*relative를 기준으로 위치이동*/
+            right: 0;
+            top: 230px;
+            border-radius: 5px;
+        }
+        .card:first-child {
+            /*첫번째 줄만 밑 간격 50픽셀*/
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType02" class="card__wrap gmark section gray">
+        <h2>🐹 아기자기한 햄찌 🐹</h2>
+        <p>
+            가장 좋아하는 취미가 운동이 될 때 건강 증진 효과는 크다. <br>
+            누구나 즐길 수 있는 재밌는 운동 추천!
+        </p>
+        <div class="card__inner container">
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="요가사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#" class="more"><span class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="웨이트 트레이닝 사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="플라잉 요가 사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="러닝사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="자전거 사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="유도 사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="권투 사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+            <article class="card">
+                <img src="cardType/img/card_bg02_01.jpg" alt="필라테스 사진">
+                <h3 class="tit">노가...흐른다....</h3>
+                <p class="desc">눈망울이 초롱초롱, 아기자기한 핑크 코, 넓대하게 녹아버린 말랑한 몸 너무 귀엽지 않나요? 같이 이 햄스터를 쓰담쓰담 해봐요 </p>
+                <a href="#"  class="more"><span  class="ir">더보기</span></a>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

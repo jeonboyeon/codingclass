@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 조건문</title>
+
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+    </head>
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="../javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">숫자 객체</a></li>
+                    <li><a href="javascript09.html">브라우저 객체</a></li>
+                    <li><a href="javascript10.html">요소 객체</a></li>
+                    <li><a href="javascript11.html">이벤트 객체</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                    <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                    <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                    <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                    <li><a href="../effect/slideEffect01.html">슬라이드 효과</a></li>
+                    <li><a href="../effect/parallaxEffect01.html">페럴랙스 효과</a></li>
+                    <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">조건문</h2>
+                <p class="t_desc">
+                    조건문은 조건식이 <i>참인 경우 참의 결과를 실행</i>하고, <br />
+                    <i>거짓인 경우 거짓 조건의 결과를 나타내는 함수</i>이다.
+                </p>
+
+                <h3 class="t_tit2">첫번 째 : if 문</h3>
+                <p class="t_desc2">
+                    if 안에 조건식이 참인 경우 해당하는 참의 결과를 실행한다. <br />
+                    조건문에 해당하지 않고 거짓이면 esle 안에 있는 코드 블록이 실행됩니다.
+                </p>
+                <p class="t_box">
+                    if ( 조건식 ){ <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;실행문 ; <br />
+                    }
+                </p>
+                <div class="t_code">
+                    <pre><code class="language-js">var age = 10;                  //   age(나이) 는 10 이다.
+  var admissionFee = " ";  //   (입장료)결과 실행 칸
+  if (age < 13) {               //   age = 10 이다. 13보다 적으니 참
+      admissionFee = "2000원";      //  << 참일 경우 여기의 값을 실행한다.
+  }
+
+  console.log(admissionFee);
+</code></pre>
+                </div>
+                <div class="t_result">
+                    <details>
+                        <summary>결과확인</summary>
+                        <div class="result09">2000원</div>
+                    </details>
+                </div>
+
+                <h3 class="t_tit2">두번 째 : 중첩 if 문</h3>
+                <p class="t_desc2">
+                    if문 안에 또 다른 if문을 중첩해서 넣는 형식이다. <br />
+                    <i>중첩 개수에는 제한이 없지만 else 사용 시 {} 사용, 들여쓰기에 주의</i> 해야 한다.
+                </p>
+                <p class="t_box">
+                    if (조건식1){ <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (조건식2){ <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문; <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+                    }
+                </p>
+                <div class="t_code">
+                    <pre><code class="language-js">var html = Number(prompt('html 점수입력',''));   //  html 점수입력을 할 수 있는 프롬프트 실행
+var css = Number(prompt('css 점수입력',''));   //  css 점수입력을 할 수 있는 프롬프트 실행
+var javascript = Number(prompt('javascript 점수입력',''));  //  javascript 점수입력을 할 수 있는 프롬프트 실행
+var avg = (html + css + javascript) / 3;    //  평균 = html + css + javascript /(나누기) 3
+var comment;
+if (avg &gt;= 60) {
+    if (html &lt; 40) {
+        comment = 'html' + '40점 미만 불합격';
+    } else if (css &lt; 40) {
+        comment = 'css' + '40점 미만 불합격';
+    } else if (javascript &lt; 40) {
+        comment = 'javascript' + '40점 미만 불합격';
+    } else {
+        comment = '평균' + avg + '점 합격';
+    }
+} else {
+    comment = '평균' + avg + '점 불합격';
+}
+
+document.write(comment);
+</code></pre>
+                </div>
+                <div class="t_result">
+                    <details>
+                        <summary>결과확인</summary>
+                        <div class="result09">
+                            html, css, javascript 모두 더한 점수에서 3을 나눴을 때 <br />
+                            평균 60 점 이상이면 합격 <br />
+                            평균 60 점 미만이면 불합격
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </main>
+        <!-- //main and -->
+
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- //footer and -->
+
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 데이터 타입</title>
+
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="../javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">숫자 객체</a></li>
+                    <li><a href="javascript09.html">브라우저 객체</a></li>
+                    <li><a href="javascript10.html">요소 객체</a></li>
+                    <li><a href="javascript11.html">이벤트 객체</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                    <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                    <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                    <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                    <li><a href="../effect/slideEffect01.html">슬라이드 효과</a></li>
+                    <li><a href="../effect/parallaxEffect01.html">페럴랙스 효과</a></li>
+                    <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">JAVASCRIPT indexOf( ) 메서드</h2>
+                <p class="t_desc">안녕하세요 👋🏻 이번 글은 JacaScript indexOf( ) 메서드 에 대해 알아보는 글입니다.</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">indexOf( )가 무엇인가요?</h2>
+                <p class="t_desc">
+                    indexOf( )란 <i>특정 문자가 문자열의 어느 index에 위치하는지 찾는 방법의 메서드</i>입니다. <br />
+                    indexOf( )는 문자열 특정 문자의 위치를 찾은 후 그 문자열을 숫자로 반환합니다.
+                </p>
+
+                <hr />
+                <br />
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ indexOf( ) 사용법</h2>
+                <p class="t_desc2">
+                    📍 indexOf( ) 메서드의 사용법은 <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>string(문자열).indexOf(searchvalue, position)</i><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;즉 문자열.indexOf(찾고싶은 문자열, 찾고싶은 문자열을 찾기 시작 할 위치) 순으로 적어야합니다.<br />
+                </p>
+
+                <br />
+
+                <h3 class="t_tit3">✔️ 사용법 예시</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.indexOf("javascript"); //0
+</code></pre>
+                </div>
+                <div class="t_box">💡 찾는 문자열이 없을 때는 숫자 -1을 반환하며, 문자열을 찾을 때 대소문자를 구별합니다.</div>
+
+                <hr />
+
+                <h2 class="t_tit2">◾️ 예제 이해하기 👩🏻‍💻</h2>
+                <p class="t_desc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📍 오늘 배운 indexOf( )의 예제를 적어보겠습니다. 차근차근 눈여겨 보고, 이해 해봅시다!</p>
+
+                <br />
+
+                <h3 class="t_tit3">✔️ indexOf( ) 예제</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.indexOf("javascript"); // 0
+const currentStr2 = str1.indexOf("reference"); // 11
+const currentStr3 = str1.indexOf("j"); // 0
+const currentStr4 = str1.indexOf("a"); // 1 중복 될 때는 가장 처음에 있는것을 서치한다.
+const currentStr5 = str1.indexOf("v"); // 2
+const currentStr6 = str1.indexOf("jquery"); // -1 데이터가 없을 때는 -1 이 나온다.
+const currentStr7 = str1.indexOf("b"); // -1 데이터가 없을 때는 -1 이 나온다.
+</code></pre>
+                </div>
+
+                <div class="t_box">
+                    💡 첫 번째 const currentStr1 = str1.indexOf("javascript"); 의 답은 0입니다. <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;완전히 이해가 된 건 아니지만 javascript는 0부터 시작이 되기 때문에 0 으로 반환이 된 것 같네요. <br /><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;두 번째 const currentStr2 = str1.indexOf("reference"); 의 답은 11입니다. <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference 는 r이 11번 째에 있으므로 반환된 숫자 값은 11로 나오는 것 같습니다. <br /><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이렇게 각 단어의 위치를 숫자로 변환하여 출력 시키고, 위 예제에서 보았 듯이 jquery 와 b 는 <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str1에 저장되어 있지 않은 문자열이므로 숫자 -1을 반환하게 된겁니다.
+                </div>
+
+                <br />
+
+                <h3 class="t_tit3">✔️ 아래는 예시를 좀 더 추가 해놓은 것입니다. (주석은 답입니다.)</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+    
+const currentStr8 = str1.indexOf("javascript", 0); // 0
+const currentStr9 = str1.indexOf("javascript", 1); // -1
+const currentStr10 = str1.indexOf("reference", 0); // 11
+const currentStr11 = str1.indexOf("reference", 1); // 11
+const currentStr12 = str1.indexOf("reference", 11); // 11
+const currentStr13 = str1.indexOf("reference", 12); // -1
+    </code></pre>
+                </div>
+
+                <hr />
+
+                <h2 class="t_tit2">공부를 마치며 📋</h2>
+                <h3 class="t_tit3">
+                    이번 글은 자바스크립트의 indexOf( )에 대해 알아보았는데요. <br />
+                    아직 제대로 이해하지를 못해서 설명이 짤막짤막한 것이 너무 부끄럽네요. <br />
+                    얼른 다시 이해하고 추가 설명을 적어 보도록 하겠습니다 ! 🥹 <br /><br />
+                    더 좋은 글로 찾아 뵙겠습니다. 빠욤
+                </h3>
+            </div>
+        </main>
+        <!-- //main and -->
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- //footer and -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

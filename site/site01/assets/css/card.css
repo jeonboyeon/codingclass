@@ -1,0 +1,98 @@
+/*   cardType   */
+.card__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 32%;
+    height: 500px;
+    background-color: #f5f5f5;
+}
+
+.card__header {
+    padding: 26px 26px 20px 26px;
+}
+
+.card__body {
+    padding: 24px;
+}
+
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.card__body2 {
+    padding: 24px;
+}
+
+.card__body2 .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card__body2 .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.card2 {
+    width: 33%;
+    height: 560px;
+    border-right: 1px solid #c6c6c6;
+}
+
+.card3 {
+    width: 33%;
+    height: 560px;
+    border-right: 1px solid #fff;
+}
+
+.card2 .card__body {
+    padding: 0 26px;
+}
+
+.card2 .card__body .tit {
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.card2 .card__body .desc {
+    line-height: 1.4;
+}
+
+.card__bt {
+    display: flex;
+    justify-content: end;
+}
+
+.card__bt .card__btName {
+    padding-top: 15px;
+}
+
+.card__bt .card__subName {
+    font-size: 13px;
+    display: flex;
+    justify-content: end;
+    color: #a9a9a9;
+}
+
+.card__btPropile {
+}
+
+.card__btPropile .bt_img {
+    width: 60px;
+    margin-left: 10px;
+}

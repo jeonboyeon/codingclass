@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 데이터 제어하기</title>
+
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/dracula.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <h1><a href="index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li class="active"><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="study/javascript05.html">문자열 객체</a></li>
+                    <li><a href="study/javascript06.html">배열 객체</a></li>
+                    <li><a href="study/javascript07.html">수학 객체</a></li>
+                    <li><a href="study/javascript08.html">숫자 객체</a></li>
+                    <li><a href="study/javascript09.html">브라우저 객체</a></li>
+                    <li><a href="study/javascript10.html">요소 객체</a></li>
+                    <li><a href="study/javascript11.html">이벤트 객체</a></li>
+                    <li><a href="study/javascript12.html">제이 쿼리</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                    <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                    <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                    <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                    <li><a href="effect/slideEffect.html">슬라이드 효과</a></li>
+                    <li><a href="effect/parallaxEffect.html">페럴랙스 효과</a></li>
+                    <li><a href="effect/gameEffect.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="container">
+                <div class="main_menu">
+                    <ul>
+                        <li><a href="#sample01">01. if문</a></li>
+                        <li><a href="#sample02">02. if문 생략</a></li>
+                        <li><a href="#sample03">03. 다중 if문</a></li>
+                        <li><a href="#sample04">04. 중첩 if문</a></li>
+                        <li><a href="#sample05">05. 삼항 연산자</a></li>
+                        <li><a href="#sample06">06. swich문</a></li>
+                        <li><a href="#sample07">07. while문</a></li>
+                        <li><a href="#sample08">08. do while문</a></li>
+                        <li><a href="#sample09">09. for문</a></li>
+                        <li><a href="#sample10">10. 중접 for문</a></li>
+                        <li><a href="#sample11">11. break문</a></li>
+                        <li><a href="#sample12">12. continue문</a></li>
+                    </ul>
+                </div>
+                <div class="main_sample">
+                    <!-- //sample01 -->
+                    <div id="sample01" class="sample">
+                        <h3>01. if문</h3>
+                        <p>조건식 결과에 따라 무슨 실행을 할 것인지 결정하는 조건문</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    //true, 1 이라 쓰면 true가 나오고, false, 0, undefined, null 을 쓰면 false가 나온다.
+    //문자열 "0 ~", [0](배열), {a: 100}(객체) 를 쓰면 true가 나온다.
+    if("조건식"){ //true(참 출력)
+        document.write("실행되었습니다(true).");
+    } else { //false(거짓 출력)
+        document.write("실행되었습니다(false).");
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample01_result">실행되었습니다(true).</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample01 and -->
+                    <!-- //sample02 -->
+                    <div id="sample02" class="sample">
+                        <h3>02. if문 생략</h3>
+                        <p>괄호를 생략하고 실행시킨다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    const num = 100;
+    //{} 괄호 생략
+    if(num) document.write("실행되었습니다(true).");
+    else document.write("실행되었습니다(false).");
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample02_result">실행되었습니다(true).</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample02 and -->
+                    <!-- //sample03 -->
+                    <div id="sample03" class="sample">
+                        <h3>03. 다중 if문</h3>
+                        <p>여러 if문을 실행시켜 좀 더 구체적인 결과를 얻어낼 때 사용한다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    const num = 100;
+
+    if( num == 90 ){ //여러 if문을 실행한다.
+        document.write("실행되었습니다(num == 90).");
+    } else if( num == 100 ){
+        document.write("실행되었습니다(num == 100).");
+    } else if( num == 110 ){
+        document.write("실행되었습니다(num == 110).");
+    } else {
+        document.write("실행되었습니다(num == 값이 없음).");
+    }
+    
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample03_result">실행되었습니다(num == 100).</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample03 and -->
+                    <!-- //sample04 -->
+                    <div id="sample04" class="sample">
+                        <h3>04. 중첩 if문</h3>
+                        <p>if문 안에 if문을 중첩으로</p>
+                        <div class="script">
+                            <pre><code class="language-js">{  //회원가입 때 많이 쓰는 조건문
+    const num = 100;
+
+    if( num==100 ) {
+        document.write("실행되었습니다(1번).");
+        if( num==100 ){
+            document.write("실행되었습니다(2번).");
+            if( num==100 ){
+                document.write("실행되었습니다(3번).");
+            }
+        }
+    } else {
+        document.write("실행되었습니다(4번).");
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample04_result">
+                                    실행되었습니다(1번). <br />
+                                    실행되었습니다(2번). <br />
+                                    실행되었습니다(3번).
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample04 and -->
+                    <!-- //sample05 -->
+                    <div id="sample05" class="sample">
+                        <h3>05. 삼항 연산자</h3>
+                        <p>{}괄호를 쓰지않고 일렬로 나열하여 좀 더 편리하게 출력해낸다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    const num = 100; //num의 값이 100이면 참을 출력하고, 아니면 거짓을 출력해보세요.
+
+    // if( num==100 ){
+    //     document.write("true");
+    // } else {
+    //     document.write("false");
+    // }
+
+    ( num==100 ) ? document.write("true") : document.write("false");
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample05_result">true</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample05 and -->
+                    <!-- //sample06 -->
+                    <div id="sample06" class="sample">
+                        <h3>06. swich문</h3>
+                        <p>
+                            if문과 용도는 비슷하나 if문은 만족하는 데이터가 여러 개일 경우에 주로 사용하고, <br />
+                            witch문은 여러 경우의 값 중 일치하는 데이터를 찾아 그에 해당하는 코드를 실행시킬 때 사용
+                        </p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    const num = 100;
+
+    switch(num){
+        case 100 :
+            document.write("실행되었습니다(num==100).");
+            break;
+        case 100 :
+            document.write("실행되었습니다(num==120).");
+            break;
+    
+        case 100 :
+            document.write("실행되었습니다(num==130).");
+            break;
+            default :
+            document.write("실행되었습니다(num==값이 없음)."); //마지막은 break 가 필요 없다.
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                실행되었습니다(num==100).
+
+                                <div class="sample06_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample06 and -->
+                    <!-- //sample07 -->
+                    <div id="sample07" class="sample">
+                        <h3>07. while문</h3>
+                        <p>while문은 조건식을 만족할 때까지 코드를 여러 회 반복하여 실행할 수 있습니다</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    let num = 1; //초기값
+
+    while( num <= 5 ){
+        document.write("실행되었습니다.");
+        num++;
+    }
+
+    //for(let i=1; i<=5; i++){
+         //document.write("실행되었습니다.")
+     //}
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample07_result">실행되었습니다.실행되었습니다.실행되었습니다.실행되었습니다.실행되었습니다.</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample07 and -->
+                    <!-- //sample08 -->
+                    <div id="sample08" class="sample">
+                        <h3>08. do while문</h3>
+                        <p>do while문은 조건 여부를 떠나 반드시 한 번은 코드를 실행하고 조건식을 검사</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    let num = 1;
+
+    do { //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한번 실행이 된다.)
+        document.write("실행되었습니다2.");
+        num++;
+    } while (num <= 5);
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample08_result">실행되었습니다2.실행되었습니다2.실행되었습니다2.실행되었습니다2.실행되었습니다2.</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample08 and -->
+                    <!-- //sample09 -->
+                    <div id="sample09" class="sample">
+                        <h3>09. for문</h3>
+                        <p>for문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행합니다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">{   //1부터 100까지 출력
+    for( let i=1; i&lt;100; i++ ){
+        document.write(i+".실행되었습니다.");
+
+        let num = [1, 2, 3, ,4 ,5 ,6];
+        for( let i=0; i&lt;num.length; i++){
+            document.write(num[i] + ". 실행되었습니다.")
+        }
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample09_result">
+                                    1.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4.
+                                    실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.2.실행되었습니다. 1. 실행되었습니다.2. 실행되었습니다.3.
+                                    실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.3.실행되었습니다.1.
+                                    실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5.
+                                    실행되었습니다.6. 실행되었습니다.4.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.5.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.6.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4.
+                                    실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.7.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3.
+                                    실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.8.실행되었습니다.1.
+                                    실행되었습니다.2. 실행되었습니다.3. 실행되었습니다. undefined. 실행되었습니다.4. 실행되었습니다.5.
+                                    실행되었습니다.6. 실행되었습니다.9.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.10.실행되었습니다. 1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.11.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다. 5. 실행되었습니다.6. 실행되었습니다.12.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.13.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.14.실행되었습니다.1. 실행되었습니다. 2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.15. 실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다. 6. 실행되었습니다.16.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.17.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다. undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.18.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.19.실행되었습니다. 1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.20.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다. 5. 실행되었습니다.6.
+                                    실행되었습니다.21.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.22.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.23.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.24.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.25.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다. undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.26.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.27.실행되었습니다. 1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.28.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다. 5. 실행되었습니다.6.
+                                    실행되었습니다.29.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.30.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.31.실행되었습니다.1. 실행되었습니다. 2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다. 32.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.33.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다
+                                    4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.34.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3.
+                                    실행되었습니다. undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.35.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.36.실행되었습니다. 1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다. 6.
+                                    실행되었습니다.37.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.
+                                    4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.38.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3.
+                                    실행되었습니다. undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.39.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.40.실행되었습니다. 1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.41.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.42.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.43.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.44.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.45.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.46.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.47.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.48.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.49.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.50.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.51.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.52.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.53.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.54.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.55.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.56.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.57.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.58.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.59.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.60.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.61.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.62.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.63.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.64.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.65.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.66.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.67.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.68.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.69.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.70.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.71.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.72.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.73.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.74.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.75.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.76.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.77.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.78.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.79.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.80.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.81.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.82.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.83.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.84.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.85.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.86.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.87.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.88.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.89.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.90.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.91.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.92.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.93.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.94.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.95.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.96.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.97.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.98.실행되었습니다.1. 실행되었습니다.2.
+                                    실행되었습니다.3. 실행되었습니다.undefined. 실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6.
+                                    실행되었습니다.99.실행되었습니다.1. 실행되었습니다.2. 실행되었습니다.3. 실행되었습니다.undefined.
+                                    실행되었습니다.4. 실행되었습니다.5. 실행되었습니다.6. 실행되었습니다.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample09 and -->
+                    <!-- //sample010 -->
+                    <div id="sample010" class="sample">
+                        <h3>10. 중첩 for문</h3>
+                        <p>for문 안에 for문을 중첩하여 사용</p>
+                        <div class="script">
+                            <pre><code class="language-js">{   //두번 반복
+    for( let i=1; i&lt;2; i++){
+        document.write(i + "실행");
+        for(let j=1; j&lt;=5; j++){
+            document.write(j + "실행");
+            //i 를 한 번 실행할 때 j를 다섯 번 반복 시켜준다.
+        }
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample010_result">1실행1실행2실행3실행4실행5실행</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample010 and -->
+                    <!-- //sample011 -->
+                    <div id="sample11" class="sample">
+                        <h3>11. break문</h3>
+                        <p>break문은 반복문을 강제로 종료할 때 사용</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    for ( let i=1; i<=20; i++ ){
+        document.write(i);
+        if ( i == 10 ){
+            break;
+        }
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample11_result">12345678910</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample11 and -->
+                    <!-- //sample012 -->
+                    <div id="sample12" class="sample">
+                        <h3>continue문</h3>
+                        <p>반복문을 다시 시작하기 위해 사용</p>
+                        <div class="script">
+                            <pre><code class="language-js">{
+    for ( let i=1; i<=20; i++ ){
+        if ( i == 10 ){
+            continue;
+        }
+        document.write(i); // 10을 출력하지 않고 다음으로 넘어간다.
+    }
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample010_result">12345678911121314151617181920</div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- //sample12 and -->
+                </div>
+            </div>
+        </main>
+        <!-- //main and -->
+
+        <div id="javascript__top">👆🏻 맨 위로 올라가기</div>
+        <!-- ----------//parallax__top//---------- -->
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- //footer and -->
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+        <script>
+            //제어문 : "조건문", 반복문, 중지, 건너뛰기)
+
+            //01 번. 문제 if문
+            // {
+            //     //true, 1 이라 쓰면 true가 나오고, false, 0, undefined, null 을 쓰면 false가 나온다.
+            //     //문자열 "0 ~", [0](배열), {a: 100}(객체) 를 쓰면 true가 나온다.
+            //     if("조건식"){ //true(참 출력)
+            //         document.write("실행되었습니다(true).");
+            //     } else { //false(거짓 출력)
+            //         document.write("실행되었습니다(false).");
+            //     }
+            // }
+
+            //02 번 문제. if문 생략
+            // {
+            //     const num = 100;
+            //     //if(num) document.write("실행되었습니다(true).");
+            //     //else document.write("실행되었습니다(false).");
+            // }           //{} 괄호 생략
+
+
+            //03 번 문제. 다중 if문
+            // {
+            //     const num = 100;
+
+            //     if( num == 90 ){ //여러 if문을 실행한다.
+            //         document.write("실행되었습니다(num == 90).");
+            //     } else if( num == 100 ){
+            //         document.write("실행되었습니다(num == 100).");
+            //     } else if( num == 110 ){
+            //         document.write("실행되었습니다(num == 110).");
+            //     } else {
+            //         document.write("실행되었습니다(num == 값이 없음).");
+            //     }
+
+            // }
+
+            //  //04 번 문제. 중첩 if문
+            //  {  //회원가입 때 많이 쓰는 조건문
+            //     const num = 100;
+
+            //     if( num==100 ) {
+            //         document.write("실행되었습니다(1번).");
+            //         if( num==100 ){
+            //             document.write("실행되었습니다(2번).");
+            //             if( num==100 ){
+            //                 document.write("실행되었습니다(3번).");
+            //             }
+            //         }
+            //     } else {
+            //         //document.write("실행되었습니다(4번).");
+            //     }
+            // }
+
+            // //05 번 문제. 조건문 연산자 (삼황 연산자) (자주쓰는 조건문)
+            // {
+            //     const num = 100; //num의 값이 100이면 참을 출력하고, 아니면 거짓을 출력해보세요.
+
+            //     // if( num==100 ){
+            //     //     document.write("true");
+            //     // } else {
+            //     //     document.write("false");
+            //     // }
+
+            //     ( num==100 ) ? document.write("true") : document.write("false");
+            // }
+
+            //06 번 문제. swich문 (거의 안쓴다.)
+            // {
+            // const num = 100;
+
+            // switch(num){
+            //     case 100 :
+            //         document.write("실행되었습니다(num==100).");
+            //         break;
+            //     case 100 :
+            //         document.write("실행되었습니다(num==120).");
+            //         break;
+
+            //     case 100 :
+            //         document.write("실행되었습니다(num==130).");
+            //         break;
+            //         default :
+            //         document.write("실행되었습니다(num==값이 없음)."); //마지막은 break 가 필요 없다.
+            // }
+            // }
+
+            // //07 번 문제. while문 (반복문)
+            // {
+            //     let num = 1; //초기값
+
+            //     while( num <= 5 ){
+            //         //document.write("실행되었습니다.");
+            //         num++;
+            //     }
+
+            //     // for(let i=1; i<=5; i++){
+            //     //     document.write("실행되었습니다.")
+            //     // }
+            // }
+
+            // //08 번 문제. do while문 (반복문)
+            // {
+            //     let num = 1;
+
+            //     do { //바로 실행문을 적는다. (조건이 맞든 안맞든 무조건 한번 실행이 된다.)
+            //         //document.write("실행되었습니다2.");
+            //         num++;
+            //     } while (num <= 5);
+            // }
+
+            // //09 번 문제. for문
+            // {   //1부터 100까지 출력
+            //     for( let i=1; i<100; i++ ){
+            //         //document.write(i+".실행되었습니다.");
+
+            //         // let num = [1, 2, 3, ,4 ,5 ,6];
+            //         // for( let i=0; i<num.length; i++){
+            //         //     document.write(num[i] + ". 실행되었습니다.")
+            //         // }
+            //     }
+            // }
+
+            // //10 번 문제. 중첩 for문
+            // {   //두번 반복
+            //     for( let i=1; i<2; i++){
+            //         //document.write(i + "실행");
+            //         for(let j=1; j<=5; j++){
+            //             //document.write(j + "실행");
+            //             //i 를 한 번 실행할 때 j를 다섯 번 반복 시켜준다.
+            //         }
+            //     }
+            // }
+            //11 번 문제. brake문
+            // {
+            // for ( let i=1; i<=20; i++ ){
+            // document.write(i);
+            // if ( i == 10 ){
+            // break;
+            // }
+            // }
+            // }
+
+            // 12 번 문제.continue 문
+            // {
+            //     for (let i = 1; i <= 20; i++) {
+            //         if (i == 10) {
+            //             continue;
+            //         }
+            //         document.write(i); // 10을 출력하지 않고 다음으로 넘어간다.
+            //     }
+            // }
+        </script>
+        <script>
+            window.addEventListener("scroll", () => {
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+                const sample01 = document.querySelector("#sample01");
+
+                let sampleTop = sample01.offsetTop
+
+                //01
+                // if(scrollTop > 0){
+                //     document.querySelector("#parallax__nav").classList.add("show");
+                // } else {
+                //     document.querySelector("#parallax__nav").classList.remove("show");
+                // }                                스크롤바 0보다 커지면 메뉴가 나온다.
+
+                // 02;
+                if (scrollTop > 870) {
+                    document.querySelector("#javascript__top").classList.add("show");
+                } else {
+                    document.querySelector("#javascript__top").classList.remove("show");
+                }
+                console.log();
+            });
+
+            // top 버튼
+            document.querySelector("#javascript__top").addEventListener("click", () => {
+                window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+            });
+        </script>
+    </body>
+</html>

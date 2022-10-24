@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 숫자 객체</title>
+
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="../javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li class="active"><a href="javascript08.html">숫자 | 데이트 객체</a></li>
+                    <li><a href="javascript09.html">브라우저 객체</a></li>
+                    <li><a href="javascript10.html">요소 객체</a></li>
+                    <li><a href="javascript11.html">이벤트 객체</a></li>
+                    <li><a href="javascript12.html">제이쿼리</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="../effect/searchEffect.html">검색 효과</a></li>
+                    <li><a href="../effect/quizEffect.html">퀴즈 효과</a></li>
+                    <li><a href="../effect/dataEffect.html">데이터 효과</a></li>
+                    <li><a href="../effect/mouseEffect.html">마우스 효과</a></li>
+                    <li><a href="../effect/slideEffect.html">슬라이드 효과</a></li>
+                    <li><a href="../effect/parallaxEffect.html">페럴랙스 효과</a></li>
+                    <li><a href="../effect/gameEffect.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="container">
+                <div class="main_menu">
+                    <h4>● MATH</h4>
+                    <ul>
+                        <!-- 직접 검색해서 정리 해주세요! -->
+                        <li><a href="#sample01">01. number.MAX_VALUE</a></li>
+                        <li><a href="#sample02">02. number.MIN_VALUE</a></li>
+                        <li><a href="#sample03">03. number.MAX_SAFE_INTEGER</a></li>
+                        <li><a href="#sample04">04. number.MIN_SAFE_INTEGER</a></li>
+                        <li><a href="#sample05">05. number.Nan</a></li>
+                        <li><a href="#sample06">06. number.isFinite</a></li>
+                        <li><a href="#sample07">07. number.isInteger</a></li>
+                        <li><a href="#sample08">08. number.isNaN</a></li>
+                        <li><a href="#sample09">09. number.prototype.toFixed</a></li>
+                        <li><a href="#sample10">10. number.prototype.toPrecision</a></li>
+                        <li><a href="#sample11">11. number.prototype.toString</a></li>
+                    </ul>
+
+                    <br />
+
+                    <h4>● DATE</h4>
+                    <ul>
+                        <!-- 직접 검색해서 정리 해주세요! -->
+                        <li><a href="#sample01">01. new Date</a></li>
+                        <li><a href="#sample02">02. date.now</a></li>
+                        <li><a href="#sample03">03. date.parse</a></li>
+                        <li><a href="#sample04">04. date.UTC</a></li>
+                        <li><a href="#sample05">05. date.prototype.getFullYear</a></li>
+                        <li><a href="#sample06">06. date.prototype.setFullYear</a></li>
+                        <li><a href="#sample07">07. date.prototype.getMonth</a></li>
+                        <li><a href="#sample08">08. date.prototype.setMonth</a></li>
+                        <li><a href="#sample09">09. date.prototype.getDate</a></li>
+                        <li><a href="#sample10">10. date.prototype.setDate</a></li>
+                        <li><a href="#sample11">11. date.prototype.getDay</a></li>
+                        <li><a href="#sample12">12. date.prototype.getHours</a></li>
+                        <li><a href="#sample13">13. date.prototype.setHours</a></li>
+                        <li><a href="#sample14">14. date.prototype.getMinutes</a></li>
+                        <li><a href="#sample15">15. date.prototype.setMinutes</a></li>
+                        <li><a href="#sample16">16. date.prototype.getSeconds</a></li>
+                        <li><a href="#sample17">17. date.prototype.setSeconds</a></li>
+                        <li><a href="#sample18">18. date.prototype.getMilliseconds</a></li>
+                        <li><a href="#sample19">19. date.prototype.setMilliseconds</a></li>
+                        <li><a href="#sample20">20. date.prototype.getTime</a></li>
+                        <li><a href="#sample21">21. date.prototype.setTime</a></li>
+                        <li><a href="#sample22">22. date.prototype.getTimezoneOffset</a></li>
+                        <li><a href="#sample23">23. date.prototype.toDateString</a></li>
+                        <li><a href="#sample24">24. date.prototype.toTimeString</a></li>
+                        <li><a href="#sample25">25. date.prototype.toLocaleString</a></li>
+                        <li><a href="#sample26">26. date.prototype.toLocaleTimeString</a></li>
+                    </ul>
+                </div>
+                <!-- //main_menu -->
+            </div>
+        </main>
+        <!-- //main and -->
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- //footer and -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

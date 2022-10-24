@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 데이터 타입</title>
+
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="../javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">숫자 객체</a></li>
+                    <li><a href="javascript09.html">브라우저 객체</a></li>
+                    <li><a href="javascript10.html">요소 객체</a></li>
+                    <li><a href="javascript11.html">이벤트 객체</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                    <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                    <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                    <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                    <li><a href="../effect/slideEffect01.html">슬라이드 효과</a></li>
+                    <li><a href="../effect/parallaxEffect01.html">페럴랙스 효과</a></li>
+                    <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">JAVASCRIPT indexOf() | lastIndexOf()</h2>
+                <p class="t_desc">자바스크립트 indexOf() | lastIndexOf() 메서드 알아보기</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">indexOf() | lastIndexOf() 메서드란</h2>
+                <p class="t_desc">문자열 특정 문자의 위치를 찾고 숫자로 반환한다.</p>
+
+                <hr />
+                <br />
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ indexOf() | lastIndexOf() 사용법</h2>
+                <p class="t_desc2">
+                    📍 "문자열" .indexOf(검색값) <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;"문자열" .indexOf(검색값, 위치값) &nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
+
+                <br />
+
+                <h3 class="t_tit3">✔️ 사용법 예시</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.indexOf("javascript"); // 0
+</code></pre>
+                </div>
+
+                <hr />
+
+                <br />
+
+                <h3 class="t_tit3">✔️ indexOf() | lastIndexOf() 예제 (주석은 답입니다.)</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.indexOf("javascript"); // 0
+const currentStr2 = str1.indexOf("reference"); // 11
+const currentStr3 = str1.indexOf("j"); // 0
+const currentStr4 = str1.indexOf("a"); // 1 중복 될 때는 가장 처음에 있는것을 서치한다.
+const currentStr5 = str1.indexOf("v"); // 2
+const currentStr6 = str1.indexOf("jquery"); // -1 데이터가 없을 때는 -1 이 나온다.
+const currentStr7 = str1.indexOf("b"); // -1 데이터가 없을 때는 -1 이 나온다.
+const currentStr8 = str1.indexOf("javascript", 0); // 0
+const currentStr9 = str1.indexOf("javascript", 1); // -1
+const currentStr10 = str1.indexOf("reference", 0); // 11
+const currentStr11 = str1.indexOf("reference", 1); // 11
+const currentStr12 = str1.indexOf("reference", 11); // 11
+const currentStr13 = str1.indexOf("reference", 12); // -1
+
+const currentStr14 = str1.lastIndexOf("javascript"); // 0
+const currentStr15 = str1.lastIndexOf("reference"); // 11
+const currentStr16 = str1.lastIndexOf("j"); // 0
+const currentStr17 = str1.lastIndexOf("a"); // 3 (마지막 위치를 찾는다.)
+const currentStr18 = str1.lastIndexOf("v"); // 2
+const currentStr19 = str1.lastIndexOf("jquery"); // -1
+const currentStr20 = str1.lastIndexOf("b"); // -1
+const currentStr21 = str1.lastIndexOf("javascript", 0); // 0
+const currentStr22 = str1.lastIndexOf("javascript", 1); // 0
+const currentStr23 = str1.lastIndexOf("reference", 0); // -1
+const currentStr24 = str1.lastIndexOf("reference", 1); // -1
+const currentStr25 = str1.lastIndexOf("reference", 11); // 11
+const currentStr26 = str1.lastIndexOf("reference", 12); // 11
+</code></pre>
+                </div>
+            </div>
+        </main>
+        <!-- //main and -->
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- //footer and -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

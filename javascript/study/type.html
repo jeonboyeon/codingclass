@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">데이터 타입</h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+                <!-- 자바스크립트를 다루기 위해서는 기초적인 특징과 기본 문법이 있습니다.
+          가장 기본이기 때문에 이 부분을 숙지하고 자바스크립트를
+          <i>공부</i>하세요! -->
+                변수에 저장되는 데이터 유형을 일컫는 말
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">데이터 타입의 종류는 무엇이 있나요?</h3>
+            <p class="t_desc2">
+                데이터 타입의 유형으론 <i>원시(Primitive)타입, 객체(Object)타입</i>으로 나뉩니다. <br>
+                원시 타입에는 number, string, boolean, undefined, null, symbol 등이 있고, <br>
+                객체 타입에는 function, object, array 등이 있습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit">객체 타입 유형 알아보기</h3>
+            <h4 class="t_tit2">첫번 째 : number</h4>
+            <p class="t_desc">
+                정수, 소수점, 지수를 표현할 수 있다.
+            </p>
+            <div class="t_desc2">
+                var num1 = <i>10;</i> <br>
+                var num2 = <i>10.5;</i> <br>
+                var num3 = <i>le+2;</i> <br><br>
+                console.log(numl); // <i>10</i> <br>
+                console.log(num2); // <i>10.5</i> <br>
+                console.log(num3); // <i>100</i> le+2 는 1*10의 2승을 의미
+            </div>
+            <h4 class="t_tit2">두번 째 : string</h4>
+            <p class="t_desc">
+                문자를 표현할 때 쓰는 데이터 <br>
+                '' 혹은 "" 으로 표현한다.
+            </p>
+            <div class="t_desc2">
+                var str1 = <i> ' </i>문자<i> ' </i>; <br>
+                var str2 = <i> " </i>문자<i> " </i>; <br><br>
+
+                문자 안에 문자가 들어갈 경우 <br>
+                var str1 = '문자 "문자"'; <br>
+                var str1 = "문자 "문자'";
+            </div>
+            <h4 class="t_tit2">세번 째 : blooean</h4>
+            <p class="t_desc">
+                참과 거짓으로 값을 표현하는 데이터
+            </p>
+            <p class="t_desc2">
+                var temp1 = (5 > 4); <br>
+                var temp2 = (5 < 4); <br><br>
+
+                    console.log(temp1); // <i>결과 값 : 참</i> <br>
+                    console.log(temp2); // <i>결과 값 : 거짓</i>
+            </p>
+            <h4 class="t_tit2">네번 째 : undefined</h4>
+            <p class="t_desc">
+                변수를 선언하고 데이터 값은 지정하지 않았을 때 결과 값으로 나타나는 데이터
+            </p>
+            <p class="t_desc2">
+                var temp1 = 10; <br>
+                <i>var temp2;</i> <br><br>
+
+                console.log(temp1); // 결과 값 : 10 <br>
+                console.log(temp2); // <i>결과 값 : undefined</i>
+            </p>
+            <h4 class="t_tit2">다섯번 째 : null</h4>
+            <p class="t_desc">
+                변수를 빈 상태로 초기화 하거나, 데이터는 저장했지만 값이 존재하지 않을 때 null값으로 반환 한다.
+            </p>
+            <p class="t_desc2">
+                var obj = 10; <br>
+                obj = null; <br>
+                console.log(obj); // <i>결과 값 : null | 변수를 빈 상태로 만든다.</i> <br><br>
+
+                var obj = document.getElementById('gnb'); <br>
+                console.log(obj); // <i>결과 값 : 변수에 데이터 값을 저장했으나, 값이 존재하지않아 null을 저장</i>
+
+                <hr />
+                <!-- 문단을 나누는 줄 -->
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

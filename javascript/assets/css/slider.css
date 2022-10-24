@@ -1,0 +1,503 @@
+/* reset */
+@import url('https://webfontworld.github.io/onestore/OneMobileTitle.css');
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+* {
+    font-family: 'GmarketSans';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    /* 100% 로 하게되면 스크롤바가 안생기게 된다. */
+    height: 100vh;
+
+}
+
+/* scroll */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #333;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #555;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+body.img01 {
+    background: #000 url('../img/sliderEffect01_bg01@2x-min.jpg') no-repeat center / cover;
+    /* 배경 반복 설정이 앞으로 와야한다. */
+}
+
+body.img02 {
+    background: #000 url('../img/sliderEffect01_bg02@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img03 {
+    background: #000 url('../img/sliderEffect01_bg03@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img04 {
+    background: #000 url('../img/sliderEffect01_bg04@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img05 {
+    background: #000 url('../img/sliderEffect01_bg05@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img06 {
+    background: #000 url('../img/sliderEffect01_bg06@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img07 {
+    background: #000 url('../img/sliderEffect01_bg07@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img08 {
+    background: #000 url('../img/sliderEffect01_bg08@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img09 {
+    background: #000 url('../img/sliderEffect01_bg09@2x-min.jpg') no-repeat center / cover;
+}
+
+body.img10 {
+    background: #000 url('../img/sliderEffect01_bg10@2x-min.jpg') no-repeat center / cover;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    /* z-index: -1; */
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* layout */
+#header {
+    z-index: 2000;
+}
+#main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
+}
+
+/* header */
+
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    padding: 20px;
+}
+
+#header h1 {
+    font-weight: 600;
+    font-family: 'OneMobileTitle';
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 2px #222;
+}
+
+#header p {
+    color: #dcdcdc;
+    margin-bottom: 10px;
+}
+
+#header ul {}
+
+#header li {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#header li a {
+    background-color: rgba(51, 51, 51, 0.461);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 2px 5px #222;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+#header li.active a {
+    background-color: #dcdcdc;
+    color: #333;
+}
+
+/* footer */
+#footer {}
+
+#footer .source {
+    background-color: rgba(51, 51, 51, 0.461);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* modal__wrap */
+.modal__wrap {}
+
+.modal__btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.modal__btn .btn__txt {
+    margin-left: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #dcdcdc;
+    background-color: rgba(34, 34, 34, 0.633);
+    border: 1px solid #111;
+    border-radius: 5px;
+    box-shadow: 3px 3px #999;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.modal__btn .btn__txt:hover {
+    background-color: #dcdcdca9;
+    color: #333;
+    box-shadow: 3px 3px #444;
+}
+
+.modal__close {
+    cursor: pointer;
+    background-color: #777;
+    padding: 10px 10px 7px 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    visibility: hidden;
+}
+
+.modal__close:hover {
+    background-color: #222;
+    color: #fff;
+    box-shadow: 2px 2px 20px #111;
+}
+
+.modal__close.show {
+    visibility: visible;
+}
+
+.modal__cont {
+    /* z-index: 6; */
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    /* visibility: hidden; */
+}
+
+.modal__box {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+    transform: scale(0);
+}
+
+.modal__box .title {
+    padding-inline: 1.5rem;
+    background-color: hsl(0 0% 13%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 60px;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+}
+
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: hsl(41 99% 59%);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 30px;
+}
+
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(129 67% 47%);
+    border-radius: 50%;
+}
+
+.modal__box .title .puls {
+    cursor: pointer;
+    margin-left: 15px;
+    background-color: hsl(0 0% 24%);
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(3 100% 67%);
+    border-radius: 50%;
+}
+
+.modal__box .title .tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 40px;
+}
+
+.modal__box .title .tabs>div.active {
+    background-color: rgb(80, 80, 80);
+}
+
+.modal__box .title .tabs>div {
+    color: #ccc;
+    background-color: hsl(0 0% 20%);
+    padding: 0.35rem 0.8rem;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.modal__box .title .tabs>div em {
+    font-style: normal;
+}
+
+.modal__box .title .tabs>div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.25rem;
+}
+
+.modal__box .title .tabs>div .close {
+    margin-left: 3rem;
+}
+
+.modal__box .title .tabs>div .close svg {}
+
+.modal__box .cont {
+    background-color: #2c2c2c;
+    height: 550px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    overflow-y: auto;
+}
+
+.modal__box .cont>div {
+    display: none;
+}
+
+.modal__box .cont>div.active {
+    display: block;
+    height: 100%;
+}
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* 모달 애니메이션 */
+.modal__cont.show {
+    /* visibility: visible; */
+    animation: forldOut forwards 0.7s ease;
+}
+
+.modal__cont.show .modal__box {
+    transform: scale(0);
+    animation: zoomOut 0.4s 0.5s ease forwards;
+}
+
+
+.modal__cont.show .modal__close {
+    animation: ClosOut 0.3s 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes forldOut {
+    0% {transform: scaleX(0) scaleY(0.005);}
+    50% {transform: scaleX(1) scaleY(0.005);}
+    100% {transform: scale(1) scaleY(1);}
+}
+
+@keyframes zoomOut {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+@keyframes ClosOut {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.modal__cont.show.hide {
+    /* visibility: visible; */
+    animation: forldIn backwards 0.3s 0.6s ease;
+}
+
+.modal__cont.show.hide .modal__box {
+    transform: scale(0);
+    animation: zoomIn 0.3s 0.3s ease backwards;
+}
+
+.modal__cont.show.hide .modal__close {
+    transform: scale(0);
+    animation: ClosIn 0.3s ease backwards;
+}
+
+
+@keyframes forldIn {
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(1) scaleY(0.005);}
+    100% {transform: scale(0) scaleY(0.005);}
+}
+
+@keyframes zoomIn {
+    0% {transform: scaleX(1);}
+    100% {transform: scale(0);}
+}
+@keyframes ClosIn {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@media (max-width: 1100px){
+    .modal__box {
+        width: 96%;
+    }
+    .modal__box .title .dot {
+        overflow: hidden;
+        display: none;
+    }
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+    .modal__box .title .tabs>div .close {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        width: 100%;
+    }
+    .modal__box {
+        width: 96%;
+    }
+    .modal__box .title .dot {
+        display: none;
+    }
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+    .modal__box .title .tabs>div .close {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        width: 100%;
+    }
+    .modal__box {
+        width: 96%;
+    }
+    .modal__box .title {
+        padding: 5px;
+    }
+    .modal__box .title .dot {
+        display: none;
+    }
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+    .modal__box .title .tabs>div .close {
+        display: none;
+    }
+
+    .modal__box .title .tabs>div {
+        font-size: 12px;
+    }
+
+    .modal__box .title .puls {
+        display: none;
+    }
+
+    pre code.hljs {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .intro_menu {
+        width: 90%;
+        padding: 14px;
+    }
+
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu ul li a {
+        font-size: 16px;
+    }
+}

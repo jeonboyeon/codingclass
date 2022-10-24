@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                <li><a href="../effect/slideEffect01.html">슬라이드 효과</a></li>
+                <li><a href="../effect/parallaxEffect01.html">페럴랙스 효과</a></li>
+                <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">JAVASCRIPT 내장함수의 종류</h2>
+                <p class="t_desc">안녕하세요 😉 이번 글은 JacaScript 내장함수 종류에 대해 알아보는 글입니다.</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">내장함수가 무엇인가요?</h2>
+                <p class="t_desc">
+                    내장함수란 <i>JavaScript 내에서 기본적으로 제공해준는 함수를 의미</i>합니다.
+                </p>
+
+                <hr /> <br>
+
+                <h2 class="t_tit">[ 내장 함수의 종류 ]</h2>
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ 인코딩 & 디코딩 함수</h2>
+                <p class="t_box">
+                    📍 URL 주소 끝에 쿼리 정보를 전송하여 데이터를 처리해야 되는 프로그램의 경우 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; 한글과 같은 유니코드 문자가 포함되어 있으면 오류가 발생합니다. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이런 경우를 대비해 인코딩 함수를 이용하여 문자를 부호화시키고, <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부호화된 문자를 다시 디코딩 함수를 이용하여 원래 문자로 되돌릴 수 있다.
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">◽️ 인코딩 & 디코딩 설명 표</h3>
+                <table class="t_table">
+                    
+                    <thead class="ce">
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>                       
+                        <tr>
+                            <td class="ce">encodeURIComponent( )</td>
+                            <td>영문, 숫자와 ( ) -  .  ~  *  !  ' 을 제외한 문자를 인코딩한다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">decodeURIComponent( )</td>
+                            <td>인코딩(encodeURIComponent( )) 의 디코딩 함수이다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>    
+                <h3 class="t_tit3">✔️ 인코딩 & 디코딩 예시</h3>
+                <div class="t_code">
+<pre><code class="language-js">// 인코딩 & 디코딩 함수
+var encodeStr = "자바스크립트";
+console.log(encodeURIComponent(encodeStr));
+
+var decodeStr = encodeURIComponent(encodeStr);
+console.log(decodeURIComponent(dncodeStr));
+</code></pre>
+                </div>
+
+                <h3 class="t_tit3">✔️ 예시 출력 값 (console 확인)</h3>
+                <img src="../assets/img/en_deCodding.png">
+
+                <hr>
+
+                <h2 class="t_tit2">◾️ 숫자 유 | 무한 값 판단 함수</h2>
+                <p class="t_box">
+                    📍 숫자 유 | 무한 값 판단 함수는 숫자가 맞는지 아닌지, 숫자가 유한값인지 무한값인지 판단하는 함수이다.
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">◽️ 숫자 유 | 무한 값 판단 함수 설명 표</h3>
+                <table class="t_table">
+                    <thead class="ce">
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>                       
+                        <tr>
+                            <td class="ce">isNaN( )</td>
+                            <td>
+                                숫자인지 아닌지 판변하는 함수이다. <br>
+                                숫자이면 false를 반환하고, 숫자가 아니면 true를 반환한다. <br>
+                                <p class="t_box" style="font-size: 0.9em; color:#999; border-radius:20px;">
+                                    💡 NaN은 Not a Number의 약자이다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">isFinite( )</td>
+                            <td>
+                                유한값인지 무한값인지 판변하는 함수이다. <br>
+                                유한값이면 true를 반환, 무한값이면 false를 반환한다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <h3 class="t_tit3">✔️ 유 | 무한 값 판별 함수 예시</h3>
+                <div class="t_code">
+<pre><code class="language-js">// 유 | 무한 값 판별 함수 
+var num1 = "숫자";
+
+if (!isNaN(num1)) {
+    console.log("숫자입니다.");
+} else {
+    console.log("숫자가 아닙니다.");
+};
+
+var num2 = 1 / 0;
+
+if (!isFinite(num2)) {
+    console.log("유한값");
+} else {
+    console.log("무한값");
+};
+</code></pre>
+                </div>
+
+                <h3 class="t_tit3">✔️ 예시 출력 값 (console 확인)</h3>
+                <img src="../assets/img/isFinite.png">
+                
+                <hr>
+
+                <h2 class="t_tit2">◾️ 숫자 | 문자 변환 함수</h2>
+                <p class="t_box">
+                    📍 문자를 숫자로 변환하거나, 숫자를 문자로 변환해주는 함수이다.
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">◽️ 숫자 | 문자 변환 함수 설명 표</h3>
+                <table class="t_table">
+                    <thead class="ce">
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>                       
+                        <tr>
+                            <td class="ce">Number( )</td>
+                            <td>
+                                문자를 숫자로 변환한다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">parselnt( )</td>
+                            <td>
+                                숫자와 문자가 포함되어 있는 경우 <br>
+                                정수 부분만 숫자로 변환한다.
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="ce">parseFloat( )</td>
+                            <td>
+                                숫자를 문자로 변환한다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">String( )</td>
+                            <td>
+                                숫자인지 아닌지 판변하는 함수이다. <br>
+                                숫자이면 false를 반환하고, 숫자가 아니면 true를 반환한다. <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <h3 class="t_tit3">✔️ 숫자 | 문자 변환 함수 예시</h3>
+                <div class="t_code">
+<pre><code class="language-js">// 숫자 | 문자 변환 함수
+var num1 = "10";
+
+console.log(Number(num1));
+
+var num2 = "100px";
+
+console.log(parseInt(num2));
+
+var num3 = "33.3%";
+
+console.log(parseFloat(num3));
+
+var num4 = 10;
+
+console.log(typeof num4);
+console.log(typeof String(num4));
+</code></pre>
+                </div>
+
+                <h3 class="t_tit3">✔️ 예시 출력 값 (console 확인)</h3>
+                <img src="../assets/img/number.png">
+                
+                <hr>
+
+                <h2 class="t_tit2">◾️ 자바스크립트 코드 변경 함수</h2>
+                <p class="t_box">
+                    📍 문자를 자바스크립트 코드로 변경한다.
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">◽️ 자바스크립트 코드 변경 함수 설명 표</h3>
+                <table class="t_table">
+                    <thead class="ce">
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>                       
+                        <tr>
+                            <td class="ce">eval( )</td>
+                            <td>
+                                문자를 자바스크립트 코드로 변경한다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <h3 class="t_tit3">✔️ 자바스크립트 코드 변경 함수 예시</h3>
+                <div class="t_code">
+<pre><code class="language-js">// 자바스크립트 코드 변경 함수
+var str1 = "var num1 = 10";
+var str2 = "var num2 = 20";
+
+eval(str1);
+eval(str2);
+
+console.log(num1 + num2);
+</code></pre>
+                </div>
+
+                <h3 class="t_tit3">✔️ 예시 출력 값 (console 확인)</h3>
+                <img src="../assets/img/javachange.png">
+                
+                <hr>
+
+                
+
+                <h2 class="t_tit2">공부를 마치며 📋</h2>
+                <h3 class="t_tit3">
+                    이번 글은 자바스크립트의 내장 함수 종류를 알아보았습니다. <br>
+                    유니코드 문자 변환 함수, 숫자 유 | 무한 값 판별 함수, <br>
+                    숫자 | 문자 변환 함수, 자바스크립트 코드 변경 함수까지 크게 총 4가지를 알아봤는데요. <br>
+                    역시 아직까진 모든 함수를 어떻게 외워야 할지 감이 안 오네요. 🥺 <br>
+                    결국 노력만이 답! 모두 코딩 공부 아자!! 하시길 바랍니다. <br><br>
+
+                    오늘 공부도 끝! 🥰
+                </h3>
+            </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

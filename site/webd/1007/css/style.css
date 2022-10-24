@@ -1,0 +1,172 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* layout */
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    display: flex;
+    width: 1200px;
+    height: 100px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header .logo {
+    height: 100px;
+    float: left;
+}
+
+#header .logo img {
+    height: 100px;
+}
+#header .menu {
+    float: right;
+}
+
+#header .menu li {
+    display: inline;
+}
+
+#header .menu li a {
+    display: inline-block;
+    padding: 20px;
+    color: #222328;
+    font-size: 18px;
+}
+#slider {
+    margin-bottom: 20px;
+}
+#slider .slider__inner {
+    overflow: hidden;
+}
+#slider .slider__inner .slider__img {
+    display: flex;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1200px;
+}
+#info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#info .info__txt {
+
+    justify-content: space-between;
+    padding: 40px 30px 30px 30px;
+    border: 1px solid #999;
+    display: flex;
+    width: 49%;
+    height: 261px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+
+}
+#info .info__txt .info__head {
+
+
+
+}
+#info .info__txt .info__head h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    display: inline-block;
+}
+#info .info__txt .info__head span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #aaa;
+}
+
+#info .info__txt .info__head p {
+    font-size: 18px;
+    line-height: 2;
+    color: #666;
+}
+.info__day a {
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+.info__day p {
+    font-size: 18px;
+    line-height: 2;
+    color: #888;
+}
+
+.info__day img {
+    position: absolute;
+    margin-left: 10px;
+    width: 20px;
+}
+
+#info .info__ad {
+    width: 49%;
+    height: 236px;
+}
+.sub__tit {
+    width: 100%;
+}
+h3 {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.sub__img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sub__img .img {
+    width: 23.5%;
+}
+
+.sub__img .img img {
+    margin-bottom: 20px;
+}
+
+.sub__img .img p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 70px;
+}
+
+#footer {
+    border-top: 1px solid #dcdcdc;
+    padding: 30px 0;
+}
+
+#footer p {
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#footer  span {
+    color: #999;
+}

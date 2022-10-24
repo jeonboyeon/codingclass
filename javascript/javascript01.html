@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 데이터 저장하기</title>
+
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/dracula.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <h1><a href="index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="study/javascript05.html">문자열 객체</a></li>
+                    <li><a href="study/javascript06.html">배열 객체</a></li>
+                    <li><a href="study/javascript07.html">수학 객체</a></li>
+                    <li><a href="study/javascript08.html">숫자 객체</a></li>
+                    <li><a href="study/javascript09.html">브라우저 객체</a></li>
+                    <li><a href="study/javascript10.html">요소 객체</a></li>
+                    <li><a href="study/javascript11.html">이벤트 객체</a></li>
+                    <li><a href="study/javascript12.html">제이 쿼리</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                    <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                    <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                    <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                    <li><a href="effect/slideEffect.html">슬라이드 효과</a></li>
+                    <li><a href="effect/parallaxEffect.html">페럴랙스 효과</a></li>
+                    <li><a href="effect/gameEffect.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- -----------//header and//----------- -->
+
+        <!-- -----------//main//----------- -->
+        <main id="main">
+            <div class="container">
+                <div class="main_menu">
+                    <ul>
+                        <li><a href="sample01">01. 변수 : 데이터 저장</a></li>
+                        <li><a href="sample02">02. 변수 : 데이터 저장 + 데이터 변경</a></li>
+                        <li><a href="sample03">03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</a></li>
+                        <li><a href="sample04">04. 변수 : 지역변수 + 전역변수 + 매개 변수</a></li>
+                        <li><a href="sample05">05. 상수 : 데이터 저장 + 데이터 변경(X)</a></li>
+                        <li><a href="sample06">06. 배열 : 데이터 저장 (여러개) : 표현 방법 1</a></li>
+                        <li><a href="sample07">07. 배열 : 데이터 저장 (여러개) : 표현 방법 2</a></li>
+                        <li><a href="sample08">08. 배열 : 데이터 저장 (여러개) : 표현 방법 3</a></li>
+                        <li><a href="sample09">09. 배열 : 데이터 저장 (여러개) : 표현 방법 4</a></li>
+                        <li><a href="sample10">10. 객체 : 데이터 저장 (키와 값) : 표현 방법 1</a></li>
+                        <li><a href="sample11">11. 객체 : 데이터 저장 (키와 값) : 표현 방법 2</a></li>
+                        <li><a href="sample12">12. 객체 : 데이터 저장 (키와 값) : 표현 방법 3</a></li>
+                        <li><a href="sample13">13. 객체 : 데이터 저장 (키와 값) : 표현 방법 4</a></li>
+                        <li><a href="sample14">14. 객체 : 데이터 저장 (키와 값) : 표현 방법 5</a></li>
+                        <li><a href="sample15">15. 객체 : 데이터 저장 (키와 값) : 표현 방법 6</a></li>
+                        <li><a href="sample16">16. 객체 : 데이터 저장 (키와 값) : 표현 방법 7</a></li>
+                        <li><a href="sample17">17. 객체 : 데이터 저장 (키와 값) : 표현 방법 8</a></li>
+                    </ul>
+                </div>
+                <div class="main_sample">
+                    <!-- -----------1번 문제----------- -->
+                    <div id="sample01" class="sample">
+                        <h3>01. 변수 : 데이터 저장</h3>
+                        <p>변수는 데이터를 저장하는 저장소 입니다. 이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">var x = 100;    // x에 100을 저장함
+var y = 200;    // y에 200을 저장함
+var z = "javascript";    // z에 문자열 javascript를 저장함
+
+document.write(x);   
+document.write(y);   
+document.write(z);   
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample01_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------2번 문제----------- -->
+                    <div id="sample02" class="sample">
+                        <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
+                        <p>변수는 데이터를 저장하는 저장소이고, 데이터 변경이 가능하다.</p>
+                        <!-- -----------코딩 하이라이트----------- -->
+                        <div class="script">
+                            <pre><code class="language-js">let x = 100;
+let y = 200;
+let z = "javascript";
+
+x = 300;    // x를 300으로 변경
+y = 400;    // y를 400으로 변경
+z = "jquery"    // z를 jquery로 변경
+
+document.write(x);   
+document.write(y);   
+document.write(z);   
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample02_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------3번 문제----------- -->
+                    <div id="sample03" class="sample">
+                        <h3>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h3>
+                        <p>변수는 데이터를 저장하는 저장소이고, 데이터를 변경 또는 추가를 할 수 있다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">let x = 100;
+let y = 200;
+let z = "javascript";
+
+x += 300;   // x에 300을 추가
+y += 400;   // y에 400을 추가
+z += "jquery"   // z에 문자열 jquery를 추가
+
+document.write(x);   
+document.write(y);   
+document.write(z);   
+    </code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample03_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------4번 문제----------- -->
+                    <div id="sample04" class="sample">
+                        <h3>04. 변수 : 지역변수 + 전역변수</h3>
+                        <p>
+                            지역변수 : 해당 지역에서 선언되는 순간 메모리가 생성되고 해당 지역을 벗어나면 자동으로 소멸 <br />
+                            전역변수 : 코드가 시작되어 선언되는 순간 메모리가 생성되고 코드 전체가 끝날때까지 메모리를 차지
+                        </p>
+                        <div class="script">
+                            <pre><code class="language-js">let x1 = 100;    // 전역변수
+let y1 = 200; 
+
+function func(){
+    let x1 = 100;    // 지역변수
+    let z1 = "javascript";   //지역변수
+    x1 = 200;   // 지역변수 x1의 100이 200으로 변경됨
+    y1 = 300;   // 지역변수에 y1이 없으면 전역변수 y1의 값을 바꿈
+
+    document.write("함수 안");
+    document.write(x1);
+    document.write(y1);
+    document.write(z1); 
+}
+
+document.write("함수 밖");
+document.write(x1);
+document.write(y1);
+document.write(z1);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample04_result">
+                                    함수 안 <br />
+                                    200 <br />
+                                    300 <br />
+                                    Javascript <br /><br />
+
+                                    함수 밖 <br />
+                                    100 <br />
+                                    300 <br />
+                                    javascript
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------5번 문제----------- -->
+                    <div id="sample05" class="sample">
+                        <h3>05. 상수 : 데이터 저장 + 데이터 변경(X)</h3>
+                        <p>상수는 데이터를 저장 할 수 있지만 변경은 하지 못한다.</p>
+                        <div class="script">
+                            <pre><code class="language-js">const x = 100;
+const y = 200;
+const z = "javascript";
+// x = 300; 
+// y = 400;
+// z = "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z); 
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample05_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------6번 문제----------- -->
+                    <div id="sample06" class="sample">
+                        <h3>06. 배열 : 데이터 저장 (여러개) : 표현 방법 1</h3>
+                        <p>표현 방법 1</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const arr = new Array();
+arr[0] = 100;
+arr[1] = 200;
+arr[2] = "javascript";
+
+document.write(arr[0]);
+document.write(arr[1]);
+document.write(arr[2]);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample06_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------7번 문제----------- -->
+                    <div id="sample07" class="sample">
+                        <h3>07. 배열 : 데이터 저장 (여러개) : 표현 방법 2</h3>
+                        <p>표현 방법 2</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const arr = new Array(100, 200, "javascript");
+
+document.write(arr[0]);
+document.write(arr[1]);
+document.write(arr[2]);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample07_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------8번 문제----------- -->
+                    <div id="sample08" class="sample">
+                        <h3>08. 배열 : 데이터 저장 (여러개) : 표현 방법 3</h3>
+                        <p>표현 방법 3</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const arr = [];
+arr[0] = 100;
+arr[1] = 200;
+arr[2] = "javascript";
+
+document.write(arr[0]);
+document.write(arr[1]);
+document.write(arr[2]);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample08_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------9번 문제----------- -->
+                    <div id="sample09" class="sample">
+                        <h3>09. 배열 : 데이터 저장 (여러개) : 표현 방법 4</h3>
+                        <p>표현 방법 4</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const arr = [100,200,"javascript"];
+
+document.write(arr[0]);
+document.write(arr[1]);
+document.write(arr[2]);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample09_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------10번 문제----------- -->
+                    <div id="sample10" class="sample">
+                        <h3>10. 객체 : 데이터 저장 (키와 값) : 표현 방법 1</h3>
+                        <p>객체란 이름(name)과 값(value)으로 구성된 프로퍼티(property)의 정렬되지 않은 집합</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = new Object();
+obj[0] = 100;
+obj[1] = 200;
+obj[2] = "javascript";
+
+document.write[obj[0]];
+document.write[obj[1]];
+document.write[obj[2]];
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample10_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------11번 문제----------- -->
+                    <div id="sample11" class="sample">
+                        <h3>11. 객체 : 데이터 저장 (키와 값) : 표현 방법 2</h3>
+                        <p>표현 방법 2</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = new Object();
+
+obj.a = 100;
+obj.b = 200;
+obj.c = "javascript";
+
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.c);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample11_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------12번 문제----------- -->
+                    <div id="sample12" class="sample">
+                        <h3>12. 객체 : 데이터 저장 (키와 값) : 표현 방법 3</h3>
+                        <p>표현 방법 3</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = {}
+
+obj.a = 100;
+obj.b = 200;
+obj.c = "javascript";
+
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.c);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample12_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------13번 문제----------- -->
+                    <div id="sample13" class="sample">
+                        <h3>13. 객체 : 데이터 저장 (키와 값) : 표현 방법 4</h3>
+                        <p>표현 방법 4</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = {a: 100, b: 200, c: "javascript"};
+
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.c);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample13_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------14번 문제----------- -->
+                    <div id="sample14" class="sample">
+                        <h3>14. 객체 : 데이터 저장 (키와 값) : 표현 방법 5</h3>
+                        <p>표현 방법 5</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = [
+    {a: 100, b: 200},
+    {c:javascript}
+]
+
+document.write(obj[0].a);
+document.write(obj[0].b);
+document.write(obj[1].c);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample14_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------15번 문제----------- -->
+                    <div id="sample15" class="sample">
+                        <h3>15. 객체 : 데이터 저장 (키와 값) : 표현 방법 6</h3>
+                        <p>표현 방법 6</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = {
+    a: 100,
+    b: [200, 300],
+    c: {x: 400, y: 500},
+    d: "javascript"
+}
+
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.b[0]);
+document.write(obj.b[1]);
+document.write(obj.c.x);
+document.write(obj.c.y);
+document.write(obj.d);
+}
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample15_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------16번 문제----------- -->
+                    <div id="sample16" class="sample">
+                        <h3>16. 객체 : 데이터 저장 (키와 값) : 표현 방법 7</h3>
+                        <p>표현 방법 7</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const a = 100; // 변수
+const b = 200;
+const c = "javascript";
+const obj = {a, b, c} // {}는 객체
+
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.c);
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample16_result"></div>
+                            </details>
+                        </div>
+                    </div>
+                    <!-- -----------17번 문제----------- -->
+                    <div id="sample17" class="sample">
+                        <h3>17. 객체 : 데이터 저장 (키와 값) : 표현 방법 8</h3>
+                        <p>표현 방법 8</p>
+
+                        <div class="script">
+                            <pre><code class="language-js">const obj = {
+    a : 100,
+    b : [200, 300],
+    c : {x : 400, y : 500},
+    d : "javascript",
+    e : function(){
+        document.write("자바스크립트가 실행되었습니다.");
+        },
+    f : function(){
+        document.write(obj.d + "가 실행되었습니다.")
+        },
+    g : function(){
+        document.write(this.d + "가 실행되었습니다.");
+        }
+}
+
+document.write(obj.a);
+document.write(obj.b[0]);
+document.write(obj.b[1]);
+document.write(obj.b);
+document.write(obj.c.x);
+document.write(obj.c.y);
+document.write(obj.c); //객체를 선택해 달라고 나온다.
+document.write(obj.d);
+(obj.e()); // 객체에서 함수를 실행 시킬 땐 document를 작성하지 않는다.
+(obj.f());
+(obj.g());
+</code></pre>
+                        </div>
+                        <div class="result">
+                            <details>
+                                <summary>결과보기</summary>
+                                <div class="sample17_result">
+                                    100 <br />
+                                    200 <br />
+                                    300 <br />
+                                    200,300 <br />
+                                    400 <br />
+                                    500 <br />
+                                    [object Object] <br />
+                                    javascript <br />
+                                    자바스크립트가 실행되었습니다. <br />
+                                    javascript가 실행되었습니다. <br />
+                                    javascript가 실행되었습니다.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- -----------//main and//----------- -->
+
+        <div id="javascript__top">👆🏻 맨 위로 올라가기</div>
+        <!-- ----------//parallax__top//---------- -->
+
+        <!-- -----------//footer//----------- -->
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- -----------//footer and//----------- -->
+
+        <script src="assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+
+        <!-- -----------답 출력 스크립트----------- -->
+        <script>
+            //1번 문제 답
+            {
+                var x = 100;
+                var y = 200;
+                var z = "javascript";
+
+                // document.write(x);
+                // document.write(y);
+                // document.write(z);
+
+                document.querySelector(".sample01_result").innerHTML = x + "<br>" + y + "<br>" + z;
+            }
+
+            // //2번 문제 답
+            {
+                let x = 100;
+                let y = 200;
+                let z = "javascript";
+
+                x = 300;
+                y = 400;
+                z = "jquery";
+
+                //document.write(x);
+                //document.write(y);
+                //document.write(z);
+
+                document.querySelector(".sample02_result").innerHTML = x + "<br>" + y + "<br>" + z;
+            }
+
+            // //3번 문제 답
+            {
+                let x = 100;
+                let y = 200;
+                let z = "javascript";
+
+                x += 300;
+                y += 400;
+                z += "jquery";
+
+                //document.write(x);
+                //document.write(y);
+                //document.write(z);
+
+                document.querySelector(".sample03_result").innerHTML = x + "<br>" + y + "<br>" + z;
+            }
+
+            // //4번 문제 답
+            {
+                let x = 100;
+                let y = 200;
+
+                function func() {
+                    let x = 100;
+                    let z = "javascript";
+                    x = 200;
+                    y = 300;
+
+                    // document.write("함수 안");
+                    // document.write(x);
+                    // document.write(y);
+                    // document.write(z);
+                }
+                func();
+
+                // document.write("함수 밖");
+                // document.write(x);
+                // document.write(y);
+                // document.write(z);
+            }
+
+            // //5번 문제 답
+            {
+                const x = 100;
+                const y = 200;
+                const z = "javascript";
+
+                // x = 300;
+                // y = 400;
+                // z = "jquery";
+
+                //document.write(x);
+                //document.write(y);
+                //document.write(z);
+
+                document.querySelector(".sample05_result").innerHTML = x + "<br>" + y + "<br>" + z;
+            }
+
+            // //6번 문제 답
+            {
+                const arr = new Array();
+                arr[0] = 100;
+                arr[1] = 200;
+                arr[2] = "javascript";
+
+                //document.write(arr[0]);
+                //document.write(arr[1]);
+                //document.write(arr[2]);
+
+                document.querySelector(".sample06_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            }
+
+            // //7번 문제 답
+            {
+                const arr = new Array(100, 200, "javascript");
+
+                //document.write(arr[0]);
+                //document.write(arr[1]);
+                //document.write(arr[2]);
+
+                document.querySelector(".sample07_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            }
+
+            // //8번 문제 답
+            {
+                const arr = [];
+                arr[0] = 100;
+                arr[1] = 200;
+                arr[2] = "javascript";
+
+                //document.write(arr[0]);
+                //document.write(arr[1]);
+                //document.write(arr[2]);
+
+                document.querySelector(".sample08_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            }
+
+            // //9번 문제 답
+            {
+                const arr = [100, 200, "javascript"];
+
+                //document.write(arr[0]);
+                //document.write(arr[1]);
+                //document.write(arr[2]);
+
+                document.querySelector(".sample09_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            }
+
+            // //10번 문제 답
+            {
+                const obj = new Object();
+                obj[0] = 100;
+                obj[1] = 200;
+                obj[2] = "javascript";
+
+                //document.write[obj[0]];
+                //document.write[obj[1]];
+                //document.write[obj[2]];
+
+                document.querySelector(".sample10_result").innerHTML = obj[0] + "<br>" + obj[1] + "<br>" + obj[2];
+            }
+
+            // //11번 문제 답
+            {
+                const obj = new Object();
+
+                obj.a = 100;
+                obj.b = 200;
+                obj.c = "javascript";
+
+                //document.write(obj.a);
+                //document.write(obj.b);
+                //document.write(obj.c);
+
+                document.querySelector(".sample11_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
+            }
+
+            // //12번 문제 답
+            {
+                const obj = {};
+
+                obj.a = 100;
+                obj.b = 200;
+                obj.c = "javascript";
+
+                //document.write(obj.a);
+                //document.write(obj.b);
+                //document.write(obj.c);
+
+                document.querySelector(".sample12_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
+            }
+
+            // //13번 문제 답
+            {
+                const obj = { a: 100, b: 200, c: "javascript" };
+
+                //document.write(obj.a);
+                //document.write(obj.b);
+                //document.write(obj.c);
+
+                document.querySelector(".sample13_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
+            }
+
+            //14번 문제 답 : 배열 속에 객체
+            {
+                const obj = [{ a: 100, b: 200 }, { c: "javascript" }];
+
+                //document.write(obj[0].a);
+                //document.write(obj[0].b);
+                //document.write(obj[1].c);
+
+                document.querySelector(".sample14_result").innerHTML = obj[0].a + "<br>" + obj[0].b + "<br>" + obj[1].c;
+            }
+
+            // //15번 문제 답
+            {
+                const obj = {
+                    a: 100,
+                    b: [200, 300],
+                    c: { x: 400, y: 500 },
+                    d: "javascript",
+                };
+
+                //document.write(obj.a);
+                //document.write(obj.b);
+                //document.write(obj.b[0]);
+                //document.write(obj.b[1]);
+                //document.write(obj.c.x);
+                //document.write(obj.c.y);
+                //ocument.write(obj.d);
+
+                document.querySelector(".sample15_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.b[0] + "<br>" + obj.c.x + obj.c.y + "<br>" + obj.c.y + "<br>" + obj.d;
+            }
+
+            // //16번 문제 답 : 객체 속에 변수가 들어간다. React에서 많이 사용한다.
+            {
+                const a = 100; // 변수
+                const b = 200;
+                const c = "javascript";
+
+                const obj = { a, b, c }; // {}는 객체
+
+                //document.write(obj.a);
+                //document.write(obj.b);
+                //document.write(obj.c);
+
+                document.querySelector(".sample16_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
+            }
+
+            // // 17번 문제 답 : 객체 속에 함수
+            {
+                const obj = {
+                    a: 100,
+                    b: [200, 300],
+                    c: { x: 400, y: 500 },
+                    d: "javascript",
+                    e: function () {
+                        document.write("자바스크립트가 실행되었습니다.");
+                    },
+                    f: function () {
+                        document.write(obj.d + "가 실행되었습니다.");
+                    },
+                    g: function () {
+                        document.write(this.d + "가 실행되었습니다.");
+                    },
+                };
+
+                // document.write(obj.a);
+                // document.write(obj.b[0]);
+                // document.write(obj.b[1]);
+                // document.write(obj.b);
+                // document.write(obj.c.x);
+                // document.write(obj.c.y);
+                // document.write(obj.c); //객체를 선택해 달라고 나온다.
+                // document.write(obj.d);
+                // obj.e(); // 객체에서 함수를 실행 시킬 땐 document를 작성하지 않는다.
+                // obj.f();
+                // obj.g();
+
+                document.querySelector(".sample17_result").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.b + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.c + "<br>" + obj.d + "<br>"; //함수 출력 못하는 중 :(
+            }
+        </script>
+        <script>
+            window.addEventListener("scroll", () => {
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+                const sample01 = document.querySelector("#sample01");
+
+                let sampleTop = sample01.offsetTop
+
+                //01
+                // if(scrollTop > 0){
+                //     document.querySelector("#parallax__nav").classList.add("show");
+                // } else {
+                //     document.querySelector("#parallax__nav").classList.remove("show");
+                // }                                스크롤바 0보다 커지면 메뉴가 나온다.
+
+                // 02;
+                if (scrollTop > 870) {
+                    document.querySelector("#javascript__top").classList.add("show");
+                } else {
+                    document.querySelector("#javascript__top").classList.remove("show");
+                }
+                console.log();
+            });
+
+            // top 버튼
+            document.querySelector("#javascript__top").addEventListener("click", () => {
+                window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+            });
+        </script>
+    </body>
+</html>

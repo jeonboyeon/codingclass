@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>마우스 이펙트 01</title>
+
+        <!-- style link -->
+        <link rel="stylesheet" href="../assets/css/mouse.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+
+        <style>
+            /* mouse Type */
+            .mouse__cursor {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 3px solid #fff;
+                background-color: rgba(255, 255, 255, 0.1);
+                user-select: none;
+                pointer-events: none;
+                transition: background-color 0.3s, border-color 0.3s, transform 0.6s, border-radius 0.3s;
+            }
+
+            .mouse__cursor {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 10px;
+                height: 10px;
+                z-index: 9999;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.1);
+                user-select: none;
+                pointer-events: none;
+                transition: transform 0.3s, opactiy 0.2s;
+            }
+
+            .mouse__cursor2 {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 30px;
+                height: 30px;
+                z-index: 9998;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.3);
+                user-select: none;
+                pointer-events: none;
+                transition: transform 0.3s, opactiy 0.2s;
+            }
+
+            .mouse__cursor.active {
+                transform: scale(0);
+            }
+            .mouse__cursor2.active {
+                transform: scale(5);
+                background-color: rgba(255, 166, 0, 0.6);
+            }
+
+            .mouse__cursor.active2 {
+                transform: scale(0);
+            }
+            .mouse__cursor2.active2 {
+                transform: scale(5);
+                background-color: rgba(0, 221, 255, 0.6);
+            }
+
+            .mouse__cursor.active3 {
+                transform: scale(0);
+            }
+            .mouse__cursor2.active3 {
+                transform: scale(5);
+                background-color: rgba(255, 0, 85, 0.6);
+            }
+
+            .mouse__wrap {
+                text-align: center;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: #fff;
+                overflow: hidden;
+                cursor: none;
+            }
+            .mouse__wrap p span {
+                padding: 15px 0;
+                border-bottom: 0.15vw dashed rgb(255, 181, 20);
+                color: rgba(255, 181, 20);
+            }
+
+            .mouse__wrap p {
+                font-size: 2vw;
+                line-height: 2;
+                font-weight: 300;
+            }
+
+            .mouse__wrap p:last-child {
+                font-size: 3vw;
+                font-weight: 400;
+            }
+
+            @media (max-width: 800px) {
+                .mouse__wrap p {
+                    font-size: 20px;
+                    padding: 0 20px;
+                    margin-bottom: 10px;
+                }
+
+                .mouse__wrap p:last-child {
+                    font-size: 40px;
+                    line-height: 1.5;
+                    text-align: center;
+                }
+            }
+
+            .mouse__info {
+                position: absolute;
+                left: 20px;
+                bottom: 10px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #fff;
+            }
+        </style>
+    </head>
+
+    <body class="img07">
+        <!-- header start -->
+        <header id="header" class="header">
+            <h1><a href="../effect/mouseEffect.html">JAVASCRIPT Mouse Effect No. 02</a></h1>
+            <p>마우스 이펙트 | 마우스 따라다니기 (GSAP)</p>
+            <ul>
+                <li><a href="mouseEffect01.html">1</a></li>
+                <li class="active"><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+            </ul>
+        </header>
+        <!-- header end -->
+
+        <!-- main start -->
+        <main id="main">
+            <section id="mouseType01">
+                <div class="mouse__cursor"></div>
+                <div class="mouse__cursor2"></div>
+                <div class="mouse__wrap">
+                    <p>When you have a dream,you've <span>got</span> to grab it and never let go</p>
+                    <p>꿈이 있다면 그 꿈을 잡고, 절대 <span>놓아주지마라</span></p>
+                </div>
+            </section>
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <footer id="footer">
+            <div class="modal__wrap">
+                <div class="modal__btn">
+                    <div for="btn" class="btn__txt">source view</div>
+                </div>
+                <div class="modal__cont">
+                    <div class="modal__box">
+                        <div class="title">
+                            <span class="dot" aria-label="true"></span>
+                            <div class="tabs">
+                                <div class="active">
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="skyblue"></path>
+                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="white"></path>
+                                        </svg>
+                                    </span>
+                                    <em>JAVASCRIPT</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                        </svg>
+                                    </span>
+                                    <em>HTML</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                            <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                            <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                        </svg>
+                                    </span>
+                                    <em>CSS</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="puls" aria-label="true">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="cont">
+                            <div class="active">
+                                <pre><code class="language-js">// 마우스 위치 값 구하기
+window.addEventListener("mousemove", (event) => {
+    document.querySelector(".clientX").innerHTML = event.clientX;
+    document.querySelector(".clientY").innerHTML = event.clientY;
+    document.querySelector(".offsetX").innerHTML = event.offsetX;
+    document.querySelector(".offsetY").innerHTML = event.offsetY;
+    document.querySelector(".pageX").innerHTML = event.pageX;
+    document.querySelector(".pageY").innerHTML = event.pageY;
+    document.querySelector(".screenX").innerHTML = event.screenX;
+    document.querySelector(".screenY").innerHTML = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+
+// 마우스 커서 스타일 : 마우스를 따라다니게 위치값 지정
+window.addEventListener("mousemove", (e) => {
+    // e = event
+
+    cursor.style.left = e.clientX - 25 + "px";
+    cursor.style.top = e.clientY - 25 + "px";
+});
+
+// .style 태그로 이동 시 마우스 효과
+// document.querySelector(".style1").addEventListener("mouseover", () => {
+//     cursor.classList.add("style1");
+// });
+
+// document.querySelector(".style1").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style1");
+// });
+
+// document.querySelector(".style2").addEventListener("mouseover", () => {
+//     cursor.classList.add("style2");
+// });
+
+// document.querySelector(".style2").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style2");
+// });
+
+// document.querySelector(".style3").addEventListener("mouseover", () => {
+//     cursor.classList.add("style3");
+// });
+
+// document.querySelector(".style3").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style3");
+// });
+
+// document.querySelector(".style4").addEventListener("mouseover", () => {
+//     cursor.classList.add("style4");
+// });
+
+// document.querySelector(".style4").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style4");
+// });
+
+// document.querySelector(".style5").addEventListener("mouseover", () => {
+//     cursor.classList.add("style5");
+// });
+
+// document.querySelector(".style5").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style5");
+// });
+
+// document.querySelector(".style6").addEventListener("mouseover", () => {
+//     cursor.classList.add("style6");
+// });
+
+// document.querySelector(".style6").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style6");
+// });
+
+// 위를 for문으로 변경
+// for (let i = 1; i <= 6; i++) {
+//     document.querySelector(".style" + i).addEventListener("mouseover", () => {
+//         cursor.classList.add("style" + i);
+//     });
+//     document.querySelector(".style" + i).addEventListener("mouseout", () => {
+//         cursor.classList.remove("style" + i);
+//     });
+// }
+
+// forEach() 문으로 변경
+// document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+//     // el = span
+//     span.addEventListener("mouseover", () => {
+//         cursor.classList.add("style" + (num + 1));
+//     });
+//     span.addEventListener("mouseout", () => {
+//         cursor.classList.remove("style" + (num + 1));
+//     });
+// });
+
+//getAttribute | 속성 가져오기
+document.querySelectorAll(".mouse__wrap span").forEach((span) => {
+    let attr = span.getAttribute("class");
+    // el = span
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove(attr);
+    });
+});
+</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-html">&lt;body class="img04">
+    &lt;!-- header start -->
+    &lt;header id="header">
+        &lt;h1>JAVASCRIPT Mouse Effect No. 01&lt;/h1>
+        &lt;p>마우스 이펙트 | 트랜지션 효과&lt;/p>
+        &lt;ul>
+            &lt;li class="active">&lt;a href="mouseEffect01.html">1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect02.html">2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect03.html">3&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect04.html">4&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect05.html">5&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect06.html">6&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect07.html">7&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/header>
+    &lt;!-- header end -->
+
+    &lt;!-- main start -->
+    &lt;main id="main">
+        &lt;section id="mouseType01">
+            &lt;div class="mouse__cursor">&lt;/div>
+            &lt;div class="mouse__wrap">
+                &lt;p>The way to get &lt;span class="style1">started&lt;/span> is to &lt;span class="style2">quit talking&lt;/span> and &lt;span class="style3">begin doing.&lt;/span>&lt;/p>
+                &lt;p>시작하는 방법은 &lt;span class="style4">말을 멈추고&lt;/span> &lt;span class="style5">행동&lt;/span>을 &lt;span class="style6">시작하는 것&lt;/span>입니다.&lt;/p>
+            &lt;/div>
+        &lt;/section>
+
+        &lt;div class="mouse__info">
+            &lt;ul>
+                &lt;li>clientX : &lt;span class="clientX">0&lt;/span>px&lt;/li>
+                &lt;li>clientY : &lt;span class="clientY">0&lt;/span>px&lt;/li>
+                &lt;li>offsetX : &lt;span class="offsetX">0&lt;/span>px&lt;/li>
+                &lt;li>offsetY : &lt;span class="offsetY">0&lt;/span>px&lt;/li>
+                &lt;li>pageX : &lt;span class="pageX">0&lt;/span>px&lt;/li>
+                &lt;li>pageY : &lt;span class="pageY">0&lt;/span>px&lt;/li>
+                &lt;li>screenX : &lt;span class="screenX">0&lt;/span>px&lt;/li>
+                &lt;li>screenY : &lt;span class="screenY">0&lt;/span>px&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- main end -->
+</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-css">/* mouse Type */
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.6s, border-radius 0.3s;
+}
+
+.mouse__cursor.style1 {
+    background-color: rgba(74, 107, 255, 0.326);
+    border-color: rgb(74, 107, 255);
+}
+
+.mouse__cursor.style2 {
+    background-color: rgba(74, 183, 255, 0.326);
+    border-color: rgb(74, 180, 255);
+    transform: scale(2) rotateY(360deg);
+}
+.mouse__cursor.style3 {
+    background-color: rgba(74, 255, 237, 0.326);
+    border-color: rgb(74, 255, 255);
+    transform: scale(1.5) rotateX(360deg);
+}
+.mouse__cursor.style4 {
+    background-color: rgba(74, 255, 92, 0.326);
+    border-color: rgb(74, 255, 80);
+    transform: scale(5);
+}
+.mouse__cursor.style5 {
+    background-color: rgba(255, 237, 74, 0.326);
+    border-color: rgb(255, 237, 74);
+    border-radius: 0;
+    transform: scale(2.5);
+}
+.mouse__cursor.style6 {
+    background-color: rgba(255, 146, 74, 0.326);
+    border-color: rgb(255, 128, 74);
+}
+
+.mouse__wrap {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed rgb(74, 107, 255);
+    color: rgb(111, 137, 255);
+}
+
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 400;
+}
+
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        font-size: 20px;
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+    }
+}
+
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- script link -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script src="../assets/js/common.js"></script>
+        <script src="../assets/js/gsap.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+
+        <script>
+            const cursor = document.querySelector('.mouse__cursor');
+            const cursor2 = document.querySelector('.mouse__cursor2');
+            const span = document.querySelectorAll('.mouse__wrap span');
+            const menu = document.querySelectorAll('#header ul li a');
+            const modal = document.querySelector('.modal__btn');
+
+            window.addEventListener('mousemove', (e) => {
+                // 커서 좌표값 할당
+                // cursor.style.left = e.pageX - 5 + "px";
+                // cursor.style.top = e.pageY - 5 + "px";
+                // cursor2.style.left = e.pageX - 15 + "px";
+                // cursor2.style.top = e.pageY - 15 + "px";
+
+                // GSAP
+                gsap.to(cursor, { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
+                gsap.to(cursor2, { duration: 0.8, left: e.pageX - 15, top: e.pageY - 15 });
+
+                // 스타일 오버 효과
+                // mouseenter(이벤트 버블링 효과가 없다.) / mouseover(이벤트 버블링 효과가 있다.)
+                span.forEach((span) => {
+                    // mouseenter 시 span 효과 설정 (화살표 함수에서는 this가 안먹힌다.)
+                    span.addEventListener('mouseenter', () => {
+                        cursor.classList.add('active');
+                        cursor2.classList.add('active');
+                    });
+                    span.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('active');
+                        cursor2.classList.remove('active');
+                    });
+                });
+                menu.forEach((menu) => {
+                    // mouseenter 시 span 효과 설정 (화살표 함수에서는 this가 안먹힌다.)
+                    menu.addEventListener('mouseenter', () => {
+                        cursor.classList.add('active2');
+                        cursor2.classList.add('active2');
+                    });
+                    menu.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('active2');
+                        cursor2.classList.remove('active2');
+                    });
+                });
+
+                modal.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active3');
+                    cursor2.classList.add('active3');
+                });
+                modal.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active3');
+                    cursor2.classList.remove('active3');
+                });
+            });
+
+            modal.classList.remove('active2');
+
+            modal.classList.add('active2');
+        </script>
+    </body>
+</html>

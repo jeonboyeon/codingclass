@@ -1,0 +1,250 @@
+body {
+    background-color: #f5f5f5;
+}
+/* board */
+.board_wrap {
+    height: 1000px;
+}
+.board_wrap .board_inner {
+    padding: 230px 0;
+}
+
+/* board_box */
+.board_wrap .board_inner .board_box {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+.board_wrap .board_inner .board_box h2 {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    font-size: 30px;
+    color: #555;
+}
+.board_wrap .board_inner .board_box h2::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #388fc0;
+}
+.board_wrap .board_inner .board_box p {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 90px;
+}
+
+/* search_inner */
+.search_inner {
+    float: right;
+    margin-bottom: 20px;
+}
+.search_inner fieldset {
+}
+.search_inner fieldset select {
+    width: 70px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+}
+.search_inner fieldset input {
+    color: #777;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #dcdcdc;
+}
+.search_inner fieldset button {
+    font-size: 16px;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background: linear-gradient(106.07deg, #388fc0 -20.17%, #195eb1 127.19%);
+}
+
+/* board_table */
+.ce {
+    text-align: center;
+}
+.lf {
+    text-align: left;
+}
+.board_box .board_table {
+    margin-bottom: 10px;
+}
+.board_box .board_table table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.board_box .board_table tr {
+}
+.board_box .board_table tr th {
+    padding: 15px;
+    border-top: 2px solid #769fcd;
+    color: #555;
+    border-bottom: 1px solid #dcdcdc;
+}
+.board_box .board_table tbody tr td {
+    padding: 14px;
+    font-size: 15px;
+    border-bottom: 1px solid #dcdcdc;
+    color: #555;
+}
+.board_box .board_table tbody tr:hover {
+    background-color: #b9d7ea80;
+}
+/* board_writeBtn */
+.board_box .board_writeBtn {
+    margin-bottom: 70px;
+}
+.board_box .board_writeBtn a {
+    float: right;
+    color: #388FC0;
+    line-height: 40px;
+    display: block;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #388FC0;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+.board_box .board_writeBtn a:hover {
+    color: #fff;
+    background: linear-gradient(106.07deg, #388fc0 -20.17%, #195eb1 127.19%);
+}
+/* board_pages */
+.board_box .board_pages {
+    clear: both;
+}
+.board_box .board_pages ul {
+    text-align: center;
+}
+.board_box .board_pages ul li {
+    margin: 0 5px;
+    display: inline-block;
+}
+.board_box .board_pages ul li.active a {
+    background-color: #769fcd;
+    color: #fff;
+}
+.board_box .board_pages ul li a {
+    font-size: 14px;
+    color: #777;
+    border-radius: 50px;
+    padding: 5px 9px;
+}
+/* board_write */
+/* .write_inner {}
+.write_inner .board__write {}
+.board__write form {}
+.board__write form fieldset {}
+.board__write form fieldset div {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.board__write form fieldset div label {
+    display: block;
+    width: 100%;
+}
+
+.board__write form fieldset div label input {
+    display: block;
+    width: 100%;
+
+} */
+.board__write legend {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.board__write label {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.board__write input {
+    width: 100%;
+    display: block;
+    border: 0;
+    background-color: #f5f5f5;
+    padding: 20px 30px;
+    font-size: 25px;
+    color: #666;
+    font-weight: 700;
+    box-sizing: border-box;
+    outline: none;
+    border-top: 3px solid #388FC0;
+    border-bottom: 2px solid #dcdcdc;
+}
+.board__write textarea {
+    width: 100%;
+    resize: none;
+    border: 0;
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+    font-weight: 300;
+    box-sizing: border-box;
+    outline: none;
+    border-bottom: 2px solid #dcdcdc;
+}
+.board__write .btn {
+    margin-right: 10px;
+    font-size: 1rem;
+    background: linear-gradient(106.07deg, #388fc0 -20.17%, #195eb1 127.19%);
+    color: #fff;
+    padding: 13px 30px;
+    display: inline-block;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.board__write {}
+.board__write .write_top {
+    text-align: bottom;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 3px solid #388FC0;
+    height: 50px;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dcdcdc;
+}
+.board__write .write_top h3 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #777;
+}
+.board__write .write_top p {
+    font-weight: 400;
+    font-size: 18px;
+}
+.board__write .write_desc {
+    display: flex;
+    text-align: left;
+    min-height: 500px;
+    padding: 0 20px;
+    border-bottom: 2px solid #dcdcdc;
+}
+
+

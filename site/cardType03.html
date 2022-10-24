@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 | 첫 번째</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: "SCoreDream";
+            font-weight: 300;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            /*line height auto는 1을 의미*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* blind */
+
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+
+        /* cardType03 */
+        body {
+            background-color: #89a676;
+        }
+
+        .card__inner {
+            display: flex;
+        }
+
+        .card__inner .card {
+            width: 33.3333%;
+            background-color: #fff;
+            padding: 26px;
+        }
+
+        .card__inner .card:nth-child(1) {
+            background-color: #fff;
+            border-right: 1px solid #eee;
+        }
+
+        .card__inner .card:nth-child(2) {
+            background-color: #fff;
+            border-right: 1px solid #eee;
+        }
+
+        .card__inner .card:nth-child(3) {
+            background-color: #fff;
+        }
+
+        .card {}
+        .card__header {
+            position: relative;
+        }
+        .card__header img {
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .card__header figcaption {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background-color: #87a841;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .card__contants h3 {
+            font-size: 20px;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .card__contants p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-bottom: 30px;
+        }
+
+        .card__footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .card__footer h4 {
+            text-align: right;
+            color: #89a676;
+        }
+        .card__footer span {
+            display: block;
+        }
+        .card__footer em {
+            display: block;
+            font-style: normal;
+            color: #666;
+        }
+        .card__footer span {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50px;
+            display: block;
+            margin-left: 10px;
+            margin-top: -2px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <section id="cardType2" class="card__wrap nexon section">
+        <div class="card__inner container">
+            <article class="card2">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg03_03.jpg">
+                </figure>
+                <div class="card__body">
+                    <p class="tit">
+                        킁킁! 맛있는 냄새! <br>
+                        어디서 흘러 들어오는 걸까
+                    </p>
+                    <p class="desc">
+                        어디선가 흘러오는 이 맛있는 냄새.. 고기인가 과일인가 솜사탕인가 무엇인가 일단 너무 배가 고파 얼른 먹...
+                    </p>
+                    <p class="btn2" href="/">
+                    <div class="card__bt">
+                        <span>
+                            <p class="card__btName">
+                                라쿤장인 그라쿤
+                            </p>
+                            <p class="card__subName">
+                                18 Resources
+                            </p>
+                        </span>
+                        <figure class="card__btPropile">
+                            <img class="bt_img" src="cardType/img/btn_01.jpg">
+                        </figure>
+                    </div>
+                    </p>
+                </div>
+            </article>
+
+            <article class="card2">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg03_01.jpg">
+                </figure>
+                <div class="card__body">
+                    <p class="tit">
+                        아따~ <br>
+                        물 한 번 시원 하구먼!
+                    </p>
+                    <p class="desc">
+                        너무 찝찝해 씻고 싶다. 시원한 물로 등목 한 번 쫘 - 악 하고 에어컨 바람 쐬며 침대에 누워...
+                    </p>
+                    <p class="btn2" href="/">
+                    <div class="card__bt">
+                        <span>
+                            <p class="card__btName">
+                                라쿤장인 그라쿤
+                            </p>
+                            <p class="card__subName">
+                                18 Resources
+                            </p>
+                        </span>
+                        <figure class="card__btPropile">
+                            <img class="bt_img" src="cardType/img/btn_01.jpg">
+                        </figure>
+                    </div>
+                    </p>
+                </div>
+            </article>
+            <article class="card2">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg03_02.jpg">
+                </figure>
+                <div class="card__body">
+                    <p class="tit">
+                        그렇게 칭찬 받고 싶나 <br>
+                        우쭈쭈~ 아이고 잘 한다~
+                    </p>
+                    <p class="desc">
+                        닝겐들이 칭찬을 좋아하는 것 같다. 아닌가 내가 이러고 있는 걸 좋아하는 건가 잘 모르겠다 집가고...
+                    </p>
+                    <p class="btn2" href="/">
+                    <div class="card__bt">
+                        <span>
+                            <p class="card__btName">
+                                라쿤장인 그라쿤
+                            </p>
+                            <p class="card__subName">
+                                18 Resources
+                            </p>
+                        </span>
+                        <figure class="card__btPropile">
+                            <img class="bt_img" src="cardType/img/btn_01.jpg">
+                        </figure>
+                    </div>
+                    </p>
+                </div>
+            </article> -->
+    <!-- </div> -->
+    <!-- 
+    </section> -->
+
+    <section id="cardType03" class="card__wrap score section">
+        <h2 class="blind">너구리 세상</h2>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg03_01.jpg" alt="너구리 사진">
+                    <figcaption>Raccoons</figcaption>
+                </figure>
+                <div class="card__contants">
+                    <h3>킁킁! 맛있는 냄새! 어디서 흘러 들어오는 걸까</h3>
+                    <p>어디선가 흘러오는 이 맛있는 냄새.. 고기인가 과일인가 솜사탕인가 무엇인가 일단 너무 배가 고파 얼른 먹고싶다. 으에에 으에에 배고파아아아아아아아</p>
+                </div>
+                <div class="card__footer">
+                    <h4>라쿤장인 그라쿤 <em>18 Resources</em></h4>
+                   <span> <img src="cardType/img/card_bg03_icon.png" alt="너구리 프로필 사진"></span>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg03_02.jpg" alt="너구리 사진">
+                    <figcaption>Raccoons</figcaption>
+                </figure>
+                <div class="card__contants">
+                    <h3>아따~ 물 한 번 시원 하구먼! 물장구도 치고 수영도하고 솜사탕도 녹여 먹고 즐거운 일상을 누려보자.</h3>
+                    <p>너무 찝찝해 씻고 싶다. 시원한 물로 등목 한 번 쫘 - 악 하고 에어컨 바람 쐬며 침대에 누워서 얼른 자고싶다.</p>
+                </div>
+                <div class="card__footer">
+                    <h4>라쿤장인 그라쿤 <em>18 Resources</em></h4>
+                   <span> <img src="cardType/img/card_bg03_icon.png" alt="너구리 프로필 사진"></span>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg03_03.jpg" alt="너구리 사진">
+                    <figcaption>Raccoons</figcaption>
+                </figure>
+                <div class="card__contants">
+                    <h3>그렇게 칭찬 받고 싶나 우쭈쭈~ 아이고 잘 한다~ 내가 이렇게 까지 해줘야 너가 </h3>
+                    <p>닝겐들이 칭찬을 좋아하는 것 같다. 아닌가 내가 이러고 있는 걸 좋아하는 건가 잘 모르겠다 집가고싶어</p>
+                </div>
+                <div class="card__footer">
+                    <h4>라쿤장인 그라쿤 <em>18 Resources</em></h4>
+                   <span> <img src="cardType/img/card_bg03_icon.png" alt="너구리 프로필 사진"></span>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

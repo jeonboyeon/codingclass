@@ -1,0 +1,220 @@
+.music__wrap {
+    display: none;
+}
+.music__wrap.show {
+    display: block;
+}
+.musicWrap__close {
+    cursor: pointer;
+}
+.music__inner {
+    padding: 0 10px 10px 10px;
+    width: 500px;
+    background-color: rgb(30, 20, 69);
+    position: absolute;
+    left: 150px;
+    top: 80px;
+}
+.music__header {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+.music__header h2 {
+    font-size: 14px;
+}
+
+.music__contents {
+    background-color: #c4c4c4;
+    width: 100%;
+}
+
+.music__view {
+    display: flex;
+    padding: 20px;
+}
+.music__view .img {
+    margin-right: 30px;
+    width: 160px;
+}
+.music__view .img img {
+    width: 100%;
+}
+
+.music__view .title {
+}
+.music__view .title h3 {
+    font-size: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.music__view .title p {
+    font-size: 16px;
+    color: rgb(102, 70, 137);
+    margin-bottom: 5px;
+}
+.music__footer .music__list {
+    display: none;
+}
+.music__footer .music__list.show {
+    display: block;
+}
+#volume_control {
+    display: inline-block;
+    margin-top: 5px;
+    width: 115px;
+}
+.music__control .progress {
+    width: 100%;
+    height: 10px;
+    border-radius: px;
+    background-color: rgb(30, 20, 69);
+}
+.music__control .progress .bar {
+    width: 0%;
+    height: 10px;
+    background-color: rgb(133, 92, 178);
+}
+.music__control .progress .timer {
+    display: flex;
+    justify-content: space-between;
+}
+.music__control .control {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+}
+.music__control .control i {
+    cursor: pointer;
+    transform: scale(0.8);
+    margin-right: 10px;
+    margin-left: -5px;
+}
+.music__control .repeat {
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -125px;
+}
+.music__control .repeat_one {
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -175px;
+}
+.music__control .shuffle {
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -125px;
+}
+.music__control .prev {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -50px;
+}
+.music__control .control {
+}
+.music__control .control .play {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: 2px;
+}
+.music__control .stop {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -150px;
+}
+.music__control .next {
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -72px;
+}
+.music__control .list {
+    width: 25px;
+    height: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -98px;
+}
+.music__control .volume {
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-image: url('../img/sound.ico.svg');
+}
+
+.music__footer {
+    background-color: #c4c4c4;
+}
+.music__footer .music__list {
+    border-top: 2px solid;
+    padding: 20px;
+}
+.music__footer .music__list h3 {
+    display: flex;
+    font-size: 24px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.music__list h3 .list {
+    display: inline-block;
+    width: 25px;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -98px;
+    vertical-align: -3.5px;
+}
+.music__list {
+    max-height: 260px;
+    overflow-y: scroll;
+}
+.music__list .close {
+    margin-left: 250px;
+    display: inline-block;
+    width: 7%;
+    background: url('../img/music_icon.svg') no-repeat;
+    background-position: -200px;
+    vertical-align: -3.5px;
+}
+.music__list .playing {
+    color: rgb(93, 48, 197);
+}
+.music__list ul {
+    margin-bottom: 10px;
+}
+.music__list li {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid #000;
+    list-style: none;
+}
+.music__list li:hover {
+    background-color: rgba(93, 48, 197, 0.141);
+}
+.music__list li strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+.music__list li em {
+    font-size: 14px;
+    font-style: normal;
+}
+.music__list li span {
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    top: 29px;
+}

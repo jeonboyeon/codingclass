@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">JAVASCRIPT replace() | replaceAll()</h2>
+                <p class="t_desc"> 자바스크립트 replace() | replaceAll() 메서드 알아보기</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">replace() | replaceAll() 메서드란</h2>
+                <p class="t_desc">
+                    replace() 메서드는 문자열을 부분 문자열로 구분하고 배열로 반환한다.
+                </p>
+
+                <hr /> <br>
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ replace() | replaceAll() 사용법</h2>
+                <p class="t_desc2">
+                    📍  /"문자열".split(구분자); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"문자열".split(정규식 표현); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"문자열".split(구분자, 제한(갯수));
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">✔️ 사용법 예시</h3>
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.replace("javascript", "자바스크립트"); // 자바스크립트 reference
+</code></pre>
+                </div>
+
+                <hr>
+
+                <br>
+
+                <h3 class="t_tit3">✔️  replace() | replaceAll() 예제 (주석은 답입니다.)</h3>
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.replace("javascript", "자바스크립트"); // 자바스크립트 reference
+const currentStr2 = str1.replace("j", "J"); // Javascript reference
+const currentStr3 = str1.replace("e", "E"); // javascript rEference (가장 첫 번째의 e가 E로 바뀐다.)
+const currentStr4 = str1.replaceAll("e", "E"); // javascript rEfErEncE (모든 e가 E로 바뀐다.)
+const currentStr5 = str1.replace(/e/g, "E"); // javascript rEfErEncE (졍규표현식 g로 e를 모두 찾아주어 E로 바꾼다.)
+const currentStr6 = str1.replace(/e/gi, "E"); // javascript rEfErEncE (졍규표현식 g로 e를 모두 찾고, i는 소대문자를 구별하지 않는다. 그렇게 e를 대문자 E로 바꾼다.)
+            
+const str2 = "https://www.naver.com/img01.jpg";
+            
+const currentStr7 = str2.replace("img01.jpg", "img02.jpg");
+            
+const str3 = "010-2000-1000";
+            
+const currentStr8 = str3.replaceAll("-", ""); // 01020001000
+const currentStr9 = str3.replace(/-/g, ""); // 01020001000
+const currentStr10 = str3.replace("-", ""); // 0102000-1000
+const currentStr11 = str3.replace(/-/g, "⭐️"); // 010⭐️2000⭐️1000
+const currentStr12 = str3.replace(/[1-9]/g,"⭐️"); // 0⭐️0-⭐️000-⭐️000
+</code></pre>
+                </div>
+            </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

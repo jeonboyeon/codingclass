@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="/javascript/assets/css/style.css" />
+    <link rel="stylesheet" href="/javascript/assets/css/dracula.css" />
+    <!-- <link rel="stylesheet" href="/javascript/assets/css/quiz02.css"> -->
+</head>
+
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">
+                <i class="t_tit">Quiz Effect 06 유형</i> <br>
+                퀴즈 이펙트 06 번
+            </h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+               퀴즈 이펙트 06 번 문제출력을 슬라이드 방식으로 하고 정답 확인 시 총 문제 갯수 , 맞힌 갯수 구하기
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">Java Script 코드</h3>
+
+            <div class="t_code">
+<pre><code  class="language-js">const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2012년 01회",
+        answerNum: "1",
+        answerAsk: "“Redesign”에 대한 설명으로 옳은 것은?",
+        answerChoice: [
+            "제품의 원상태를 재생한는 작업이다.",
+            "기존상품의 개선안을 찾아서 새로운 디자인을 개발하는 작업이다.",
+            "새로운 제품을 위한 신제품을 개발하는 작업이다.",
+            "실제 제품생산에 들어가기 전에 샘플을 디자인하는 작업이다."
+        ],
+        answerResult: "기존상품의 개선안을 찾아서 새로운 디자인을 개발하는 작업이다.",
+        answerEx: "Redesign”는 기존상품의 개선안을 찾아서 새로운 디자인을 개발하는 작업이다."
+    },
+    {
+        answerType: "웹디자인기능사 2012년 01회",
+        answerNum: "2",
+        answerAsk: "착시에 대한 설명으로 옳은 것은?",
+        answerChoice: [
+            "눈에 의한 생리적 작용에 따라 형태나 색채 등이 실제와 다르게 지각되는 것을 말한다.",
+            "각 부분 사이에 강한 힘과 약한 힘이 규칙적으로 연속될 때 생기는 것을 말한다.",
+            "시각상 힘의 안정을 주면 보는 사람에게 안정감을 주고 명쾌한 감정을 느끼게 하는 것을 말한다.",
+            "부분과 전체 사이에 디자인 요소들이 잘 어울려서 균형을 유지하는 상태를 느끼게 하는 것을 말한다."
+        ],
+        answerResult: "눈에 의한 생리적 작용에 따라 형태나 색채 등이 실제와 다르게 지각되는 것을 말한다.",
+        answerEx: "착시는 눈에 의한 생리적 작용에 따라 형태나 색채 등이 실제와 다르게 지각됩니다."
+    },
+    {
+        answerType: "웹디자인기능사 2012년 01회",
+        answerNum: "3",
+        answerAsk: "제과점 홈페이지를 제작할 때 식욕을 돋우는 색채 계획과 가장 거리가 먼 것은?",
+        answerChoice: [
+            "녹색",
+            "주황",
+            "노랑",
+            "빨강"
+        ],
+        answerResult: "녹색",
+        answerEx: "녹색은 식욕을 돋우는 색체 계획가 거리가 멀다."
+    },
+    {
+        answerType: "웹디자인기능사 2012년 01회",
+        answerNum: "4",
+        answerAsk: "주전자, 냉장고, 자동차를 디자인하는 디자인 영역은?",
+        answerChoice: [
+            "패션디자인",
+            "시각디자인",
+            "노랑환경디자인",
+            "제품디자인"
+        ],
+        answerResult: "제품디자인",
+        answerEx: "모두 제품에 속하므로 제품 디자인이다."
+    },
+    {
+        answerType: "웹디자인기능사 2012년 01회",
+        answerNum: "5",
+        answerAsk: "레터링(Lettering)에 대한 설명으로 틀린 것은?",
+        answerChoice: [
+            "글자체, 글자 크기, 글자 사이, 여백 등을 조절하여 읽기에 편하도록 구성하는 표현기술이다.",
+            "넓은 뜻으로 글자 디자인, 글자 표현 등의 글자 자체를 의미한다.",
+            "어떤 디자인을 위한 특정한 목적을 가지는 글자를 묘사하는 것을 말한다",
+            "글자라는 소재를 사용하여 어떤 의도를 표현하고 전달하려는 것이다."
+        ],
+        answerResult: "글자체, 글자 크기, 글자 사이, 여백 등을 조절하여 읽기에 편하도록 구성하는 표현기술이다.",
+        answerEx: "레터링(Lettering)은 글자체, 글자 크기, 글자 사이, 여백 등을 조절하여 읽기에 편하도록 구성하는 표현기술이다."
+    }
+    ];
+    
+    const quizQuestion = document.querySelector(".quiz__question");
+    const quizSelects = document.querySelector(".quiz__selects");
+    const quizType = document.querySelector(".quiz__type");
+    const quizResult = document.querySelector(".result");
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");
+    const quizView = document.querySelector(".quiz__view");
+    
+    let quizCount = 0;
+    let quizScore = 0;
+    
+    //  문제 출력
+    const updateQuiz = (index) => {
+    const questionTag = `
+        &ltspan class="number">${quizInfo[index].answerNum}&lt/span>
+        &ltdiv class="ask">${quizInfo[index].answerAsk}&lt/div>
+    `;
+    const choiceTag = `
+        &ltlabel for="select1">
+            &ltinput type="radio" id="select1" class="select" name="select" value="1">
+            &ltspan class="choice">${quizInfo[index].answerChoice[0]}&lt/span>
+        &lt/label>
+        &ltlabel for="select2">
+            &ltinput type="radio" id="select2" class="select" name="select" value="2">
+            &ltspan class="choice">${quizInfo[index].answerChoice[1]}&lt/span>
+        &lt/label>
+        &ltlabel for="select3">
+            &ltinput type="radio" id="select3" class="select" name="select" value="3">
+            &ltspan class="choice">${quizInfo[index].answerChoice[2]}&lt/span>
+        &lt/label>
+        &ltlabel for="select4">
+            &ltinput type="radio" id="select4" class="select" name="select" value="4">
+            &ltspan class="choice">${quizInfo[index].answerChoice[3]}&lt/span>
+        &lt/label>
+    `;
+    const typeTag = `
+        &ltspan class="quiz__type">${quizInfo[index].answerType}&lt/span>
+    `;
+    
+    //문제 출력
+    quizQuestion.innerHTML = questionTag;
+    quizSelects.innerHTML = choiceTag;
+    quizType.innerHTML = typeTag;
+    quizResult.innerHTML = quizInfo[index].answerEx;
+    
+    const quizChoice = quizSelects.querySelectorAll(".choice");
+    
+    for(let i=0; i&ltquizChoice.length; i++){
+        quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
+    };
+    
+    // 문제, 해설 숨기기
+    quizResult.style.display = "none";
+    quizConfirm.style.display = "none";
+    };
+    
+    updateQuiz(quizCount);
+    
+    const choiceSelected = (answer) => {
+    // alert(answer.textContent); 
+    let userAnswer = answer.textContent; // 사용자가 체크한 정답
+    let currentAnswer = quizInfo[quizCount].answerResult; // 문제 정답
+    
+    if(userAnswer == currentAnswer){
+        console.log("정답");
+        quizView.classList.add("like");
+        quizScore++;
+    } else {
+        console.log("오답");
+        quizView.classList.add("dislike");
+        quizResult.style.display = "block";
+    }
+        quizConfirm.style.display = "block";
+    };
+    
+    // 정답 확인 버튼
+    const answerQuiz = () => {
+    quizCount++;
+    updateQuiz(quizCount);
+    quizView.classList.remove("like", "dislike");
+    
+    // 마지막 문제
+    if(quizInfo.length -1 == quizCount){
+        quizConfirm.textContent = `총 ${quizCount} 문제 중에 ${quizScore} 문제를 맞추었습니다.`
+    };
+    };
+    
+    quizConfirm.addEventListener("click", answerQuiz);
+</code></pre>
+            </div>
+
+                <h2 class="t_tit2">결과물</h2>
+                <div class="t_iframe" style="min-height: 1010px; padding-top: 0;">
+                    <iframe src="https://jeonboyeon.github.io/coding2/javascript/effect/quizEffect06.html">
+                    </iframe>
+                </div>
+                
+                <br>
+                <div class="t_link">
+                    <a href="https://github.com/jeonboyeon/coding2/blob/main/javascript/effect/quizEffect06.html"
+                        target="_blank">원본 사이트 코드 보러가기</a>
+                </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="/javascript/assets/js/highlight.min.js"></script>  
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gmarket {
+            font-family: "GmarketSans";
+            font-weight: 500;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image {
+            width: 32%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image__box {
+
+        }
+        .image__box img {
+            vertical-align: top;
+            transition: all 0.3s ease-in-out;
+        }
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 23px 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            background-color: rgba(0,0,0,0.1);
+            bottom: -100px;
+            transition: all 0.3s ease-in;
+        }
+
+        .image:hover .image__box img {
+            transform: scale(1.03);
+        }
+
+        .image:hover .image__desc {
+            bottom: 0;
+        }
+
+        
+        .img1 .image__desc {background: rgba(65, 123, 145, 0.5)}
+        .img2 .image__desc {background: rgba(207, 164, 164, 0.5)}
+        .img3 .image__desc {background: rgba(111, 168, 208, 0.5)}
+        .img1 .image__desc h3 {color: rgba(36, 88, 108, 1)}
+        .img2 .image__desc h3 {color: #AE6763}
+        .img3 .image__desc h3 {color: #3C6C8B}
+        .img1 .image__desc .more {color: #3A6474}
+        .img2 .image__desc .more {color: #BB7D79}
+        .img3 .image__desc .more {color: #5884A3}
+        
+    
+        .image__desc h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .image__desc .more {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType02" class="image__wrap gmarket section">
+        <h2>‘ 하늘 바라보기 ‘</h2>
+        <p>웹 디자이너, 웹 퍼블리셔, 프론트앤드를 위한 포트폴리오 입니다. </p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <figure class="image__box">
+                    <img src="../cardType/img/imgType02_01.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                     <h3>은은한 하늘</h3>
+                <a href="/" class="more" title="자세히보기">자세히보기</a>
+                </div>
+            </article>
+            <article class="image img2">
+                <figure class="image__box">
+                    <img src="../cardType/img/imgType02_02.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                     <h3>분홍빛 하늘</h3>
+                <a href="/" class="more" title="자세히보기">자세히보기</a>
+                </div>           
+            </article>
+            <article class="image img3">
+                <figure class="image__box">
+                    <img src="../cardType/img/imgType02_03.jpg" alt="">
+                </figure>
+                <div class="image__desc">
+                     <h3>푸른 하늘</h3>
+                <a href="/" class="more" title="자세히보기">자세히보기</a>
+                </div>
+            </article>
+          
+        </div>
+    </section>
+</body>
+</html>

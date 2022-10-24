@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">JavaScript slice( ), substring( ), substr( ) 메서드 알아보기</h2>
+            <p class="t_desc">안녕하세요 😗 이번 글은 JavaScript slice( ), substring( ), substr( ) 메서드에 대해 알아보는 글입니다.</p>
+
+            <!-- 주 타이틀 설명 -->
+            <h2 class="t_tit2">slice( ), substring( ), substr( ) 각각 어떤 메서드인가요? </h2>
+            <p class="t_desc">
+                ➖ slice( ) : 원본 배열은 유지하고 begin부터 end까지(end 미포함)의 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 새로운 배열 객체를 반환하는 메서드 입니다. (원본 배열은 바뀌지 않는다.) <br>
+                ➖ substring( ) : string 객체의 시작 인덱스로 부터 종료 인덱스 전 까지 문자열의 부분 문자열을 반환하는 메서드 입니다. <br>
+                ➖ substr( ) : 문자열에서 특정 위치에서 시작하여 특정 문자 수 만큼의 문자들을 반환하는 메서드 입니다.
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">◾️ slice( ) 예시 👩🏻‍💻</h3>
+            <p class="t_desc2">
+                📍 상수를 str1으로 지정해놓고 값을 "javascript reference" 문자열을 저장 해봤습니다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 그리고 currentStr1 에 str1.slice(0), slice(1)메서드를 적어준 뒤 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; console.log(currentStr1); 를 출력해주면 어떤 값이 나올까요?
+            </p>
+            <br>
+            <div class="t_code">
+                <pre><code class="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.slice(0);
+
+const str1 = "javascript reference";
+const currentStr1 = str1.slice(1);
+</code></pre>
+            </div>
+            <p class="t_box">
+                💡 str1.slice(0) 답은 javascript reference 가 나오게 됩니다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;javascript reference 문자를 배열로 치면 j = 0, a = 1, v = 2 식으로 이뤄지는데 이 때 0은 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;j 니까 j부터 문장 그대로 나오게 된다.
+            </p>
+            <p class="t_box">
+                💡 str1.slice(1) 답은 avascript reference 가 나오게 됩니다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;위의 설명을 토대로 a = 1 이니 앞에 j를 빼고 a 부터 나오게 됩니다.
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+            <br>
+            <h3 class="t_tit3">
+                ✔️ 아래는 예시를 좀 더 추가 해놓은 것입니다. (주석은 답입니다.)
+            </h3>
+            <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.slice(0); // javascript reference
+const currentStr2 = str1.slice(1); // avascript reference
+const currentStr3 = str1.slice(2); // vascript reference
+const currentStr4 = str1.slice(0, 1); // j
+const currentStr5 = str1.slice(0, 2); // ja
+const currentStr6 = str1.slice(0, 3); // jav
+const currentStr7 = str1.slice(1, 1); // 아무것도 나오지 않는다.
+const currentStr8 = str1.slice(1, 2); // a
+const currentStr9 = str1.slice(1, 3); // av
+const currentStr10 = str1.slice(1, 4); // avs
+const currentStr11 = str1.slice(-1); // e
+const currentStr12 = str1.slice(-2); // ce
+const currentStr13 = str1.slice(-3); // nce
+const currentStr14 = str1.slice(-2, -1); // c (뒤에서 부터 시작한다.)
+const currentStr15 = str1.slice(-3, -2); // nc
+const currentStr16 = str1.slice(-3, -3); // 아무것도 나오지 않는다.
+</code></pre>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">◾️ substring( ) 예시 👩🏻‍💻</h3>
+            <p class="t_desc2">
+                📍 substring( ) 메서드는 string 객체의 시작 인덱스로 부터 종료 인덱스 전 까지 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;문자열의 부분 문자열을 반환하는 메서드 입니다. <br>
+            </p>
+            <br>
+            <div class="t_code">
+                <pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.substring(4, 1); // ava (()의 숫자 위치를 제대로 작동하게 자동으로 바꿔준다.)
+const currentStr2 = str1.substring(1, 4); // ava
+</code></pre>
+            </div>
+            <p class="t_box">
+                💡 원래는 시작위치가 끝나는 위치보다 숫자가 크면 안되지만 .substring() 메서드는 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>( ) 안의 숫자 위치를 제대로 작동하게끔 자동으로 바꿔줍니다.</i> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;그러므로 .substring( )을 쓸 땐 (4, 1) 과 (1, 4)는 같게 나옵니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">◾️ substr( ) 예시 👩🏻‍💻</h3>
+            <p class="t_desc2">
+                📍 substr( ) 메서드는 문자열에서 특정 위치에서 시작하여 특정 문자 수 만큼의 문자들을 반환합니다.
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr21 = str1.substr(0); // javascript reference
+const currentStr22 = str1.substr(1); // avascript reference
+const currentStr23 = str1.substr(2); // vascript reference
+</code></pre>
+            </div>
+            <p class="t_box">
+                💡 여기 까지는 slice( ) 메서드와 똑같이 동작을 하게 되지만 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;아래 추가 예시를 보면 조금씩 다르다는 걸 알 수 있습니다.
+            </p>
+
+            <br>
+
+            <h3 class="t_tit3">
+                ✔️ 아래는 예시를 좀 더 추가 해놓은 것입니다. (주석은 답입니다.)
+            </h3>
+            <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.substr(0, 1); // j
+const currentStr2 = str1.substr(0, 2); // ja
+const currentStr3 = str1.substr(0, 3); // jav
+const currentStr4 = str1.substr(1, 2); // av
+const currentStr5 = str1.substr(1, 3); // ava
+const currentStr6 = str1.substr(1, 4); // avas
+const currentStr7 = str1.substr(-1); // e
+const currentStr8 = str1.substr(-2); // ce
+const currentStr9 = str1.substr(-3); // nce
+const currentStr10 = str1.substr(-1, 1); // e
+const currentStr11 = str1.substr(-2, 2); // ce
+const currentStr12 = str1.substr(-3, 3); // nce
+</code></pre>
+            </div>
+
+            <p class="t_box">
+                💡 slice( ) 메서드는 (1, 2)를 적게되면 a가 나오게 되지만, <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;substr( ) 메서드는 (1, 2)를 적게되면 av가 나오게 되죠. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;slice( ) 메서드는 시작위치와 끝나는 위치를 적었을 때 끝나는 위치가 나오지 않고, <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;substr( ) 메서드는 가로안에 숫자의 의미가 시작위치와 길이이기 때문에 1번부터 2개의 단어가 나오게 되는 것 입니다.
+            </p>
+
+            <h2 class="t_tit2">공부를 마치며 📋</h2>
+            <h3 class="t_tit3">
+                오늘은 JavaScript의 3가지 메서드를 알아보았습니다. <br>
+                비슷하면서도 아니고, 아니면서도 비슷한게 헷갈리네요. 🥲 <br>
+                역시 이럴 땐 직접 써보면서 익숙해지는 것 밖에 없는 것 같습니다. 😎 <br><br>
+
+                모두들 기초 마스터가 되는 그 날 까지! 아자! 🎉
+            </h3>
+
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

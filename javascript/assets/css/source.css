@@ -1,0 +1,89 @@
+code {
+    font-family: 'HBIOS-SYS' !important;
+}
+
+.hljs {
+    background-color:rgb(48, 37, 86) !important;
+}
+.source__wrap {
+    position: relative;
+    top: 80px;
+    left: 150px;
+    width: 80%;
+    height: 600px;
+    background-color: #c4c4c4;
+    border: 10px solid rgb(30, 20, 69);
+    overflow: auto;
+    display: none;
+}
+.source__wrap::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgb(30, 20, 69);
+}
+.source__wrap::-webkit-scrollbar-thumb {
+    height: 20%;
+    background-color: #fff;
+}
+.source__wrap::-webkit-scrollbar-button:horizontal:decrement {
+    width: 5px;
+    background-color: rgb(30, 20, 69);
+    height: 20%;
+    background-color: #fff;
+}
+
+.source__wrap.show {
+    display: block;
+}
+.source__wrap > .source__inner {
+    width: 100%;
+}
+
+.source__header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.source__header > h3 {
+    color: #fff;
+    background-color: rgb(30, 20, 69);
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.source__header > nav {
+}
+.source__header > nav > ul {
+    background-color: #fff;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: start;
+}
+.source__header > nav > ul > li {
+    padding: 0 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.source__header > nav > ul > li.active {
+    background-color: rgb(48, 37, 86);
+    color: #fff;
+}
+
+.source__code {
+}
+
+.source__JSCode.show {
+    display: block;
+}
+.source__HTMLCode {
+    display: none;
+}
+.source__HTMLCode.show {
+    display: block;
+}
+
+.source__CSSCode {
+    display: none;
+}
+.source__CSSCode.show {
+    display: block;
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <style>
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+
+        .sebang {
+            font-family: 'SebangGothic';
+            font-weight: normal;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            height: 425px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        .card__header {
+            width: 100%;
+            border-top: 2px solid #000;
+            margin-bottom: 20px;
+        }
+
+        .card__header .card__sub {
+            width: 80px;
+            height: 25px;
+            background-color: #000;
+            font-size: 10px;
+            color: #fff;
+            text-align: center;
+            line-height: 2.2;
+        }
+
+        .card__body {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .card__body .card__mainImg {
+            width: 60%;
+            height: 425px;
+            background-color: #888;
+            margin-right: 20px;
+        }
+
+        .card__mainTit {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .card__body .card__mainTit {
+            width: 40%;
+            height: 425px;
+        }
+
+        .card__mainTit1 .main__sub {
+            font-size: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card__mainTit1 .main__tit {
+            font-size: 25px;
+            line-height: 1.4;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card__mainTit1 .main__sub2 {
+            font-size: 8px;
+        }
+
+        .card__mainTit2>p {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .card__footer {
+            width: 100%;
+            border-top: 1px solid #c8c8c8;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer {
+            width: 23%;
+            height: 100px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer__tit p {
+            font-size: 10px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .footer__tit h3 {
+            font-size: 15px;
+        }
+
+        .footer__img img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap sebang section">
+        <div class="card__inner container">
+            <article class="card__header">
+                <div class="card__sub">
+                    <h3>LONGREADS</h3>
+                </div>
+            </article>
+            <article class="card__body">
+                <figure class="card__mainImg">
+                    <img src="cardType/img/card_bg04_01.jpg" />
+                </figure>
+                <div class="card__mainTit">
+                    <div class="card__mainTit1">
+                        <p class="main__sub">
+                            이미지 다운로드
+                        </p>
+                        <h2 class="main__tit">
+                            깔끔하고, 눈이가는 이미지 <br>
+                            다운로드 사이트
+                        </h2>
+                        <p class="main__sub2">
+                            배경화면, 일러스트, ICO 모두 다 있다!
+                        </p>
+                    </div>
+                    <div class="card__mainTit2">
+                        <p>
+                            어서오세요. IT.D 에 오신 것을 환영합니다. 🎉 <br>
+                            수많은 이미지 다운로드 사이트 IT.D 방문자 분들을 위해 쾌적하고 원활한 <br>
+                            관리를 하도록 노력하겠습니다. 감사합니다. <br>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="card__footer">
+                <div class="footer">
+                    <div class="footer__tit">
+                        <p>
+                            배경화면
+                        </p>
+                        <h3>
+                            심플하고 <br>
+                            감성적인 배경화면
+                        </h3>
+                    </div>
+                    <figure class="footer__img">
+                        <img src="cardType/img/card_bg04_02.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="footer">
+                    <div class="footer__tit">
+                        <p>
+                            애니메이션
+                        </p>
+                        <h3>
+                            000 애니메이션 <br>
+                            캐릭터 일러스트 
+                        </h3>
+                    </div>
+                    <figure class="footer__img">
+                        <img src="cardType/img/card_bg04_03.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="footer">
+                    <div class="footer__tit">
+                        <p>
+                            풍경
+                        </p>
+                        <h3>
+                            밤하늘 <br>
+                            아름다운 별들
+                        </h3>
+                    </div>
+                    <figure class="footer__img">
+                        <img src="cardType/img/card_bg04_04.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="footer">
+                    <div class="footer__tit">
+                        <p>
+                            ICO
+                        </p>
+                        <h3>
+                            컴퓨터 꾸미기용 <br>
+                            아이콘 일러스트
+                        </h3>
+                    </div>
+                    <figure class="footer__img">
+                        <img src="cardType/img/card_bg04_05.jpg" alt="">
+                    </figure>
+                </div>
+    </section>
+    </article>
+    </div>
+    </section>
+
+</body>
+
+</html>

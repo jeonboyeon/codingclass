@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">CSS | SCSS Variables (변수)</h2>
+                <p class="t_desc"> SCSS Variables (변수) 사용법</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">SCSS란?</h2>
+                <p class="t_desc">
+                    Syntactically Awesome StyleSheet의 약어이며 코드의 재활용성을 올리고, <br>
+                    가독성을 올리는 등 CSS에서 보이던 단점을 보완하고, 개발의 효율을 올리기 위해 등장한 CSS 전처리기 언어이다.
+                </p>
+
+                <hr /> <br>
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ SCSS Variables (변수) 사용법</h2>
+                <p class="t_desc2">
+                    📍 변수를 스타일시트 전체에서 재사용하려는 정보를 저장하는 방법으로 생각하시면 됩니다. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;색상, 글꼴 스택 또는 재사용하고 싶은 CSS 값과 같은 항목을 저장할 수 있습니다. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Sass는 $ 기호를 사용하여 무언가를 변수로 만듭니다. 다음은 예입니다.
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">✔️ 사용법 예시</h3>
+                <div class="t_code">
+<pre><code class="language-css">$font-stack: Helvetica, sans-serif; /* 변수 font-stack에 폰트 Helvetica, sans-serif 저장 */
+    $primary-color: #333; /* 컬러 #333을 저장 */
+    
+    body {
+      font: 100% $font-stack; /* 저장한 변수를 가져와 재사용 */
+      color: $primary-color;
+    }
+</code></pre>
+                </div>
+
+                <br>
+
+                <h3 class="t_tit3">✔️  위 SCSS를 CSS로 compiled 시켜서 확인</h3>
+                <div class="t_code">
+<pre><code class="language-js">body {
+    font: 100% Helvetica, sans-serif;
+    color: #333;
+  }
+</code></pre>
+                </div>
+            </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

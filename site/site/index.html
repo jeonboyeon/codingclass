@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>COCHODING</title>
+
+        <!-- SEO -->
+        <meta name="author" content="cochoding" />
+        <meta name="description" content="사이트 만들기" />
+        <meta name="keyword" content="사이트, 만들기, 건물, 건축물, 직선, 곡선, 코초딩" />
+        <meta name="robots" content="all" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../site/assets/css/common.css" />
+        <link rel="stylesheet" href="../site/assets/css/font.css" />
+        <link rel="stylesheet" href="../site/assets/css/reset.css" />
+        <link rel="stylesheet" href="../site/assets/css/style.css" />
+    </head>
+    <body class="A1">
+        <header id="header">
+            <div class="header_wrap content__item">
+                <h1>
+                    <a href="#"><em>CO</em>CHODING</a>
+                </h1>
+                <div class="menu_ico">
+                    <div class="ico"></div>
+                </div>
+                <nav class="header_nav">
+                    <ul>
+                        <li><a href="#sliderType">Slider</a></li>
+                        <li><a href="#imageType">Image</a></li>
+                        <li><a href="#imageTextType">ImageText</a></li>
+                        <li><a href="#cardType">Card</a></li>
+                        <li><a href="#bannerType">Banner</a></li>
+                        <li><a href="#textType">Text</a></li>
+                    </ul>
+                </nav>
+                <button class="header_login" type="button"><a href="#">Log In</a></button>
+            </div>
+        </header>
+        <main id="main" class="main">
+            <div class="main_wrap">
+                <section id="sliderType" class="sliderType content__item">
+                    <div class="slider_image">
+                        <div class="slider_txt container">
+                            <span>STORY</span>
+                            <h2>THE WORLD OF SQUARES</h2>
+                            <p>
+                                아름다움을 이끌어 낼 수 있는 비율 <br />
+                                황금비의 시작 정사각형
+                            </p>
+                        </div>
+                        <div class="slider_more container">
+                            <div class="more white"><a href="#">자세히 보기</a></div>
+                            <div class="more black"><a href="#">사이트 보기</a></div>
+                        </div>
+                        <div class="slider_dot container">
+                            <a href="#" class="dot active"><span class="ir">1</span></a>
+                            <a href="#" class="dot"><span class="ir">2</span></a>
+                            <a href="#" class="dot"><span class="ir">3</span></a>
+                            <a href="#" class="play"><span class="ir">play</span></a>
+                            <a href="#" class="stop"><span class="ir">stop</span></a>
+                        </div>
+                        <div class="slider_arrow">
+                            <a href="#" class="before"><span class="ir">이전</span></a>
+                            <a href="#" class="after"><span class="ir">다음</span></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer id="footer" class="footer container">
+            <div class="footer_wrap"></div>
+        </footer>
+    </body>
+    <script src="../site/site02/assets/js/swiper.min.js"></script>
+    <script>
+        // 슬라이드 영역 사진 이동 / 애니메이션 설정
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next", // 다음 이미지 버튼
+                prevEl: ".swiper-button-prev", // 이전 이미지 버튼
+            },
+            autoplay: {
+                // 이미지 자동 넘어가기
+                delay: 2000,
+                disableOnInteraction: false, // 애니메이션이 멈추는 버그 수정
+            },
+            pagination: {
+                // 페이징(목록 요소의 개수를 나타내주는 UI)
+                el: ".swiper-pagination",
+                type: "bullets", // 개수를 나타내주는 이미지 유형
+                clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+            },
+        });
+
+        // 슬라이드 영역 사진 클릭시 자동 애니메이션 설정
+        document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+            swiper.autoplay.stop();
+        });
+        document.querySelector(".swiper-button-play").addEventListener("click", () => {
+            swiper.autoplay.start();
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = document.querySelectorAll("ul li a");
+
+        // 슬라이드 영역 애니메이션 재생/일시정지 버튼 기능, 디스플레이 설정
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        // 헤더 햄버거 메뉴 클릭시 스크롤 고정 설정
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+        });
+
+        // 브라우저 크기에 따른 햄버거 메뉴 클릭시 스크롤 고정, 메뉴 활성화 여부 설정
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        });
+
+        // 햄버거 메뉴에서 메뉴 클릭시 메뉴바가 비활성화 되도록 설정
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            });
+        });
+    </script>
+</html>

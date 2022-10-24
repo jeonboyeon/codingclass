@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 구조관련 요소 이해하기</title>
+
+    <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'SCoreDream';
+            font-size: 16px;
+            line-height: normal;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        ul,
+        li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        /* 큰 틀 잡기 */
+        body {}
+
+        .continer {
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+        .header__box {
+            height: 150px;
+            margin-bottom: 20px;
+            background-color: rgb(255, 157, 0);
+            display: flex;
+            border-radius: 10px;
+        }
+
+        .main__box {
+            height: 500px;
+            margin-bottom: 20px;
+            background-color: rgb(255, 157, 0);
+            border-radius: 10px;
+        }
+
+        .footerbox {
+            height: 150px;
+            background-color: rgb(255, 157, 0);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* header */
+        .header__box>.logo_box {
+            margin: 20px 50px 20px 20px;
+            width: 10%;
+            height: 110px;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .header__box>.logo_box>p {
+            font-size: 0.8em;
+            display: inline-block;
+            padding: 3px 10px;
+            margin-top: 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+        }
+
+        .header__box>.logo_box>h1 {
+            line-height: 50px;
+        }
+
+        .header__box>.nav_box {
+            width: 80%;
+            text-align: center;
+        }
+
+        .header__box>.nav_box>p {
+            display: inline-block;
+            margin: 20px 0 20px 15px;
+            padding: 3px 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50px;
+        }
+
+        .header__box>.nav_box>.nav_mainBox {
+            padding: 7px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .header__box>.nav_box>.nav_mainBox>p {
+            font-size: 0.8em;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+
+        .header__box>.nav_box>.nav_mainBox>nav>ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* main */
+        .main__box {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+        }
+
+        .main__box>.contants_box {
+            width: 35%;
+            margin-right: 20px;
+            background-color: #fff;
+            height: 500px;
+            border-radius: 10px;
+        }
+        .main__box>.contants_box > h1 {
+            line-height: 450px;
+        }
+        .main__box>.contants_box > p {
+            font-size: 0.8em;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+            margin-top: 20px;
+
+        }
+
+        .main__box>.contants_sideBox {
+            width: 30%;
+
+        }
+        .main__box>.contants_sideBox >.post_box {
+            background-color: #fff;
+            height: 48%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .main__box>.contants_sideBox >.post_box>p {
+            font-size: 0.8em;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+        .main__box>.contants_sideBox >.post_box>h1 {
+            line-height: 170px;
+        }
+
+        .main__box>.contants_sideBox >.ad_box {
+            background-color: #fff;
+            height: 48%;
+            border-radius: 10px;
+        }
+
+        .main__box>.contants_sideBox >.ad_box>p {
+            font-size: 0.8em;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+        .main__box>.contants_sideBox >.ad_box>h1 {
+            line-height: 170px;
+        }
+
+        /* footer */
+        .footerbox {
+            padding: 20px;
+            text-align: center;
+            align-items: center;
+        }
+        .footerbox>p {
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50px;
+        }
+        .footerbox>.address_box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: first start;
+            width: 70%;
+            padding: 10px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .footerbox>.address_box>p {
+            font-size: 0.8em;
+            padding: 3px 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+            margin-right: 200px;
+        }
+        .footerbox>.p_box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: first start;
+            width: 70%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .footerbox>.p_box>p {
+            font-size: 0.8em;
+            padding: 3px 10px;
+            background-color: rgb(255, 85, 0);
+            color: #fff;
+            border-radius: 50px;
+            margin-right: 265px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="section" class="html__wrap continer">
+        <header id="header" class="header__box">
+            <div class="logo_box">
+                <p>h1</p>
+                <h1>로고</h1>
+            </div>
+            <div class="nav_box">
+                <p>header</p>
+                <div class="nav_mainBox">
+                    <p>nav</p>
+                    <nav>
+                        <ul>
+                            <li>메뉴 01</li>
+                            <li>메뉴 02</li>
+                            <li>메뉴 03</li>
+                            <li>메뉴 04</li>
+                            <li>메뉴 05</li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+        <main id="main" class="main__box">
+            <section class="contants_box">
+                <p>section</p>
+                <h1>콘텐츠 그룹 01</h1>
+            </section>
+            <section class="contants_box">
+                <p>section</p>
+                <h1>콘텐츠 그룹 02</h1>
+            </section>
+            <div class="contants_sideBox">
+                <section class="post_box">
+                    <p>section</p>
+                    <h1>주요 기사</h1>
+                </section>
+                <section class="ad_box">
+                    <p>section</p>
+                    <h1>광고</h1>
+                </section>
+            </div>
+        </main>
+        <footer id="footer" class="footerbox">
+            <p>footer</p>
+            <div class="address_box">
+                <p>address</p>
+                <h1>032)123-4567 limdaedok@gmail.com</h1>
+            </div>
+            <div class="p_box">
+                <p>p</p>
+                <h1>COPYLIGHT © ALL rights reseved</h1>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

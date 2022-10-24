@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자바스크립트 : 데이터 타입</title>
+
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <h1><a href="../index.html">javascript</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="../javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">숫자 객체</a></li>
+                    <li><a href="javascript09.html">브라우저 객체</a></li>
+                    <li><a href="javascript10.html">요소 객체</a></li>
+                    <li><a href="javascript11.html">이벤트 객체</a></li>
+                </ul>
+                <ul class="effect">
+                    <li><a href="../effect/searchEffect01.html">검색 효과</a></li>
+                    <li><a href="../effect/quizEffect01.html">퀴즈 효과</a></li>
+                    <li><a href="../effect/textEffect01.html">텍스트 효과</a></li>
+                    <li><a href="../effect/mouseEffect01.html">마우스 효과</a></li>
+                    <li><a href="../effect/slideEffect01.html">슬라이드 효과</a></li>
+                    <li><a href="../effect/parallaxEffect01.html">페럴랙스 효과</a></li>
+                    <li><a href="../effect/gameEffect01.html">게임 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">JAVASCRIPT includes( )</h2>
+                <p class="t_desc">자바스크립트 includes( ) 메서드 알아보기</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">includes( ) 메서드란</h2>
+                <p class="t_desc">배열이 특정 요소를 포함하고 있는지 판별하고 참과 거짓으로 반환합니다.</p>
+
+                <hr />
+                <br />
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ includes( ) 사용법</h2>
+                <p class="t_desc2">
+                    📍 "문자열".includes(검색값) <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;"문자열".includes(검색값, 시작값)
+                </p>
+
+                <br />
+
+                <h3 class="t_tit3">✔️ 사용법 예시</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.includes("javascript"); // 참 (true)
+</code></pre>
+                </div>
+
+                <hr />
+
+                <br />
+
+                <h3 class="t_tit3">✔️ includes( ) 예제 (주석은 답입니다.)</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">const str1 = "javascript reference";
+
+const currentStr1 = str1.includes("javascript"); // 참 (true)
+const currentStr2 = str1.includes("j"); // 참 (true)
+const currentStr3 = str1.includes("b"); // 거짓 (false)
+const currentStr4 = str1.includes("reference"); // 참 (true)
+const currentStr5 = str1.includes("reference", 1); // 참 (true)
+const currentStr6 = str1.includes("reference", 11); // 참 (true)
+const currentStr7 = str1.includes("reference", 12); // 거짓 (false)
+</code></pre>
+                </div>
+            </div>
+        </main>
+        <!-- //main and -->
+        <footer id="footer">
+            <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+        </footer>
+        <!-- //footer and -->
+        <script src="../assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형 | 첫 번째</title>
+    <style>
+        /*  fonts   */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            /*  개별적으로 폰트 설정해서 클래스로 적용   */
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /*   reset   */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /*   common   */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /*   cardType   */
+        .card__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 32%;
+            height: 500px;
+            background-color: #f5f5f5;
+        }
+
+        .card__header {
+            padding: 26px 26px 20px 26px;
+        }
+
+        .card__body {
+            padding: 24px;
+        }
+
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .card__body2 {
+            padding: 24px;
+        }
+
+        .card__body2 .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card__body2 .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .card2 {
+            width: 33%;
+            height: 560px;
+            border-right: 1px solid #c6c6c6;
+        }
+
+        .card3 {
+            width: 33%;
+            height: 560px;
+            border-right: 1px solid #fff;
+        }
+
+        .card2 .card__body {
+            padding: 0 26px;
+        }
+
+        .card2 .card__body .tit {
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .card2 .card__body .desc {
+            line-height: 1.4;
+        }
+
+        .card__bt {
+            display: flex;
+            justify-content: end;
+        }
+
+        .card__bt .card__btName {
+            padding-top: 15px;
+        }
+
+        .card__bt .card__subName {
+            font-size: 13px;
+            display: flex;
+            justify-content: end;
+            color: #a9a9a9;
+        }
+
+        .card__btPropile {}
+
+        .card__btPropile .bt_img {
+            width: 60px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <h2>이미지 무료 다운로드 IT.D</h2>
+        <p>풍경, 일러스트, 배경화면, ico 등 여러 이미지 다운로드가 가능한 사이트에 오신걸 환영합니다.</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg01_01.jpg" alt="풍경 사진">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">풍경 사진</h3>
+                    <p class="desc">바다, 하늘, 들판 등 사람들이 찍은 여러가지의 풍경, 느낌이 담겨진 이미지. 서로의 사진을 공유하며 다운로드하고 즐겨볼 수 있다.</p>
+                    <a class="btn" href="/">
+                        이미지 더보기
+                        <span aria-hidden="true">
+                            <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg01_02.jpg" alt="풍경 사진">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">일러스트 사진</h3>
+                    <p class="desc">애니메이션 캐릭터, 만화 캐릭터 등 일러스트, 이미지를 담아놨다. 귀엽고 아기자기한 일러스트들을 다운받고 눈으로 즐겨보는 시간</p>
+                    <a class="btn" href="/">
+                        이미지 더보기
+                        <span aria-hidden="true">
+                            <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg01_03.jpg" alt="풍경 사진">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">배경화면 사진</h3>
+                    <p class="desc">직접 그리고 만든 배경화면을 자신의 휴대폰, 컴퓨터, 노트북에 다운을 받아 적용이 가능하다. 아름답고 신비로운 이미지 다운 받기
+                    </p>
+                    <a class="btn" href="/">
+                        이미지 더보기
+                        <span aria-hidden="true">
+                            <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+
+    <!-- <section id="cardType2" class="card__wrap nexon section">
+        <div class="card__inner container">
+            <article class="card2">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg06.jpg">
+                </figure>
+                <div class="card__body">
+                    <p class="tit">
+                        킁킁! 맛있는 냄새! <br>
+                        어디서 흘러 들어오는 걸까
+                    </p>
+                    <p class="desc">
+                        어디선가 흘러오는 이 맛있는 냄새.. 고기인가 과일인가 솜사탕인가 무엇인가 일단 너무 배가 고파 얼른 먹...
+                    </p>
+                    <p class="btn2" href="/">
+                    <div class="card__bt">
+                        <span>
+                            <p class="card__btName">
+                                라쿤장인 그라쿤
+                            </p>
+                            <p class="card__subName">
+                                18 Resources
+                            </p>
+                        </span>
+                        <figure class="card__btPropile">
+                            <img class="bt_img" src="cardType/img/btn_01.jpg">
+                        </figure>
+                    </div>
+                    </p>
+                </div>
+            </article>
+
+            <article class="card2">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg04.jpg">
+                </figure>
+                <div class="card__body">
+                    <p class="tit">
+                        아따~ <br>
+                        물 한 번 시원 하구먼!
+                    </p>
+                    <p class="desc">
+                        너무 찝찝해 씻고 싶다. 시원한 물로 등목 한 번 쫘 - 악 하고 에어컨 바람 쐬며 침대에 누워...
+                    </p>
+                    <p class="btn2" href="/">
+                    <div class="card__bt">
+                        <span>
+                            <p class="card__btName">
+                                라쿤장인 그라쿤
+                            </p>
+                            <p class="card__subName">
+                                18 Resources
+                            </p>
+                        </span>
+                        <figure class="card__btPropile">
+                            <img class="bt_img" src="cardType/img/btn_01.jpg">
+                        </figure>
+                    </div>
+                    </p>
+                </div>
+            </article>
+            <article class="card2">
+                <figure class="card__header">
+                    <img src="cardType/img/card_bg05.jpg">
+                </figure>
+                <div class="card__body">
+                    <p class="tit">
+                        그렇게 칭찬 받고 싶나 <br>
+                        우쭈쭈~ 아이고 잘 한다~
+                    </p>
+                    <p class="desc">
+                        닝겐들이 칭찬을 좋아하는 것 같다. 아닌가 내가 이러고 있는 걸 좋아하는 건가 잘 모르겠다 집가고...
+                    </p>
+                    <p class="btn2" href="/">
+                    <div class="card__bt">
+                        <span>
+                            <p class="card__btName">
+                                라쿤장인 그라쿤
+                            </p>
+                            <p class="card__subName">
+                                18 Resources
+                            </p>
+                        </span>
+                        <figure class="card__btPropile">
+                            <img class="bt_img" src="cardType/img/btn_01.jpg">
+                        </figure>
+                    </div>
+                    </p>
+                </div>
+            </article> -->
+        </div>
+
+    </section>
+</body>
+
+</html>

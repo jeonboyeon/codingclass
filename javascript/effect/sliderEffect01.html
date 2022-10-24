@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sliderEffect | 슬라이드 이펙트 01</title>
+
+        <!-- css style -->
+        <link rel="stylesheet" href="../assets/css/slider.css" />
+        <link rel="stylesheet" href="../assets/css/dracula.css" />
+
+        <!-- style -->
+        <style>
+            /* slider */
+            .slider__wrap {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .slider__img {
+                position: relative;
+                width: 800px;
+                height: 450px;
+            }
+
+            .slider {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            .slider::before {
+                margin: 5px;
+                padding: 7px;
+                border-radius: 5px;
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                background-color: rgba(34, 34, 34, 0.698);
+                color: rgb(199, 199, 199);
+            }
+
+            .slider:nth-child(1)::before {
+                content: "image 01";
+            }
+
+            .slider:nth-child(2)::before {
+                content: "image 02";
+            }
+
+            .slider:nth-child(3)::before {
+                content: "image 03";
+            }
+
+            .slider:nth-child(4)::before {
+                content: "image 04";
+            }
+
+            .slider:nth-child(5)::before {
+                content: "image 05";
+            }
+
+            .slider:nth-child(1) {
+                z-index: 5;
+            }
+
+            .slider:nth-child(2) {
+                z-index: 4;
+            }
+
+            .slider:nth-child(3) {
+                z-index: 3;
+            }
+
+            .slider:nth-child(4) {
+                z-index: 2;
+            }
+
+            .slider:nth-child(5) {
+                z-index: 1;
+            }
+
+            @media (max-width: 800px) {
+                .slider__img {
+                    width: 400px;
+                    height: 225px;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="img05">
+        <!-- header start -->
+        <header id="header">
+            <h1>JAVASCRIPT Slider Effect No. 01</h1>
+            <p>슬라이드 이펙트 | 트랜지션 효과</p>
+            <ul>
+                <li class="active"><a href="sliderEffect01.html">1</a></li>
+                <li><a href="sliderEffect02.html">2</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect04.html">4</a></li>
+                <li><a href="sliderEffect05.html">5</a></li>
+                <li><a href="sliderEffect06.html">6</a></li>
+                <li><a href="sliderEffect07.html">7</a></li>
+            </ul>
+        </header>
+
+        <!-- main start -->
+        <main id="main">
+            <section id="sliderType01">
+                <div class="slider__wrap">
+                    <div class="slider__img">
+                        <div class="slider"><img src="../assets/img/sliderEffect01_bg10-min.jpg" alt="이미지01" /></div>
+                        <div class="slider"><img src="../assets/img/sliderEffect01_bg11-min.jpg" alt="이미지02" /></div>
+                        <div class="slider"><img src="../assets/img/sliderEffect01_bg12-min.jpg" alt="이미지03" /></div>
+                        <div class="slider"><img src="../assets/img/sliderEffect01_bg13-min.jpg" alt="이미지04" /></div>
+                        <div class="slider"><img src="../assets/img/sliderEffect01_bg14-min.jpg" alt="이미지05" /></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- footer start -->
+        <footer id="footer">
+            <div class="modal__wrap">
+                <div class="modal__btn">
+                    <div for="btn" class="btn__txt">source view</div>
+                </div>
+                <div class="modal__cont">
+                    <div class="modal__box">
+                        <div class="title">
+                            <span class="dot" aria-label="true"></span>
+                            <div class="tabs">
+                                <div class="active">
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                            <path
+                                                d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="skyblue"
+                                            ></path>
+                                            <path
+                                                d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="white"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <em>JAVASCRIPT</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M12.5 3.5L3.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 12.5L3.5 3.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                            <path
+                                                d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="orange"
+                                            ></path>
+                                            <path
+                                                d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="yellow"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <em>HTML</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M12.5 3.5L3.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 12.5L3.5 3.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                            <path
+                                                d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="orange"
+                                            ></path>
+                                            <path
+                                                d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="yellow"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <em>CSS</em>
+                                    <span class="close">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M12.5 3.5L3.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 12.5L3.5 3.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="puls" aria-label="true">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M2.5 8H13.5"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                    <path
+                                        d="M8 2.5V13.5"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="cont">
+                            <div class="active">
+                                <pre><code class="language-js">//탭 메뉴
+const tabBtn = document.querySelectorAll(".modal__box .tabs > div");
+const tabCont = document.querySelectorAll(".modal__box .cont > div");
+                                
+                                
+                                
+tabBtn.forEach((element, index) => {
+    //버튼을 클릭함
+    element.addEventListener("click", (event) => {
+        //클릭시 초기화면으로 돌아가는 이벤트를 막아줍니다.
+        event.preventDefault();
+
+        //클래스 active를 모두 제거함
+        tabBtn.forEach(li => {
+            li.classList.remove("active");
+        });
+
+        //내가 클릭한 버튼에 active를 추가함
+        element.classList.add("active");
+
+        //버튼을 클릭하면 모든 자식 박스 숨김
+        tabCont.forEach(div => {
+            div.style.display = "none";
+        });
+
+        //[i]클릭한 버튼과 관련된 [i]박스를 보이게 함
+        tabCont[index].style.display = "block";
+    });
+});
+
+// 모달
+const modalBtn = document.querySelector(".modal__btn");
+const modalClose = document.querySelector(".modal__close");
+const modalCont = document.querySelector(".modal__cont");
+
+modalBtn.addEventListener("click", () => {
+    modalCont.classList.add("show")
+    modalClose.classList.add("show")
+    modalCont.classList.remove("hide")
+    modalClose.classList.remove("hide")
+});
+
+modalClose.addEventListener("click", () => {
+    modalCont.classList.add("hide")
+    modalClose.classList.add("hide")
+});
+
+// slider img
+const sliderWrap = document.querySelector(".slider__wrap");    // 슬라이더 박스
+const sliderImg = document.querySelector(".slider__img");    // 슬라이더 이미지
+const slider = sliderWrap.querySelectorAll(".slider");    // 슬라이더
+
+let currentIndex = 0;   // 가장 앞에 보이는 이미지를 currentIndex 라고 지정해준다.
+let sliderCount = slider.length;    // 슬라이더 이미지의 갯수 (sliderCount)
+
+setInterval(() => { // 시간을 지정해서 실행문을 실행 시킨다.
+    let nextIndex = (currentIndex + 1) % 5;    // 다음 이미지는 currentIndex에 +1 값
+
+    // 1초가 지났을 때 첫 번째 이미지를 안보이게 해주며, 두 번째 이미지를 보이게 해준다.
+    slider[currentIndex].style.opacity = "0";
+    slider[nextIndex].style.opacity = "1";
+
+    currentIndex = nextIndex; // nextIndex 값을 currentIndex에 대입시켜서 다시 처음부터 실행한다.
+
+}, 1000); // 1000 = 1초
+</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-html">&lt;div class="slider__wrap"&gt;
+    &lt;div class="slider__img"&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img2/effect_bg_02-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img2/effect_bg_03-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img2/effect_bg_04-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img2/effect_bg_05-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img2/effect_bg_07-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-css">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+                        
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+                        
+.slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+                        
+.slider::before {
+    margin: 5px;
+    padding: 7px;
+    border-radius: 5px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: rgba(34, 34, 34, 0.698);
+    color: rgb(199, 199, 199);
+}
+                        
+.slider:nth-child(1)::before {
+    content: 'image 01';
+}
+                        
+.slider:nth-child(2)::before {
+    content: 'image 02';
+}
+                        
+.slider:nth-child(3)::before {
+    content: 'image 03';
+}
+                        
+.slider:nth-child(4)::before {
+    content: 'image 04';
+}
+                        
+.slider:nth-child(5)::before {
+    content: 'image 05';
+}
+                        
+.slider:nth-child(1) {
+    z-index: 5;
+}
+                        
+.slider:nth-child(2) {
+    z-index: 4;
+}
+                        
+.slider:nth-child(3) {
+    z-index: 3;
+}
+                        
+.slider:nth-child(4) {
+    z-index: 2;
+}
+                        
+.slider:nth-child(5) {
+    z-index: 1;
+}
+                        
+@media (max-width:800px) {
+    .slider__img {
+        width: 400px;
+        height: 225px;
+    }
+}
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path
+                                d="M12.5 3.5L3.5 12.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                            <path
+                                d="M12.5 12.5L3.5 3.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = document.querySelector(".slider__img");
+        const slider = document.querySelectorAll(".slider");
+
+        let currentIndex = 0;
+        let sliderCount = slider.length;
+
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+            slider[currentIndex].style.opacity = "0";
+            slider[nextIndex].style.opacity = "1";
+
+            currentIndex = nextIndex;
+            
+        }, 1000);
+    </script>
+</html>

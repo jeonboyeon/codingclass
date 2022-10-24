@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="/javascript/assets/css/style.css" />
+    <link rel="stylesheet" href="/javascript/assets/css/dracula.css" />
+    <!-- <link rel="stylesheet" href="/javascript/assets/css/quiz02.css"> -->
+</head>
+
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">
+                <i class="t_tit">Search Effect 01 유형</i> <br>
+                서치 이펙트 01 번
+            </h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+               서치 이펙트를 이용해 태그 검색을 해보자
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">html</h3>
+
+            <div class="t_code">
+<pre><code  class="language-html">&lt;body>
+    &lt;header id="header">
+        &lt;nav>
+            &lt;ul>
+                &lt;li class="active">&lt;a href="searchEffect01.html">1&lt;/a>
+                    &lt;ul class="sub">
+                        &lt;li class="active">&lt;a href="searchEffect01.html"> HTML&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="searchEffect01_css.html"> CSS&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="searchEffect01_javascript.html"> JAVASCRIPT&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="searchEffect02.html">2&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect03.html">3&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect04.html">4&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect05.html">5&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="searchEffect06.html">6&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+    &lt;!-- header -->
+
+    &lt;main id="main">
+        &lt;div class="search__wrap">
+            &lt;span>
+                indexOf( ) 를 이용하여 CSS 속성 검색하기
+            &lt;/span>
+            &lt;h1>
+                HTML 태그 검색하기
+            &lt;/h1>
+            &lt;div class="search__box">
+                &lt;label for="search">검색하기&lt;/label>
+                &lt;input id="search" type="text" placeholder="HTML 태그를 입력해주세요 ✏️" />
+            &lt;/div>
+            &lt;div class="search__list">
+                &lt;div class="html">
+                    &lt;ul>
+                        &lt;li data-name="a">&lt;strong>a&lt;/strong> : a 태그는 다른 페이지 이동을 설정한다.&lt;/li>
+                        &lt;li data-name="abbr">&lt;strong>abbr&lt;/strong> : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li>
+                        &lt;li data-name="acronym">&lt;strong>acronym&lt;/strong> : abbr 머리글자로만 된 단어를 정의할 때 사용 | &lt;abbr>로 바뀌었다.
+                        &lt;/li>
+                        &lt;li data-name="address">&lt;strong>address&lt;/strong> : 연락할 수 있는 정보를 명시할 때 사용&lt;/li>
+                        &lt;li data-name="applet">&lt;strong>applet&lt;/strong> : 문서에 포함되는 애플릿을 정의할 때 사용 | &lt;embed> 혹은
+                            &lt;object>로 바뀌었다.&lt;/li>
+                        &lt;li data-name="area">&lt;strong>area&lt;/strong> : 이미지 맵에서 하이퍼링크가 연결될 영역을 정의&lt;/li>
+                        &lt;li data-name="article">&lt;strong>article&lt;/strong> : 문서나 페이지 또는 사이트와는 완전히 독립적으로 구성할 수 있는 요소를 정의할 때
+                            사용&lt;/li>
+                        &lt;li data-name="aside">&lt;strong>aside&lt;/strong> : 콘텐츠들로부터 분리시킬 수 있는 콘텐츠로 구성된 페이지 영역을 정의할 때 사용&lt;/li>
+                        &lt;li data-name="audio">&lt;strong>audio&lt;/strong> : 태그는 음악이나 오디오 스트림과 같은 사운드를 정의할 때 사용&lt;/li>
+                        &lt;li data-name="b">&lt;strong>b&lt;/strong> : 굵게 표현되는 텍스트를 정의할 때 사용&lt;/li>
+                        &lt;li data-name="base">&lt;strong>base&lt;/strong> : 해당 문서의 모든 상대 주소에 대한 기본 URL과 target 속성값을 정의할 때 사용
+                        &lt;/li>
+                        &lt;li data-name="bdi">&lt;strong>bdi&lt;/strong> : 주위의 텍스트들과는 다른 방향으로 써지는 텍스트 영역을 정의할 때 사용&lt;/li>
+                        &lt;li data-name="bdo">&lt;strong>bdo&lt;/strong> : 자식 요소의 텍스트 방향성을 정의할 때 사용&lt;/li>
+                        &lt;li data-name="bgsound">&lt;strong>bgsound&lt;/strong> : 배경 사운드 요소 | 현제는 &lt;audio>로 대신 사용 한다.&lt;/li>
+                        &lt;li data-name="big">&lt;strong>big&lt;/strong> : 글자 크기가 큰 텍스트를 정의할 때 사용 | 현재는 CSS 로 사용&lt;/li>
+                        &lt;li data-name="blink">&lt;strong>blink&lt;/strong> : 텍스트를 깜박이게 설정 | CSS Animation으로 대신 사용한다.&lt;/li>
+                        &lt;li data-name="blockquote">&lt;strong>blockquote&lt;/strong> : 다른 출처로부터 인용된 블록을 정의할 때 사용&lt;/li>
+                        &lt;li data-name="body">&lt;strong>body&lt;/strong> : 문서의 텍스트, 하이퍼링크, 이미지, 리스트 등과 같은 모든 콘텐츠를 포함하는 영역을 정의할
+                            때 사용&lt;/li>
+                        &lt;li data-name="br">&lt;strong>br&lt;/strong> : 텍스트 내의 줄바꿈을 정의할 때 사용&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/main>
+    &lt;!-- main -->
+
+    &lt;footer id="footer">
+        &lt;a href="mailto:jeon.boyeon@kakao.com">jeon.boyeon@kakao.com&lt;/a>
+    &lt;/footer>
+    &lt;!-- footer -->
+
+    &lt;script>
+        //선택자
+
+        const searchBox = document.querySelector(".search__box input"); // HTML 검색 박스
+        const searchList = document.querySelectorAll(".search__list ul li"); // 태그 목록 리스트
+
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value; // 사용자가 입력한 키워드
+            // console.log(searchWord);
+
+            searchList.forEach(el => {
+                const cssName = el.dataset.name;
+
+                if (cssName.indexOf(searchWord)) {
+                    el.classList.add("hide"); // hide 속성을 추가한다.
+                } else {
+                    // Ex) abbr.indexOf("abbr") 은 0
+                    el.classList.remove("hide"); // hide를 지워 보여준다. (indexOf 값이 0이 되면 0이 되는 값만 hide 속성을 없앤다.)
+                }
+            });
+        });
+    &lt;/script>
+
+&lt;/body>
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+
+
+            <div class="t_code">
+<pre><code  class="language-css">:root {
+    --htmlColor : #223547;
+    --csslColor : #37626a;
+    --javascriptlColor : #60446a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "TmoneyRoundWind";
+    color: #223547;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* header */
+
+#header {}
+
+#header nav {
+    margin: 10px;
+}
+
+#header nav ul li {
+    display: inline;
+    position: relative;
+}
+
+#header nav ul li a {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 29px;
+    font-family: "TmoneyRoundWind";
+}
+
+#header nav ul li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+#header nav ul li .sub {
+    width: 400px;
+    position: absolute;
+    left: 0;
+    top: 35px;
+}
+
+#header nav ul li .sub li a {
+    width: auto;
+    background-color:transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+
+#header nav ul li .sub li.active a {
+    text-decoration: underline;
+} 
+
+/* search wrap */
+#main {
+    margin: 50px 10px;
+}
+
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .search__wrap {
+        padding: 20px;
+    }
+
+    .search__wrap>h1 {
+        font-size: 44px;
+    }
+
+    .search__wrap>span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .search__wrap input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+.search__wrap>h1 {
+    font-size: 5vw;
+    color: var(--htmlColor);
+    font-family: "Tmon";
+    margin-bottom: 10px;
+}
+
+.search__wrap>span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+.search__box {
+    margin-bottom: 20px;
+}
+
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden
+}
+
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 20px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.search__tab {
+    margin-bottom: 20px;
+}
+
+.search__list {}
+
+.search__list li {
+    list-style: none;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.search__list li.hide {
+    display: none;
+}
+
+/* footer */
+
+#footer {
+    text-align: center;
+}
+
+#footer a {
+    font-family: "TmoneyRoundWind";
+    color: #000;
+    padding-bottom: 50px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">JS</h3>
+
+            <div class="t_code">
+<pre><code  class="language-js"> //선택자
+
+    const searchBox = document.querySelector(".search__box input"); // HTML 검색 박스
+    const searchList = document.querySelectorAll(".search__list ul li"); // 태그 목록 리스트
+
+    searchBox.addEventListener("keyup", () => {
+        const searchWord = searchBox.value; // 사용자가 입력한 키워드
+        // console.log(searchWord);
+
+        searchList.forEach(el => {
+            const cssName = el.dataset.name;
+
+            if (cssName.indexOf(searchWord)) {
+                el.classList.add("hide"); // hide 속성을 추가한다.
+            } else {
+                // Ex) abbr.indexOf("abbr") 은 0
+                el.classList.remove("hide"); // hide를 지워 보여준다. (indexOf 값이 0이 되면 0이 되는 값만 hide 속성을 없앤다.)
+            }
+        });
+    });
+}
+</code></pre>
+            </div>
+
+                <h2 class="t_tit2">결과물</h2>
+                <div class="t_iframe" style="min-height: 1010px; padding-top: 0;">
+                    <iframe src="https://jeonboyeon.github.io/coding2/javascript/effect/searchEffect01.html">
+                    </iframe>
+                </div>
+                
+                <br>
+                <div class="t_link">
+                    <a href="https://github.com/jeonboyeon/coding2/blob/main/javascript/effect/searchEffect01_javascript.html"
+                        target="_blank">원본 사이트 코드 보러가기</a>
+                </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="/javascript/assets/js/highlight.min.js"></script>  
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

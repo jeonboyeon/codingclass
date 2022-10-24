@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사이트 | 카드 유형 첫 번째</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css" />
+</head>
+
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">
+                사이트 유형 <br>
+                <i class="t_tit">카드 유형 세 번째</i>
+            </h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+                <!-- 자바스크립트를 다루기 위해서는 기초적인 특징과 기본 문법이 있습니다.
+          가장 기본이기 때문에 이 부분을 숙지하고 자바스크립트를
+          <i>공부</i>하세요! -->
+                오늘은 카드 유형 세 번째를 만들어보자!
+            </p>
+
+            <hr />
+
+            <h3 class="t_tit">실전 | 카드 유형 디자인 만들기</h3>
+            <p class="t_desc">
+                오늘도 아래 보이는 디자인은 수업을 받으며 피그마로 만들어본 카드유형 디자인 레이이아웃이다. <br>
+                사이트 제목을 가리고, 박스 안에 3개의 카드를 넣은 디자인이다.
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F6HyvSs7mzSseCG19fNscA0%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fpage-id%3D185%253A313%26node-id%3D189%253A620%26viewport%3D422%252C-691%252C0.36%26scaling%3Dscale-down"
+                    allowfullscreen></iframe>
+            </div>
+            <h4 class="t_tit2">section을 이용해 전체 틀 잡기</h4>
+            <p class="t_desc">
+                제목, 카드 디자인, 카드 안에 요소들이 들어갈 전체 틀을 만들어준다.
+            </p>
+            <br>
+            <p class="t_desc2">
+                html 문서
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">&lt;section id="cardType03" class="card__wrap score section"&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                css 문서
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">/* fonts */
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+.score {
+    font-family: "SCoreDream";
+    font-weight: 300;
+}
+</code></pre>
+            </div>
+
+            <!-- 나중에 정리 -->
+            <h4 class="t_tit2">아티클로 카드 박스와 안에 들어갈 요소들을 만들어준다.</h4>
+            <p class="t_desc">
+                부 설명
+            </p>
+            <br>
+            <p class="t_desc2">
+                html 문서
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">&lt;h2 class="blind">너구리 세상&lt;/h2>
+    &lt;div class="card__inner container">
+        &lt;article class="card"> <!-- 카드 박스 -->
+            &lt;figure class="card__header"> <!-- 너구리 사진과 문구가 들어갈 박스 -->
+                &lt;img src="cardType/img/card_bg03_01.jpg" alt="너구리 사진"> <!-- 귀여운 너구리 사진 -->
+                &lt;figcaption>Raccoons&lt;/figcaption> <!-- 사진 오른쪽 위에 들어갈 문구 -->
+            &lt;/figure>
+            &lt;div class="card__contants">
+                &lt;h3>킁킁! 맛있는 냄새! 어디서 흘러 들어오는 걸까&lt;/h3>
+                &lt;p>어디선가 흘러오는 이 맛있는 냄새.. 고기인가 과일인가 솜사탕인가 무엇인가 일단 너무 배가 고파 얼른 먹고싶다. 으에에 으에에 배고파아아아아아아아&lt;/p>
+            &lt;/div>
+            &lt;div class="card__footer">
+                &lt;h4>라쿤장인 그라쿤 &lt;em>18 Resources&lt;/em>&lt;/h4>
+               &lt;span> &lt;img src="cardType/img/card_bg03_icon.png" alt="너구리 프로필 사진">&lt;/span>
+            &lt;/div>
+        &lt;/article>
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                css 문서
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">/* cardType03 */
+    body {
+        background-color: #89a676; /* 배경 색상 */
+    }
+
+    .card__inner {
+        display: flex; /* flex를 주지않으면 카드 박스 3개의 요소들이 세로로 줄을 짓기 때문 */
+    }
+
+    .card__inner .card {
+        width: 33.3333%;
+        background-color: #fff;
+        padding: 26px; /* 카드박스 요소 사이 여백 */
+    }
+
+    .card__inner .card:nth-child(1) { /* 요소를 개인적으로 선택해서 각각 스타일을 지정 */
+        background-color: #fff;
+        border-right: 1px solid #eee; /* 카드 오른쪽 실선 */
+    }
+
+    .card__inner .card:nth-child(2) {
+        background-color: #fff;
+        border-right: 1px solid #eee; /* 카드 오른쪽 실선 */
+    }
+
+    .card__inner .card:nth-child(3) {
+        background-color: #fff; /* 마지막은 실선이 필요 없기 때문에 주지 않았다. */
+    }
+
+    .card__header {
+        position: relative;
+    }
+    .card__header img {
+        border-radius: 10px;
+        box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.5); /* 이미지에 그림자 효과 넣기 */
+        margin-bottom: 20px;
+    }
+    .card__header figcaption {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        padding: 6px 16px;
+        border-radius: 50px;
+                /* blind */
+
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+
+        /* cardType03 */
+        body {
+            background-color: #89a676;
+        }
+
+        .card__inner {
+            display: flex;
+        }
+
+        .card__inner .card {
+            width: 33.3333%;
+            background-color: #fff;
+            padding: 26px;
+        }
+
+        .card__inner .card:nth-child(1) {
+            background-color: #fff;
+            border-right: 1px solid #eee;
+        }
+
+        .card__inner .card:nth-child(2) {
+            background-color: #fff;
+            border-right: 1px solid #eee;
+        }
+
+        .card__inner .card:nth-child(3) {
+            background-color: #fff;
+        }
+
+        .card {}
+        .card__header {
+            position: relative;
+        }
+        .card__header img {
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .card__header figcaption {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background-color: #87a841;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .card__contants h3 {
+            font-size: 20px;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .card__contants p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            margin-bottom: 30px;
+        }
+
+        .card__footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .card__footer h4 {
+            text-align: right;
+            color: #89a676;
+        }
+        .card__footer span {
+            display: block;
+        }
+        .card__footer em {
+            display: block;
+            font-style: normal;
+            color: #666;
+        }
+        .card__footer span {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50px;
+            display: block;
+            margin-left: 10px;
+            margin-top: -2px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
+        }
+        text-align: center;
+        font-size: 14px;
+        color: #7b7b7b;
+    }
+
+    .card__contants h3 {
+        font-size: 20px;
+        line-height: 1.4;
+        overflow: hidden; /* 넘치는 요소를 숨겨준다. */
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* 몇 줄 이상일 때 숨겨주냐를 정하는 속성. 여기선 2줄이 넘어가게 되면 글을 ... 처리한다. */
+        -webkit-box-orient: vertical;
+    }
+    .card__contants p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.7;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        margin-bottom: 30px;
+    }
+
+    .card__footer {
+        display: flex;
+        justify-content: flex-end; /* 요소를 박스 마지막 위치로 자리 */
+    }
+    .card__footer h4 {
+        text-align: right; /* 텍스트 정렬을 오른쪽으로 시켜준다. */
+    }
+    .card__footer span {
+        display: block;
+    }
+    .card__footer em {
+        display: block;
+        font-style: normal;
+    }
+    .card__footer span {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 50px;
+        display: block;
+        margin-left: 10px;
+        margin-top: -2px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
+    }
+</code></pre>
+            </div>
+
+            <br>
+
+            <h2 class="t_desc2">
+                위 HTML 문서와 CSS를 적용하게 되면 아래 처럼 완성된 하나의 card 박스가 나오게 된다.
+            </h2>
+            <img src="../cardType/img/스크린샷 2022-08-11 오후 5.20.52.png">
+
+            <br><br>
+
+            <p class="t_desc">
+                위처럼 3개의 박스를 만들고 적용하게되면 3개의 카드 디자인 유형 박스가 나오게 되는 것이다.
+            </p>
+            <br><br>
+
+            <p class="t-box">
+                피그마 카드유형 디자인 작업본
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F6HyvSs7mzSseCG19fNscA0%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D889%253A250"
+                    allowfullscreen></iframe>
+            </div>
+            <br>
+            <p class="t-box">
+                아래는 코드 원본을 볼 수 있는 링크입니다. <br>
+                감사합니다.
+            </p>
+
+            <div class="t_link">
+                <a href="https://github.com/jeonboyeon/coding2/blob/main/site/cardType03.html" target="_blank">원본 소스
+                    보러가기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://jeonboyeon.github.io/coding2/site/cardType03.html" target="_blank">원본 코드
+                    보러가기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

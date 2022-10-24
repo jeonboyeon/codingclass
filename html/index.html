@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+
+    <link href="https://webfontworld.github.io/elice/EliceDigitalBaeum.css" rel="stylesheet">
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'EliceDigitalBaeum';
+        }
+
+        #main {
+            background-color: #222831;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /*세로 정렬 태그*/
+            height: 100vh;
+            box-sizing: border-box;
+            /*이 태그가 화면 크기에 맞게 테두리 사이즈를 맞춰줌*/
+
+        }
+
+        #main h1 {
+            font-size: 8vw;
+            /*단축 fz8vw*/
+            text-align: center;
+            line-height: 1;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6vw;
+            text-shadow: 2px 2px 10px #222;
+            -webkit-animation: tracking-in-contract 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            animation: tracking-in-contract 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        @-webkit-keyframes tracking-in-contract {
+            0% {
+                letter-spacing: 1em;
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                letter-spacing: normal;
+                opacity: 1;
+            }
+        }
+
+        @keyframes tracking-in-contract {
+            0% {
+                letter-spacing: 1em;
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                letter-spacing: normal;
+                opacity: 1;
+            }
+        }
+
+        #main h1 em {
+            display: block;
+            font-style: normal;
+            /*em 태그는 글자가 기울어지는데 교정시키는 방법*/
+        }
+
+        #main nav {}
+
+        #main nav ul {}
+
+        #main nav ul li {
+            list-style: none;
+            display: inline;
+            /*세로 정렬 되있는걸 가로로 바꾸기*/
+        }
+
+        #main nav ul li a {
+            margin: 1vw;
+            text-decoration: none;
+            color: #222831;
+            background-color: #fff;
+            font-size: 1.2vw;
+            padding: 1vw 2vw;
+            border-radius: 10px;
+            transition: all 0.4s;
+            box-shadow: 0 0 10px #222;
+        }
+
+        #main nav ul li a:hover {
+            background-color: #00ADB5;
+            border-radius: 1.3vw;
+            color: #EEEEEE;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <h1>HTML <em>레퍼런스 북</em></h1>
+        <!--em 태그는 강조 태그-->
+        <nav>
+            <ul>
+                <li><a href="../html/basic.html">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="../html/alphabet.html">알파벳</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+
+</html>

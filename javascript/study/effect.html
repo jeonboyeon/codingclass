@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="/javascript/assets/css/style.css" />
+    <link rel="stylesheet" href="/javascript/assets/css/dracula.css" />
+    <!-- <link rel="stylesheet" href="/javascript/assets/css/quiz02.css"> -->
+</head>
+
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">
+                <i class="t_tit">이펙트 응용편</i> <br>
+                퀴즈 만들기 세번 째
+            </h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+                상수, 배열, 객체, for문, forEach문, <i>addEventListener</i> 를 사용하여 퀴즈 문제 만들기
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">querySelectorAll을 이용해 class값 요소를 찾아준다.</h3>
+            <p class="t_desc">
+                앞 전 문제들과 달리 문제가 4개 이므로 querySelector이 아닌 <br>
+                <i>querySelectorAll을 이용해 여러 요소를 한 번에 가져온다.</i>
+            </p>
+
+            <div class="t_code">
+<pre><code  class="language-js">//선택자
+const quizType = document.querySelectorAll(".quiz__type");    // 퀴즈 종류
+const quizNumber = document.querySelectorAll(".quiz__question .number")    // 퀴즈 번호
+const quizAsk = document.querySelectorAll(".quiz__question .ask")   // 퀴즈 질문
+const quizConfirm = document.querySelectorAll(".quiz__answer .confirm")    // 정답 확인 버튼
+const quizResult = document.querySelectorAll(".quiz__answer .result")    // 정답 결과
+const quizInput = document.querySelectorAll(".quiz__answer .input")    // 사용자 정답   
+const quizView = document.querySelectorAll(".quiz__view")   // 강아지 애니메이션
+</code></pre>
+            </div>
+            <p class="t_box">
+                상수의 상수값을 정하고 document.querySelectorAll을 이용해 각각 class값을 모두 찾아준다.
+            </p>
+            <img src="/javascript/assets/img/ex01.jpg">
+
+
+            <h3 class="t_tit2">문제 내용을 한번에 넣어줄 상수값을 선언 후 배열안에 객체를 만들어준다.</h3>
+            <p class="t_desc">
+                const quizInfo 상수값을 선언 후 <i>배열[] 안에 문제(객체){} 4개를 넣어준다.</i>
+            </p>
+
+            <div class="t_code">
+<pre><code  class="language-js">const quizInfo = [{
+    answerType: "웹디자인 기능사",  // 1번 문제
+    answerNum: "1.",
+    answerAsk: "서로 반대되는 색상을 배색하였을 때 나타나는 느낌은 무엇인가",
+    answerResult: "강렬한 느낌"
+},
+{
+    answerType: "웹디자인 기능사",  // 2번 문제
+    answerNum: "2.",
+    answerAsk: "HTML 문서의 시작을 알려주는 태그는?",
+    answerResult: "&lt;html&gt;"
+},
+{
+    answerType: "웹디자인 기능사",  // 3번 문제
+    answerNum: "3.",
+    answerAsk: "다음 중 웹 페이지 제작에 따른 외부 스타일시트 확장자는?",
+    answerResult: "css"
+},
+{
+    answerType: "웹디자인 기능사", // 4번 문제
+    answerNum: "4.",
+    answerAsk: "E-mail 송신 시에 사용되는 프로토콜은?",
+    answerResult: "SMTP"
+}];
+</code></pre>
+            </div>
+            <p class="t_box">
+                answerType : 퀴즈 종류 <br>
+                answerNum : 퀴즈 문제 번호 <br>
+                answerAsk : 퀴즈 질문 <br>
+                answerResult : 퀴즈 정답
+            </p>
+
+            <h3 class="t_tit2">for문 혹은 forEach문을 이용해 값을 넣어준다.</h3>
+            <p class="t_desc">
+                하드 방식 < for문 < forEach문 순서로 간편해지니 forEach문을 습관화 해보자.</i>
+            </p>
+
+            <br>
+            
+            <h3 class="t_desc2">for문 사용</h3>
+            <div class="t_code">
+<pre><code  class="language-js">for ( i=0; i&lt;quizInfo.length; i++ ){
+    quizType[i].textContent = quizInfo[i].answerType;
+    uizNumber[i].textContent = quizInfo[i].answerNum;
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+    quizResult[i].textContent = quizInfo[i].answerResult;
+}
+</code></pre>
+            </div>
+            <p class="t_box">
+                quizType 쪽만 풀어서 설명 해보자면 <br>
+                <i>quizInfo[i].answerType;</i> <br>
+                "quizInfo[i]" 값의 "answerType" 을 <br>
+                <i>quizType[i].textContent</i> <br>
+                "quizType[i]" 값에 "textContent" 텍스트로 대입한다.
+            </p>
+
+            <br>
+
+            <h3 class="t_desc2">forEach문 사용</h3>
+            <div class="t_code">
+<pre><code  class="language-js">quizInfo.forEach(( e, i ) => {  // function을 없애고 화살표 함수 사용
+    quizType[i].textContent = quizInfo[i].answerType;
+    quizNumber[i].textContent = quizInfo[i].answerNum;
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+    quizResult[i].textContent = quizInfo[i].answerResult;
+});
+</code></pre>
+            </div>
+            <p class="t_box">결과</p>
+            <img src="/javascript/assets/img/스크린샷 2022-08-06 오전 12.52.30.png" style="width: 335px;">
+
+            <h3 class="t_tit2">하드 방식, for문 혹은 forEach문을 이용해 정답 칸을 숨겨준다.</h3>
+            <p class="t_desc">
+                자바스크립트 스타일 적용 방식으로 정답확인 버튼 아래 정답 칸을 숨겨보자.</i>
+            </p>
+
+            <br>
+            
+            <h3 class="t_desc2">하드 방식</h3>
+            <div class="t_code">
+<pre><code  class="language-js">quizResult[0].style.display = "none";
+quizResult[1].style.display = "none";
+quizResult[2].style.display = "none";
+quizResult[3].style.display = "none";
+</code></pre>
+            </div>
+
+            <br>
+
+            <h3 class="t_desc2">for문 사용</h3>
+            <div class="t_code">
+<pre><code  class="language-js">for (let i=0; i&lt;quizResult.length; i++){
+    quizResult[i].style.display = "none";
+}
+</code></pre>
+            </div>
+
+            <p class="t_box">
+                (let i=0; i&lt;quizResult.length; i++) <br>
+                i=0 이고 i는 quizResult.length 개수만큼 i++ 1식 커진다. <br>
+                그렇게 되면 quizResult[i]의 i 값은 quizResult.length의 값이 4니까 <br>
+                0부터 3까지 (4개니까 4번 반복) 적용이 되어 4개의 문제 모두 답을 숨길 수 있는 것.
+            </p>
+
+            <br>
+
+            <h3 class="t_desc2">forEaxh문 사용</h3>
+            <div class="t_code">
+<pre><code  class="language-js">quizInfo.forEach (function(e, i){
+    quizResult[i].style.display = "none";
+});
+</code></pre>
+            </div>
+            <p class="t_box">결과</p>
+            <img src="/javascript/assets/img/스크린샷 2022-08-06 오후 3.59.25.png" style="width: 335px;">
+
+            <h3 class="t_tit2">정답 확인 버튼을 누를 때 발생한는 이벤트들을 설정한다.</h3>
+            <p class="t_desc">
+                addEventListener 를 이용해 이벤트 발생을 시켜보자.</i>
+            </p>
+
+            <br>
+            
+            <h3 class="t_desc2">forEach, addEventListener 사용</h3>
+            <div class="t_code">
+<pre><code  class="language-js">quizConfirm.forEach((btn, num) => {  // 버튼 4개가 있다는걸 알려주기위해서 forEach문을 통해 btn 개수를 알려주고 그 다음 클릭 이벤트를 실행
+    btn.addEventListener("click", ()=> {
+
+        //사용자 정답
+        const userWord = quizInput[num].value.toLowerCase().trim();
+
+        //사용자 정답 == 문제 정답
+        if(userWord == quizInfo[num].answerResult){
+            //정답
+            // alert("정답")
+            quizView[num].classList.add("like");
+            quizConfirm[num].style.display = "none";
+            quizResult[num].style.display = "block";
+            quizInput[num].style.display = "none";
+        } else {
+            //오답
+            // alert("오답")
+            quizView[num].classList.add("dislike");
+            quizConfirm[num].style.display = "none";
+            quizResult[num].style.display = "block";
+            quizInput[num].style.display = "none";
+        }
+    })
+});
+</code></pre>
+            </div>
+            <p class="t_box">
+                quizConfirm.forEach((btn, num) : btn, num의 모든 요소를 호출한다. <br>
+                btn.addEventListener("click", ()=> : 호출 하여 찾은 버튼들에게 클릭할 시 발생할 이벤트를 정한다. <br>
+                if(userWord == quizInfo[num].answerResult) : userWord와 quizInfo[num].answerResult 의 답이 같을 시 <br>
+                실행할 것을 정해준다. <br> <br>
+                답이 같을 시 <br>
+                quizView[num].classList.add("like") : quizView[num] 각각에 like 클래스를 적용 <br>
+                quizConfirm[num].style.display = "none" : quizConfirm[num] 각각을 화면에서 없앤다. <br>
+                quizResult[num].style.display = "block" : quizResult[num] 각각을 화면에 다시 나타나게 해준다. <br>
+                quizInput[num].style.display = "none" : quizInput[num] 각각을 화면에서 없앤다. <br> <br>
+                답이 다를 시 (else) <br>
+                quizView[num].classList.add("dislike") : quizView[num] 각각에 dislike 클래스를 적용 <br>
+                quizConfirm[num].style.display = "none" : quizConfirm[num] 각각을 화면에서 없앤다. <br>
+                quizResult[num].style.display = "block" : quizResult[num] 각각을 화면에 다시 나타나게 해준다. <br>
+                quizInput[num].style.display = "none" : quizInput[num] 각각을 화면에서 없앤다.
+            </p>
+
+            <br><br>
+
+            <p class="t_desc2">정답 시 결과</p>
+            <img src="/javascript/assets/img/화면-기록-2022-08-06-오후-4.57.42.gif" style="width: 335px;">
+            <br><br>
+            <p class="t_desc2">오답 시 결과</p>
+            <img src="/javascript/assets/img/화면-기록-2022-08-06-오후-4.57.06.gif" style="width: 335px;">
+
+                <hr />
+                <!-- 문단을 나누는 줄 -->
+
+                <h2 class="t_tit2">결과물</h2>
+                <div class="t_iframe" style="min-height: 1010px; padding-top: 0;">
+                    <iframe src="https://jeonboyeon.github.io/coding2/javascript/effect/quizEffect03.html">
+                    </iframe>
+                </div>
+                
+                <br>
+                <div class="t_link">
+                    <a href="https://github.com/jeonboyeon/coding2/blob/main/javascript/effect/quizEffect03.html"
+                        target="_blank">원본 사이트 코드 보러가기</a>
+                </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="/javascript/assets/js/highlight.min.js"></script>  
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

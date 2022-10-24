@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+            <div class="document">
+                <!-- 주 타이틀 -->
+                <h2 class="t_tit">JAVASCRIPT padStart( ) | padEnd( )</h2>
+                <p class="t_desc"> 자바스크립트 padStart( ) | padEnd( ) 메서드 알아보기</p>
+
+                <!-- 주 타이틀 설명 -->
+                <h2 class="t_tit2">padStart( ) | padEnd( ) 메서드란</h2>
+                <p class="t_desc">
+                    주어진 길이에 맞게 앞 / 뒤 문자열을 채우고, 새로운 문자열을 반환합니다.
+                </p>
+
+                <hr /> <br>
+
+                <!-- 서브 타이틀 -->
+                <h2 class="t_tit2">◾️ padStart( ) | padEnd( ) 사용법</h2>
+                <p class="t_desc2">
+                    📍 "문자열".padStart(길이) <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;"문자열".padStart(길이, 문자열)
+                </p>
+
+                <br>
+
+                <h3 class="t_tit3">✔️ 사용법 예시</h3>
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "456";
+const currentStr1 = str1.padStart(1); // 456
+</code></pre>
+                </div>
+
+                <hr>
+
+                <br>
+
+                <h3 class="t_tit3">✔️  padStart( ) | padEnd( ) 예제 (주석은 답입니다.)</h3>
+                <div class="t_code">
+<pre><code class="language-js">const currentStr1 = str1.padStart(1); // 456
+    
+const currentStr2 = str1.padStart(1, "0"); // 456
+const currentStr3 = str1.padStart(2, "0"); // 456
+const currentStr4 = str1.padStart(3, "0"); // 456 (길이 값이 3이기 때문에 여기까진 그대로 나온다.)
+const currentStr5 = str1.padStart(4, "0"); // 0456 (원래 문자열의 길이를 넘어가게 되면 맨 앞에 뒤 문자열 0으로 남은 길이를 채운다.)
+const currentStr6 = str1.padStart(5, "0"); // 00456
+const currentStr7 = str1.padStart(6, "0"); // 000456
+const currentStr8 = str1.padStart(6, "1"); // 111456
+const currentStr9 = str1.padStart(6, "12"); // 121456
+const currentStr10 = str1.padStart(6, "123"); // 123456
+const currentStr11 = str1.padStart(6, "1234"); // 123456
+const currentStr12 = str1.padStart(6, ""); //    456 (반환할 문자열을 쓰지 않으면 앞에는 공백으로 채워지게 된다.)
+            
+const currentStr13 = str1.padㄷEnd(1, "0"); // 456
+const currentStr14 = str1.padㄷEnd(2, "0"); // 456
+const currentStr15 = str1.padㄷEnd(3, "0"); // 456
+const currentStr16 = str1.padㄷEnd(4, "0"); // 4560 (기본 문자열 뒤에 0이 추가된다.)
+const currentStr17 = str1.padㄷEnd(5, "0"); // 45600
+const currentStr18 = str1.padㄷEnd(6, "0"); // 456000
+const currentStr19 = str1.padㄷEnd(6, "1"); // 456111
+const currentStr20 = str1.padㄷEnd(6, "12"); // 456121
+const currentStr21 = str1.padㄷEnd(6, "123"); // 456123
+const currentStr22 = str1.padㄷEnd(6, "1234"); // 456123
+const currentStr23 = str1.padㄷEnd(6, ""); // 456   (반환될 문자열을 쓰지 않으면 뒤에가 공백으로 채워진다.)
+</code></pre>
+                </div>
+            </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

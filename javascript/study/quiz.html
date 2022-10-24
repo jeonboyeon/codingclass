@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 퀴즈 문제 만들기</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">퀴즈 문제 만들기</h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc2">
+                자바스크립트를 이용하여 퀴즈 문제를 만들어보자.
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">1번 문제 ( 정답 확인 유형 )</h3>
+            <p class="t_box">자바스크립트 코드</p>
+            <div class="t_code">
+<pre><code  class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");    // 퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number")    // 퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask")    // 퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm")    // 정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result")    // 정답 결과
+const quizDog = document.querySelector(".quiz__view .dog")    // 강아지
+
+//문제 정보 > 데이터 저장
+const answerType = "웹디자인기능사";
+const answerNum = 1;
+const answerAsk = "인접하는 두색의 경계 부분에 생상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+const answerResult = "연변대비";
+
+//문제 출력
+quizType.innerText = answerType;
+quizNumber.innerText = answerNum + ".";
+quizAsk.innerText = answerAsk;
+quizResult.innerText = answerResult;
+
+//정답 확인
+//정답 버튼을 클릭하면 확인버튼을 안보이게 작업하고 숨겨진 정답을 보이게 작업
+//정답 확인을 하면 강아지가 웃는 애니메이션을 취함 > 클래스 like 추가
+quizConfirm.addEventListener("click", function () {
+    quizConfirm.style.display = "none"; //자바스크립트식 스타일 주는 방법
+    quizResult.style.display = "block"; //정답확인을 클릭했을 때 숨어있던 정답을 나타나게 해준다.
+    quizDog.classList.add("like"); // 정답확인을 클릭했을 때 강아지가 웃게 만들어준다.
+});
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">quizConfirm.addEventListener("click", function () {}
+</code></pre>
+            </div>
+            <p class="t_box">
+                정답확인 버튼을 클릭했을 때 이벤트를 실행 하겠다 라는 의미
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">quizConfirm.style.display = "none";
+</code></pre>
+            </div>
+            <p class="t_box">자바스크립트로 스타일을 주는 방법 <br>
+                정답확인 버튼을 클릭했을 때 정답확인 버튼을 숨긴다.
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">quizResult.style.display = "block";
+</code></pre>
+            </div>
+            <p class="t_box">
+                정답확인 버튼을 클릭했을 때 정답을 나타내준다.
+            </p>
+            <h2 class="t_box">결과물</h2>
+            <div class="t_iframe" style="min-height: 1010px; padding-top: 0;">
+                <iframe src="https://jeonboyeon.github.io/coding2/javascript/effect/quizEffect01.html">
+                </iframe>
+            </div>
+            
+            <br>
+
+
+
+            <p class="t_desc2">
+                퀴즈 박스의 제목, 문제 번호, 문제 내용, 답안 등 모든걸 스크립트로 출력을 해내고 <br>
+                js 로 정답확인 버튼을 클릭할 때 숨어있던 정답을 나오게 하면서 정답확인 박스는 안보이게 만들어준다.
+            </p>
+            <br>
+            <div class="t_link">
+                <a href="https://github.com/jeonboyeon/coding2/blob/main/javascript/effect/quizEffect01.html"
+                    target="_blank">원본 사이트 코드 보러가기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

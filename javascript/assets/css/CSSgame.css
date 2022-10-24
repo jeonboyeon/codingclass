@@ -1,0 +1,93 @@
+.CSSgame__wrap {
+    position: absolute;
+    top: 80px;
+    left: 150px;
+    width: 80%;
+    height: 600px;
+    background-color: rgb(48, 37, 86);
+    border: 10px solid rgb(30, 20, 69);
+    overflow: auto;
+    /* display: none; */
+}
+.CSSgame__wrap > .CSSgame__inner {
+    text-align: center;
+}
+
+.search__wrap > h1 {
+    font-size: 18px;
+    text-align: left;
+    background-color: rgb(30, 20, 69);
+    display: block;
+    color: #fff;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.search__wrap > .desc {
+    font-size: 15px;
+    color: rgb(148, 139, 185);
+}
+
+.search__wrap > .time > span {
+    font-size: 25px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.search__box > input {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 350px;
+    height: 50px;
+    padding: 5px 20px;
+    border: 5px ridge #fff;
+    margin-bottom: 20px;
+}
+
+.search__box > .start {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    width: 300px;
+    padding: 5px 10px;
+    border: 5px solid #dcdcdc;
+    box-shadow: 5px 5px rgb(22, 15, 52);
+    background-color: #fff;
+}
+
+.search__info {}
+.search__info > div {
+    margin-top: 80px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.search__info > div + div {
+    margin-top: 0;
+}
+
+.search__missAnswers > span {
+    color: #fff;
+    padding: 3px 10px;
+    display: inline-block;
+    border: 1px solid #aaa;
+    margin: 5px;
+}
+.search__missAnswers > span:hover {
+    background-color: #aaa; 
+}

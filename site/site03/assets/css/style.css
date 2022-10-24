@@ -1,0 +1,254 @@
+/* 폰트 */
+@import url("https://webfontworld.github.io/gmarket/GmarketSans.css");
+
+/* 컨테이너 */
+.container {
+    margin: 0 auto;
+    width: 1200px;
+    padding: 70px;
+}
+
+/* 랩 */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 사이드 */
+#aside {
+    width: 25%;
+    box-sizing: border-box;
+}
+.aside_wrap {
+}
+.aside_wrap .aside_inner {
+}
+.aside_wrap .aside_inner .logo {
+    margin-bottom: 60px;
+}
+.aside_wrap .aside_inner .logo img {
+    width: 50%;
+}
+
+/* 사이드 메뉴 */
+.aside_menu {
+}
+.aside_menu h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.aside_menu h2.active {
+    color: #0065e1;
+}
+.aside_menu ul {
+    margin-bottom: 30px;
+}
+.aside_menu ul li {
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.aside_menu ul li a {
+    font-size: 16px;
+}
+
+/* 사이트 푸터 */
+.aside_footer {
+}
+.aside_footer ul {
+}
+.aside_footer ul li {
+}
+.aside_footer ul a {
+}
+
+/* 메인 */
+#main {
+    box-sizing: border-box;
+    width: 75%;
+    margin-bottom: 20px;
+}
+.slider_wrap {
+    overflow: hidden;
+}
+.slider_wrap .slider_inner {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+}
+.slider_wrap .slider_inner .slider {
+    width: 900px;
+}
+.slider_wrap .slider_inner .slider img {
+    display: inline-block;
+    width: 900px;
+}
+
+/* 서비스 */
+.service_wrap {
+}
+.service_wrap .service_inner {
+}
+.service_tap {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.service_tap .service01 {
+    display: inline-block;
+}
+.service_tap .service01 h2 a {
+    cursor: pointer;
+    padding: 0 10px;
+    font-weight: 500;
+    color: #888;
+}
+.service_tap span {
+    border-right: 3px solid;
+}
+.service_tap .service01.active h2 a {
+    color: #000;
+}
+.service_tap .service02 {
+    display: inline-block;
+}
+.service_tap .service02 h2 a {
+cursor: pointer;
+    padding: 0 10px;
+    font-weight: 500;
+    color: #888;
+}
+.service_tap .service02.active h2 a {
+    color: #000;
+}
+
+
+/* 카드 */
+.card_box1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card_box1 .card {
+    width: 20%;
+}
+.card_box1 .card figure {
+    width: 70%;
+    margin: 0 auto;
+}
+.card_box1 .card figure img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.card_box1 .card p {
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.card_box2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: none;
+}
+.card_box2 .card {
+    width: 20%;
+}
+.card_box2 .card figure {
+    width: 70%;
+    margin: 0 auto;
+}
+.card_box2 .card figure img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.card_box2 .card p {
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+/* 공지사항 */
+.notic_box {
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+.notic_box .notic_inner {
+    display: flex;
+    justify-content: space-between;
+}
+.notic_box .notic_inner .nootic {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #999;
+    padding: 20px;
+    position: relative;
+    width: 31%;
+}
+.notic_box .notic_inner .nootic h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.notic_box .notic_inner .nootic figure {
+    margin: 0 auto;
+    width: 60%;
+}
+.notic_box .notic_inner .nootic figure img {
+    margin-bottom: 30px;
+    width: 100%;
+    border-radius: 50%;
+}
+.notic_box .notic_inner .nootic ul {
+}
+.notic_box .notic_inner .nootic ul li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notic_box .notic_inner .nootic ul li a {
+}
+
+.notic_box .notic_inner .nootic .plus {
+    position: absolute;
+    width: 15%;
+    right: 10px;
+    top: 10px;
+}
+
+/* 푸터 */
+#footer {
+    padding: 10px;
+    width: 100%;
+    height: 130px;
+    background-color: #edf2f8;
+}
+.footer_inner {
+    display: flex;
+    align-items: center;
+
+}
+.footer_inner .logo2 {
+}
+.footer_inner .logo2 img {
+    height: 130px;
+    margin-right: 20px;
+}
+.footer_txt p {
+    line-height: 2;
+    font-size: 15px;
+    color: #555;
+    margin-right: 220px;
+}
+
+.footer_sns {
+    display: flex;
+}
+.footer_sns a {}
+.footer_sns a img {
+    height: 70px;
+}

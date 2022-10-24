@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dracula.css" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="variable.html">지역변수 / 전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="quiz.html">웹디자인기능사 시험 퀴즈</a></li>
+                <li><a href="web.html">웹 표준</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">배열 메서드 | join( ), push( ), pop( )</h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+                이번 글은 배열 메서드의 join( ), push( ), pop( ) 에 대한 포스터 입니다.
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <br>
+
+            <h3 class="t_tit">배열과 메서드</h3>
+            <p class="t_tit3">
+                배열은 다양한 메서드를 제공하는데 오늘은 다양한 메서드 중 <br>
+                요소 추가 | 제거 메서드에 대해서 알아볼 것입니다.
+            </p>
+            <h2 class="t_tit2">
+                배열 메서드 | join( )
+            </h2>
+            <p class="t_desc">
+                join( ) 메서드는 <i>배열의 모든 요소를 연결하여 하나의 문자열로 만든 후, 숫자로 반환한다.</i>
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">const arrNum = [100, 200, 300, 400, 500];
+
+const text1 = arrNum.join('');
+const text2 = arrNum.join(' ');
+const text3 = arrNum.join('★');
+const text4 = arrNum.join('-');
+</code></pre>
+            </div>
+
+            <p class="t_desc2">
+                위 const arrNum = [100, 200, 300, 400, 500]; 에 <br>
+                text1, text2, text3, text4에 join()메서드를 넣어 출력시키게 되면 <br><br>
+                arrNum.join('') = 100200300400500 <br>
+                arrNum.join(' ') = 100 200 300 400 500 <br>
+                arrNum.join('★') = 100★200★300★400★500 <br>
+                arrNum.join('-') = 100-200-300-400-500 <br>
+                라는 답이 출력되게 된다. <br><br>
+                위에 설명한대로 join()메서드는 배열 모든 요소를 연결하여 하나의 문자열로 만들기 때문에 <br>
+                <i>join()괄호 안에 넣은 것들이 배열 사이사이에 들어가 하나의 문자열로 되는 것</i> 이다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">배열 메서드 | push( )</h2>
+            <p class="t_desc">
+                push( ) 메서드는 배열 끝에 하나 이상의 요소를 추가 시키고, 배열의 새로운 길이를 반환한다.
+            </p>
+
+            <div class="t_code">
+<pre><code class="language-js">const arrNum = [100, 200, 300, 400, 500];
+    
+const arrPush = arrNum.push(600);
+</code></pre>
+            </div>
+
+            <p class="t_desc2">
+                위 const arrNum = [100, 200, 300, 400, 500]; 에 <br>
+                arrPush = arrNum.push(600); 으로 arrPush 를 출력하게 되면 어떻게 될까? <br><br>
+                위에 설명을 생각하며 답을 도출하면 100 200 300 400 500 '600' 마지막에 600이 추가되어 답이 나올 것 같지만, <br>
+                arrPush 값의 답은 6이 나오게된다. <br>
+                즉 push() 메서드를 쓴 상수값을 출력 시키게 되면 <i>arrNum 에 600까지 추가시켜 배열의 총 숫자를 구하게 되고</i>, <br>
+                100 200 300 400 500 600 을 출력하고 싶다면 <i>arrNum 을 써서 출력을 시켜줘야 하는 것</i> 이다. 
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">배열 메서드 | pop( )</h2>
+            <p class="t_desc">
+                pop( ) 메서드는 배열 마지막 요소를 제거하고, 그 요소를 반환한다.
+            </p>
+
+            <div class="t_code">
+<pre><code class="language-js">const arrNum = [100, 200, 300, 400, 500];
+    
+const arrPush = arrNum.pop();
+</code></pre>
+            </div>
+
+            <p class="t_desc2">
+                위 설명 처럼 pop( ) 메서드는 배열 마지막 요소를 제거 후, 그 요소를 반환해준다. <br><br>
+                그 설명을 이해하고 위 arrPush 의 값을 출력하게 되면 <br>
+                arrNum 배열의 맨 마지막 요소인 500을 제거 후, 500을 반환하여 닶은 500이 출력되게 된다. <br>
+                그렇게 arrNum 의 값도 같이 출력을 하게 된다면 500이 빠진 100 200 300 400 만 출력이 되는 것이다.
+            </p>
+
+            <hr>
+            <br>
+            <h3 class="t_tit3">
+                이렇게 오늘은 <br>
+                배열의 모든 요소를 연결하여 하나의 문자열로 만든 후, 숫자로 반환 하는 join( ) 메서드 <br>
+                배열 끝에 하나 이상의 요소를 추가 시키고, 배열의 새로운 길이를 반환 하는 push( ) 메서드 <br>
+                배열 마지막 요소를 제거하고, 그 요소를 반환 하는 pop( ) 메서드에 대해서 공부해 보았습니다.
+
+
+            </h3>
+
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

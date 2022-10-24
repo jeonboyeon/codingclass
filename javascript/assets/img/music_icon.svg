@@ -1,0 +1,43 @@
+<svg width="317" height="25" viewBox="0 0 317 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 20.8333H8.39999V4.16667H10.5V6.25001H12.6V9.375H14.7V11.4583H16.8V13.5417H14.7V15.625H12.6V18.75H10.5V20.8333Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35.7 4.16667H30.45V20.8333H35.7V4.16667ZM45.15 4.16667H39.9V20.8333H45.15V4.16667Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M56.7 4.16667H58.8V20.8333H56.7V4.16667ZM69.3 4.16667H67.2V6.25001H65.1V9.375H63V11.4583H60.9V13.5417H63V16.6667H65.1V18.75H67.2V20.8333H69.3V4.16667Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M94.5 20.8333H92.4V4.16667H94.5V20.8333ZM81.9 20.8333H84V18.75H86.1V15.625H88.2V13.5417H90.3V11.4583H88.2V8.33334H86.1V6.25001H84V4.16667H81.9V20.8333Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144.9 5.20833H142.8V7.29166H144.9V9.37499H138.6V11.4583H136.5V17.7083H128.1V19.7917H136.5V17.7083H138.6V11.4583H144.9V13.5417H142.8V15.625H144.9V13.5417H147V11.4583H149.1V9.37499H147V7.29166H144.9V5.20833ZM128.1 9.37499H134.4V11.4583H128.1V9.37499ZM149.1 17.7083H140.7V19.7917H149.1V17.7083Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M111.3 13.5417H117.6V9.37499V5.20833H119.7H123.9V9.37499H119.7V13.5417V15.625V17.7083V19.7917H111.3V17.7083V15.625V13.5417ZM113.4 15.625V17.7083H117.6V15.625H113.4ZM102.9 17.7083H109.2V19.7917H102.9V17.7083ZM109.2 13.5417H102.9V15.625H109.2V13.5417ZM102.9 9.37499H115.5V11.4583H102.9V9.37499ZM115.5 5.20833H102.9V7.29166H115.5V5.20833Z" fill="black"/>
+<path d="M172.725 3.64583H155.4V20.8333H172.725V3.64583Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M193.2 2.08333H191.1V4.16666H193.2V6.25H180.6V8.33333H178.5V13.5417H180.6V8.33333H193.2V10.4167H191.1V12.5H193.2V10.4167H195.3V8.33333H197.4V6.25H195.3V4.16666H193.2V2.08333ZM182.7 20.8333H184.8V22.9167H186.9V20.8333H184.8V18.75H197.4V16.6667H199.5V11.4583H197.4V16.6667H184.8V14.5833H186.9V12.5H184.8V14.5833H182.7V16.6667H180.6V18.75H182.7V20.8333Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M185.325 1.5625H180.075V2.60417H179.025V3.64583H177.975V8.85417H179.025V9.89583H180.075V10.9375H185.325V9.89583H186.375V8.85417H187.425V3.64583H186.375V2.60417H185.325V1.5625ZM185.325 2.60417V3.64583H186.375V8.85417H185.325V9.89583H180.075V8.85417H179.025V3.64583H180.075V2.60417H185.325Z" fill="white"/>
+<path d="M186.375 3.64583H179.025V9.37499H186.375V3.64583Z" fill="black"/>
+<path d="M185.325 2.60417H180.075V7.81251H185.325V2.60417Z" fill="black"/>
+<path d="M185.325 4.16667H180.075V9.89584H185.325V4.16667Z" fill="black"/>
+<path d="M183.225 3.125H182.175V4.16667H183.225V3.125Z" fill="white"/>
+<path d="M183.225 4.16667H182.175V5.20834H183.225V4.16667Z" fill="white"/>
+<path d="M183.225 4.6875H182.175V5.72917H183.225V4.6875Z" fill="white"/>
+<path d="M183.225 5.72917H182.175V6.77084H183.225V5.72917Z" fill="white"/>
+<path d="M183.225 6.77083H182.175V7.81249H183.225V6.77083Z" fill="white"/>
+<path d="M183.225 7.29167H182.175V8.33334H183.225V7.29167Z" fill="white"/>
+<path d="M183.225 8.33333H182.175V9.37499H183.225V8.33333Z" fill="white"/>
+<path d="M179.55 9.375H179.025V8.85417H179.55V9.375Z" fill="white"/>
+<path d="M186.375 9.375H185.85V8.85417H186.375V9.375Z" fill="white"/>
+<rect x="210" y="3" width="2" height="2" fill="black"/>
+<rect x="212" y="5" width="2" height="2" fill="black"/>
+<rect x="214" y="7" width="2" height="2" fill="black"/>
+<rect x="216" y="9" width="2" height="2" fill="black"/>
+<rect x="218" y="11" width="2" height="2" fill="black"/>
+<rect x="220" y="13" width="2" height="2" fill="black"/>
+<rect x="222" y="15" width="2" height="2" fill="black"/>
+<rect x="224" y="17" width="2" height="2" fill="black"/>
+<rect x="226" y="19" width="2" height="2" fill="black"/>
+<rect x="228" y="21" width="2" height="2" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 230 3)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 228 5)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 226 7)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 224 9)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 222 11)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 220 13)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 218 15)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 216 17)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 214 19)" fill="black"/>
+<rect width="2" height="2" transform="matrix(-1 0 0 1 212 21)" fill="black"/>
+</svg>

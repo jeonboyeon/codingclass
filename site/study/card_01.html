@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사이트 | 카드 유형 첫 번째</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css" />
+</head>
+
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">
+                사이트 유형 <br>
+                <i class="t_tit">카드 유형 첫 번째</i>
+            </h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+                <!-- 자바스크립트를 다루기 위해서는 기초적인 특징과 기본 문법이 있습니다.
+          가장 기본이기 때문에 이 부분을 숙지하고 자바스크립트를
+          <i>공부</i>하세요! -->
+                사이트의 수많은 유형 중 카드 유형을 만들어보자.
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">카드형 디자인 레이아웃</h3>
+            <p class="t_desc2">
+                이미지와 텍스트를 작은 사각형 안에 병합하여 <br>
+                좀 더 쉽고 간단하게 스토리를 전달할 수 있다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit">실전 | 카드 유형 디자인 만들기</h3>
+            <h4 class="t_tit2">자신이 원하는 디자인을 디자인 툴로 만들어보기</h4>
+            <p class="t_desc">
+                아래는 수업을 받으며 피그마로 만들어본 카드유형 디자인 레이이아웃이다. <br>
+                사이트 제목과 사이트 설명, 카드유형 디자인 3개의 레이아웃으로 잡았다.
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F6HyvSs7mzSseCG19fNscA0%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D8%253A95"
+                    allowfullscreen></iframe>
+            </div>
+            <h4 class="t_tit2">section을 이용해 전체 틀 잡기</h4>
+            <p class="t_desc">
+                제목, 설명, 카드 디자인이 들어갈 전체 틀을 만들어준다.
+            </p>
+            <br>
+            <p class="t_desc2">
+                html 문서
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">&lt;section id="cardType" class="card__wrap nexon section"&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                css 문서
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">/*  fonts   */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+.nexon {
+    /*  개별적으로 폰트 설정해서 클래스로 적용   */
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+</code></pre>
+            </div>
+
+<!-- 나중에 정리 -->
+            <h4 class="t_tit2">코드</h4>
+            <br>
+            <p class="t_desc2">
+                html 문서
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">&lt;!DOCTYPE html>
+    &lt;html lang="ko">
+    
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+        &lt;title>카드 유형 | 첫 번째&lt;/title>
+        &lt;style>
+            /*  fonts   */
+            @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    
+            .nexon {
+                /*  개별적으로 폰트 설정해서 클래스로 적용   */
+                font-family: 'NexonLv1Gothic';
+                font-weight: 400;
+            }
+    
+            /*   reset   */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+    
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-weight: normal;
+            }
+    
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+    
+            img {
+                width: 100%;
+            }
+    
+            /*   common   */
+            .container {
+                width: 1160px;
+                padding: 0 20px;
+                margin: 0 auto;
+            }
+    
+            .section {
+                padding: 120px 0;
+            }
+    
+            .section>h2 {
+                font-size: 50px;
+                line-height: 1;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+    
+            .section>p {
+                font-size: 22px;
+                font-weight: 300;
+                color: #666;
+                text-align: center;
+                margin-bottom: 70px;
+            }
+    
+            /*   cardType   */
+            .card__inner {
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .card {
+                width: 32%;
+                height: 500px;
+                background-color: #f5f5f5;
+            }
+    
+            .card__body {
+                padding: 24px;
+            }
+    
+            .card__body .tit {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+    
+            .card__body .desc {
+                font-size: 18px;
+                line-height: 1.4;
+                color: #666;
+                margin-bottom: 20px;
+                font-weight: 300;
+            }
+        &lt;/style>
+    &lt;/head>
+    
+    &lt;body>
+        &lt;section id="cardType" class="card__wrap nexon section">
+            &lt;h2>이미지 무료 다운로드 IT.D&lt;/h2>
+            &lt;p>풍경, 일러스트, 배경화면, ico 등 여러 이미지 다운로드가 가능한 사이트에 오신걸 환영합니다.&lt;/p>
+            &lt;div class="card__inner container">
+                &lt;article class="card">
+                    &lt;figure class="card__header">
+                        &lt;img src="/site/cardType/img/card_bg01.jpg" alt="풍경 사진">
+                    &lt;/figure>
+                    &lt;div class="card__body">
+                        &lt;h3 class="tit">풍경 사진&lt;/h3>
+                        &lt;p class="desc">바다, 하늘, 들판 등 사람들이 찍은 여러가지의 풍경, 느낌이 담겨진 이미지. 서로의 사진을 공유하며 다운로드하고 즐겨볼 수 있다.&lt;/p>
+                        &lt;a class="btn" href="/">이미지 더보기&lt;/a>
+                    &lt;/div>
+                &lt;/article>
+                &lt;article class="card">
+                    &lt;figure class="card__header">
+                        &lt;img src="/site/cardType/img/card_bg02.jpg" alt="풍경 사진">
+                    &lt;/figure>
+                    &lt;div class="card__body">
+                        &lt;h3 class="tit">일러스트 사진&lt;/h3>
+                        &lt;p class="desc">애니메이션 캐릭터, 만화 캐릭터 등 일러스트, 이미지를 담아놨다. 귀엽고 아기자기한 일러스트들을 다운받고 눈으로 즐겨보는 시간&lt;/p>
+                        &lt;a class="btn" href="/">이미지 더보기&lt;/a>
+                    &lt;/div>
+                &lt;/article>
+    
+                &lt;article class="card">
+                    &lt;figure class="card__header">
+                        &lt;img src="/site/cardType/img/card_bg03.jpg" alt="풍경 사진">
+                    &lt;/figure>
+                    &lt;div class="card__body">
+                        &lt;h3 class="tit">배경화면 사진&lt;/h3>
+                        &lt;p class="desc">직접 그리고 만든 배경화면을 자신의 휴대폰, 컴퓨터, 노트북에 다운을 받아 적용이 가능하다. 아름답고 신비로운 이미지 다운 받기
+                        &lt;/p>
+                        &lt;a class="btn" href="/">이미지 더보기&lt;/a>
+                    &lt;/div>
+                &lt;/article>
+            &lt;/div>
+        &lt;/section>
+    &lt;/body>
+    
+    &lt;/html>
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                css 문서
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">/*  fonts   */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+    .nexon {
+        /*  개별적으로 폰트 설정해서 클래스로 적용   */
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+
+    /*   reset   */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    /*   common   */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    .section>h2 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section>p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    /*   cardType   */
+    .card__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 32%;
+        height: 500px;
+        background-color: #f5f5f5;
+    }
+
+    .card__header {
+        padding: 26px 26px 20px 26px;
+    }
+
+    .card__body {
+        padding: 24px;
+    }
+
+    .card__body .tit {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .card__body .desc {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #666;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+</code></pre>
+            </div>
+            <div class="t_link">
+                <a href="https://github.com/jeonboyeon/coding2/blob/main/site/cardTyp01.html"
+                    target="_blank">원본 코드 보러가기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://jeonboyeon.github.io/coding2/site/cardType01.html" target="_blank">원본 사이트
+                    보러가기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="../js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

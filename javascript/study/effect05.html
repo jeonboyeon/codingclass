@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 데이터 타입</title>
+
+    <link rel="stylesheet" href="/javascript/assets/css/style.css" />
+    <link rel="stylesheet" href="/javascript/assets/css/dracula.css" />
+    <!-- <link rel="stylesheet" href="/javascript/assets/css/quiz02.css"> -->
+</head>
+
+<body>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <!-- 주 타이틀 -->
+            <h2 class="t_tit">
+                <i class="t_tit">이펙트 응용편</i> <br>
+                퀴즈 만들기 다섯 번째
+            </h2>
+
+            <!-- 주 타이틀 설명 -->
+            <p class="t_desc">
+                객관식 선택형 문제 만들기
+            </p>
+
+            <hr />
+
+            <!-- 서브 타이틀 -->
+            <h3 class="t_tit2">새로운 선택자를 추가 시켜준다.</h3>
+            <p class="t_desc">
+
+            </p>
+
+            <div class="t_code">
+                <pre><code  class="language-js">//선택자
+    const quizType = document.querySelector(".quiz__type");                 // 퀴즈 종류
+    const quizNumber = document.querySelector(".quiz__question .number");   // 퀴즈 번호
+    const quizAsk = document.querySelector(".quiz__question .ask");         // 퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");   // 정답 확인 버튼
+    const quizResult = document.querySelector(".quiz__answer .result");     // 정답 결과
+    const quizView = document.querySelector(".quiz__view");                 // 강아지
+
+    //추가 선택자
+    const quiz_selects = document.querySelector("quiz_selects");            // 객관식 보기
+    const quizChoice = document.querySelectorAll(".choice");                // 객관식 선택
+    const quizSelect = document.querySelectorAll(".select");
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">문제 내용을 한번에 넣어줄 상수값을 선언 후 배열안에 객체를 만들어준다.
+            </h3>
+            <p class="t_desc">
+                1, 2, 3 번 문제와 달리 ansewerChoice(문제 선택 항목) 에 또 다른 배열을 만들어 객관식을 만들어준다.</i>
+            </p>
+
+            <div class="t_code">
+                <pre><code  class="language-js">const quizInfo = [{
+    ansewerType: "웹디자인기능사 2022년 01회",
+    ansewerNum: "1",
+    ansewerAsk: "색의 3속성 중 사람의 눈이 가장 예민하고 강하게 반응하는 대비는?",
+    ansewerChoice: ["명도대비", "색상대비", "보색대비", "채도대비"],
+    ansewerResult: "1",
+    ansewerEx: "해설 없음"
+</code></pre>
+            </div>
+            <p class="t_box">
+                answerType : 퀴즈 종류 <br>
+                answerNum : 퀴즈 문제 번호 <br>
+                answerAsk : 퀴즈 질문 <br>
+                ansewerChoice : 객관식 항목 <br>
+                answerResult : 퀴즈 정답 <br>
+                ansewerEx : 퀴즈 해설
+            </p>
+
+            <h3 class="t_tit2">문제를 출력해준다.</h3>
+
+            <br>
+
+            <h3 class="t_desc2">일반 방식</h3>
+            <div class="t_code">
+                <pre><code  class="language-js">quizType.textContent = quizInfo[0].ansewerType;
+quizNumber.textContent = quizInfo[0].ansewerNum;
+quizAsk.textContent = quizInfo[0].ansewerAsk;
+quizResult.textContent = quizInfo[0].ansewerEx;
+</code></pre>
+            </div>
+
+            <br>
+
+            <h3 class="t_tit2">for문을 사용해 객관식 보기 항목을 출력해준다.</h3>
+
+            <br>
+
+            <div class="t_code">
+                <pre><code  class="language-js">for (i=0; i&lt;4; i++){
+    quizChoice[i].textContent = quizInfo[0].ansewerChoice[i];
+</code></pre>
+            </div>
+
+            <br>
+
+            <h3 class="t_tit2">정답이 틀릴 때가 아니면 해설이 보일 필요가 없기 때문에 해설을 숨겨준다.</h3>
+            <div class="t_code">
+<pre><code  class="language-js">quizResult.style.display = "none";
+</code></pre>
+            </div>
+
+            <br>
+
+            <h3 class="t_tit2">여태 해오던 것들을 묶어서 함수(function)로 한번에 실행 해준다.</h3>
+            <div class="t_code">
+<pre><code  class="language-js">function updateQuiz() { // 문제 출력과 보기 출력을 한번에 묶어서 실행 시켜주기위한 함수 실행문
+    //문제 출력
+    quizType.textContent = quizInfo[0].ansewerType;
+    quizNumber.textContent = quizInfo[0].ansewerNum;
+    quizAsk.textContent = quizInfo[0].ansewerAsk;
+    quizResult.textContent = quizInfo[0].ansewerEx;
+
+    //보기 출력
+     for (i=0; i&lt;4; i++){
+         quizChoice[i].textContent = quizInfo[0].ansewerChoice[i];
+     }
+    });
+
+    //해설 숨기기
+    quizResult.style.display = "none";
+}
+updateQuiz(); // 함수 실행문 필수!
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">정답 확인 버튼을 눌렀을 때 발생할 이벤트를 설정해준다.</h3>
+            <div class="t_code">
+<pre><code  class="language-js">//정답 확인
+    function ansewerQuiz() {
+        //사용자가 선택한 정답과 문제 정답이 일치한지 일치하지 않은지
+        //사용자가 클릭한 Input 박스를 가져와야한다. --> 사용자가 클릭하면 checked 속성이 생긴다.
+
+        for (let i = 0; i < quizSelect.length; i++) {
+            if (quizSelect[i].checked == true) { //문제 보기에 체크가 되어있는 상태
+                //체크되어있는 번호와 문제 번호가 일치한지 확인 (if)
+                if (quizSelect[i].value == quizInfo[0].ansewerResult) {
+                    // alert("정답")
+                    quizView.classList.add("like");
+                } else {
+                    // alert("오답")
+                    quizView.classList.add("dislike");
+                    quizResult.style.display = "block";
+                    quizConfirm.style.display = "none";
+                }
+            }
+        }
+    }
+
+    //정답 클릭
+    quizConfirm.addEventListener("click", ansewerQuiz);
+</code></pre>
+            </div>
+                
+            </p>
+
+            <hr />
+            <!-- 문단을 나누는 줄 -->
+
+            <h2 class="t_tit2">결과물</h2>
+            <div class="t_iframe" style="min-height: 1010px; padding-top: 0;">
+                <iframe src="https://jeonboyeon.github.io/coding2/javascript/effect/quizEffect04.html">
+                </iframe>
+            </div>
+
+            <br>
+            <div class="t_link">
+                <a href="https://github.com/jeonboyeon/coding2/blob/main/javascript/effect/quizEffect04.html"
+                    target="_blank">원본 사이트 코드 보러가기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main and -->
+    <footer id="footer">
+        <a href="mailto:wjsqhdus971007@gmail.com">wjsqhdus971007@gmail.com</a>
+    </footer>
+    <!-- //footer and -->
+    <script src="/javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

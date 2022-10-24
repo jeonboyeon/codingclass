@@ -1,0 +1,483 @@
+@font-face {
+    font-family: 'HBIOS-SYS';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 18px;
+    background: url('../img/cursor.cluster.png') no-repeat;
+    z-index: 555;
+}
+
+/* * {
+    cursor: url('../img/cursor.cluster.png'), auto;
+} */
+
+/* 여백 초기화 */
+* {
+    /* cursor: none; */
+    margin: 0;
+    padding: 0;
+    font-family: 'HBIOS-SYS';
+}
+/* a 태그 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #444;
+}
+/* 목록 초기화 */
+li {
+    list-style: none;
+}
+/* 제목 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+body {
+    overflow: hidden;
+}
+
+#header {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(52, 31, 102);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+#header h1 {
+    font-size: 20px;
+    color: #fff;
+}
+#header .time {
+    color: #fff;
+}
+
+#footer {
+    box-sizing: border-box;
+    text-align: center;
+    position: fixed;
+    padding: 5px 10px;
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(52, 31, 102);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.icon {
+    cursor: pointer;
+    /* user-select: none; */
+    /* pointer-events: none; */
+}
+
+.icon1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 50px;
+}
+.icon1 img {
+    width: 100%;
+}
+
+.icon1 span {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+.icon1 {
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    width: 50px;
+}
+/* //1번 아이콘 */
+.icon2 {
+    position: absolute;
+    left: 50px;
+    top: 200px;
+    width: 50px;
+}
+.icon2 img {
+    width: 100%;
+}
+.icon2 img {
+    width: 100%;
+}
+
+.icon2 span {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+/* //2번 아이콘 */
+
+.icon3 {
+    position: absolute;
+    left: 50px;
+    top: 300px;
+    width: 50px;
+}
+.icon3 img {
+    width: 100%;
+}
+.icon3 img {
+    width: 100%;
+}
+
+.icon3 span {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+/* //3번 아이콘 */
+
+.icon4 {
+    position: absolute;
+    left: 50px;
+    top: 400px;
+    width: 50px;
+}
+.icon4 img {
+    width: 100%;
+}
+.icon4 img {
+    width: 100%;
+}
+
+.icon4 span {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+/* //3번 아이콘 */
+#footer {
+}
+#footer .agent {
+}
+/* 윈도우 푸터 */
+.window #footer {
+}
+/* 맥 푸터 */
+.macintosh #footer {
+}
+
+/* 모달 */
+/* modal__wrap */
+.modal__wrap {
+}
+
+.modal__btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 30;
+}
+
+.modal__btn .btn__txt {
+    margin-left: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #dcdcdc;
+    background-color: rgba(34, 34, 34, 0.633);
+    border: 1px solid #111;
+    border-radius: 5px;
+    box-shadow: 3px 3px #999;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.modal__btn .btn__txt:hover {
+    background-color: #dcdcdca9;
+    color: #333;
+    box-shadow: 3px 3px #444;
+}
+
+.modal__close {
+    cursor: pointer;
+    background-color: #777;
+    padding: 10px 10px 7px 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    /* visibility: hidden; */
+}
+
+.modal__close:hover {
+    background-color: #222;
+    color: #fff;
+    box-shadow: 2px 2px 20px #111;
+}
+
+.modal__close.show {
+    visibility: visible;
+
+}
+
+.modal__cont {
+    /* z-index: 6; */
+    display: flex;
+    font-size: 15px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    /* transform: scale(0); */
+    /* visibility: hidden; */
+}
+
+.modal__box {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+    /* transform: scale(0); */
+}
+
+.modal__box .title {
+    padding-inline: 1.5rem;
+    background-color: hsl(0 0% 13%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 60px;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+}
+
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: hsl(41 99% 59%);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 30px;
+}
+
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(129 67% 47%);
+    border-radius: 50%;
+}
+
+.modal__box .title .puls {
+    cursor: pointer;
+    margin-left: 15px;
+    background-color: hsl(0 0% 24%);
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(3 100% 67%);
+    border-radius: 50%;
+}
+
+.modal__box .title .tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 40px;
+}
+
+.modal__box .title .tabs > div.active {
+    background-color: rgb(80, 80, 80);
+}
+
+.modal__box .title .tabs > div {
+    color: #ccc;
+    background-color: hsl(0 0% 20%);
+    padding: 0.35rem 0.8rem;
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.modal__box .title .tabs > div em {
+    font-style: normal;
+}
+
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.25rem;
+}
+
+.modal__box .title .tabs > div .close {
+    margin-left: 3rem;
+}
+
+.modal__box .title .tabs > div .close svg {
+}
+
+.modal__box .cont {
+    background-color: #2c2c2c;
+    height: 550px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    overflow-y: auto;
+}
+
+.modal__box .cont > div {
+    display: none;
+}
+
+.modal__box .cont > div.active {
+    display: block;
+    height: 100%;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+
+/* 모달 애니메이션 */
+.modal__cont.show {
+    /* visibility: visible; */
+    animation: forldOut forwards 0.7s ease;
+}
+
+.modal__cont.show .modal__box {
+    transform: scale(0);
+    animation: zoomOut 0.4s 0.5s ease forwards;
+}
+
+.modal__cont.show .modal__close {
+    animation: ClosOut 0.3s 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes forldOut {
+    0% {
+        transform: scaleX(0) scaleY(0.005);
+    }
+    50% {
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        transform: scale(1) scaleY(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes ClosOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal__cont.show.hide {
+    /* visibility: visible; */
+    animation: forldIn backwards 0.3s 0.6s ease;
+}
+
+.modal__cont.show.hide .modal__box {
+    transform: scale(0);
+    animation: zoomIn 0.3s 0.3s ease backwards;
+}
+
+.modal__cont.show.hide .modal__close {
+    transform: scale(0);
+    animation: ClosIn 0.3s ease backwards;
+}
+
+@keyframes forldIn {
+    0% {
+        transform: scaleX(1) scaleY(1);
+    }
+    50% {
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        transform: scale(0) scaleY(0.005);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes ClosIn {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
