@@ -2,7 +2,7 @@
 # 오잉
 
 ## 자바스크립트 
-https://jeonboyeon.github.io/codingclass/javascript/index.html   
+https://jeonboyeon.github.io/codingclass/javascript/index.html    
 https://jeonboyeon.github.io/codingclass/javascript/javascript01.html   
 https://jeonboyeon.github.io/codingclass/javascript/javascript02.html   
 https://jeonboyeon.github.io/codingclass/javascript/javascript03.html   
