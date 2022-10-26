@@ -7,8 +7,8 @@ https://jeonboyeon.github.io/codingclass/javascript/javascript01.html
 https://jeonboyeon.github.io/codingclass/javascript/javascript02.html   
 https://jeonboyeon.github.io/codingclass/javascript/javascript03.html   
 https://jeonboyeon.github.io/codingclass/javascript/javascript04.html   
-https://jeonboyeon.github.io/codingclass/javascript/javascript05.html   
-https://jeonboyeon.github.io/codingclass/javascriptstudy//javascript06.html   
+https://jeonboyeon.github.io/codingclass/javascript/study/javascript05.html   
+https://jeonboyeon.github.io/codingclass/javascript/study/javascript06.html   
 https://jeonboyeon.github.io/codingclass/javascript/study/javascript07.html   
 https://jeonboyeon.github.io/codingclass/javascript/study/javascript08.html   
 https://jeonboyeon.github.io/codingclass/javascript/study/javascript09.html   
