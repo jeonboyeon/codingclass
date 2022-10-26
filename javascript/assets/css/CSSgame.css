@@ -15,6 +15,16 @@
 .CSSgame__wrap > .CSSgame__inner {
     text-align: center;
 }
+.play,.stop {
+    margin-top: 10px;
+}
+.search__answers > span {
+    display: inline-block;
+    margin: 10px 5px;
+    border: 1px solid;
+    padding: 5px 10px;
+    color: #fff;
+}
 
 .search__wrap > h1 {
     font-size: 18px;
