@@ -370,7 +370,7 @@
                                 <div class="hover-wrap">
                                     <span class="overlay-img-donut">JAVASCRIPT</span>
                                     <a href="javascript/effect/slideEffect.html" class="overlay-text-thumb-donut bts">바로보기</a>
-                                    <a href="https://github.com/jeonboyeon/codingclass/blob/main/javascript/effect/sliderEffect.html" class="overlay-text-thumb1-donut bts">소스보기</a>
+                                    <a href="https://github.com/jeonboyeon/codingclass/blob/main/javascript/effect/slideEffect.html" class="overlay-text-thumb1-donut bts">소스보기</a>
                                     <span class="overlay-text-thumb2-donut">SCRIPT</span>
                                 </div>
                                 <img src="assets/img/puzzle.png" alt="portfolio" />
@@ -513,59 +513,59 @@
             let os = navigator.userAgent.toLowerCase();
             let sw = screen.width;
             let sh = screen.height;
-            let infor = document.getElementById('infor');
+            let infor = document.getElementById("infor");
 
-            if (os.indexOf('windows') >= 0) {
-                infor.innerHTML = '현재 윈도우를 사용하고 있으며, 화면 크기는 ' + sw + 'x' + sh + ' 입니다.';
-            } else if (os.indexOf('macintosh') >= 0) {
-                infor.innerHTML = '현재 맥을 사용하고 있으며, 화면 크기는 ' + sw + 'x' + sh + ' 입니다.';
-            } else if (os.indexOf('iphone') >= 0) {
-                infor.innerHTML = '현재 아이폰을 사용하고 있으며, 화면 크기는 ' + sw + 'x' + sh + ' 입니다.';
-            } else if (os.indexOf('android') >= 0) {
-                infor.innerHTML = '현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 ' + sw + 'x' + sh + ' 입니다.';
+            if (os.indexOf("windows") >= 0) {
+                infor.innerHTML = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다.";
+            } else if (os.indexOf("macintosh") >= 0) {
+                infor.innerHTML = "현재 맥을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다.";
+            } else if (os.indexOf("iphone") >= 0) {
+                infor.innerHTML = "현재 아이폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다.";
+            } else if (os.indexOf("android") >= 0) {
+                infor.innerHTML = "현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다.";
             }
 
             //시간 표현
-            let clock = document.getElementById('clock');
+            let clock = document.getElementById("clock");
 
             setInterval(function () {
                 clock.innerHTML = new Date().toLocaleTimeString();
             }, 1000);
 
             $(function () {
-                var $container = $('#container'),
+                var $container = $("#container"),
                     filters = {};
 
                 $container.isotope({
-                    itemSelector: '.color-shape',
+                    itemSelector: ".color-shape",
                     masonry: {
                         columnWidth: 57,
                     },
                 });
 
                 // filter buttons
-                $('.filter a').click(function () {
+                $(".filter a").click(function () {
                     var $this = $(this);
                     // don't proceed if already selected
-                    if ($this.hasClass('selected')) {
+                    if ($this.hasClass("selected")) {
                         return;
                     }
 
-                    var $optionSet = $this.parents('.option-set');
+                    var $optionSet = $this.parents(".option-set");
                     // change selected class
-                    $optionSet.find('.selected').removeClass('selected');
-                    $this.addClass('selected');
+                    $optionSet.find(".selected").removeClass("selected");
+                    $this.addClass("selected");
 
                     // store filter value in object
                     // i.e. filters.color = 'red'
-                    var group = $optionSet.attr('data-filter-group');
-                    filters[group] = $this.attr('data-filter-value');
+                    var group = $optionSet.attr("data-filter-group");
+                    filters[group] = $this.attr("data-filter-value");
                     // convert object into array
                     var isoFilters = [];
                     for (var prop in filters) {
                         isoFilters.push(filters[prop]);
                     }
-                    var selector = isoFilters.join('');
+                    var selector = isoFilters.join("");
                     $container.isotope({
                         filter: selector,
                     });
@@ -573,13 +573,13 @@
                     return false;
                 });
 
-                $('.tit_btn').on('click', function (e) {
+                $(".tit_btn").on("click", function (e) {
                     e.preventDefault();
-                    $('.nav_container').toggleClass('on');
+                    $(".nav_container").toggleClass("on");
                 });
 
-                $('.click').click(function () {
-                    $('.view').fadeToggle();
+                $(".click").click(function () {
+                    $(".view").fadeToggle();
                 });
             });
         </script>
