@@ -7,7 +7,10 @@
     background-color: rgb(48, 37, 86);
     border: 10px solid rgb(30, 20, 69);
     overflow: auto;
-    /* display: none; */
+    display: none;
+}
+.CSSgame__wrap.show {
+    display: block;
 }
 .CSSgame__wrap > .CSSgame__inner {
     text-align: center;
@@ -28,6 +31,10 @@
     color: rgb(148, 139, 185);
 }
 
+.search__wrap > .play {
+    display: none;
+}
+
 .search__wrap > .time > span {
     font-size: 25px;
     display: inline-block;
@@ -35,6 +42,20 @@
     color: #fff;
     margin-bottom: 10px;
 }
+.search__result {
+    display: none;
+    position: fixed;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.search__result.show {
+    display: block;
+}
+
+
 
 label {
     position: absolute;
