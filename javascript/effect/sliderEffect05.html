@@ -29,7 +29,7 @@
                 /* position: relative;  JQurey 용 */
                 width: 800px;
                 height: 450px;
-                /* overflow: hidden; */
+                overflow: hidden;
             }
             .slider__inner {
                 /* 이미지를 감싸고 있는 부모 요소 : 움직이는 부분 */
@@ -38,7 +38,7 @@
                 flex-wrap: wrap;
                 width: 10000px;
                 height: 450px;
-                left: -800px;
+                left: 0px;
             }
             .slider {
                 /* 개별적 이미지 */
@@ -57,22 +57,22 @@
                 color: rgb(199, 199, 199);
             }
             .slider:nth-child(1)::before {
-                content: 'image 01';
+                content: "image 01";
             }
             .slider:nth-child(2)::before {
-                content: 'image 02';
+                content: "image 02";
             }
             .slider:nth-child(3)::before {
-                content: 'image 03';
+                content: "image 03";
             }
             .slider:nth-child(4)::before {
-                content: 'image 04';
+                content: "image 04";
             }
             .slider:nth-child(5)::before {
-                content: 'image 05';
+                content: "image 05";
             }
             .slider:nth-child(6)::before {
-                content: 'image 01';
+                content: "image 01";
             }
             .slider:nth-child(1) {
                 z-index: 5;
@@ -166,7 +166,7 @@
                             <div class="slider" role="group" aria-label="2/5"><img src="../assets/img/sliderEffect01_bg03-min.jpg" alt="이미지02" /></div>
                             <div class="slider" role="group" aria-label="3/5"><img src="../assets/img/sliderEffect01_bg04-min.jpg" alt="이미지03" /></div>
                             <div class="slider" role="group" aria-label="4/5"><img src="../assets/img/sliderEffect01_bg05-min.jpg" alt="이미지04" /></div>
-                            <div class="slider" role="group" aria-label="5/5"><img src="../assets/img/sliderEffect01_bg06-min.jpg" alt="이미지05" /></div>
+                            <div class="slider" role="group" aria-label="5/5"><img src="../assets/img/sliderEffect01_bg01-min.jpg" alt="이미지05" /></div>
                         </div>
                     </div>
                     <div class="slider__btn">
@@ -465,63 +465,63 @@ sldierBtnNext.addEventListener("click", () => {
     </script>
 
     <script>
-        const sliderWrap = document.querySelector('.slider__wrap');
-        const sliderImg = document.querySelector('.slider__img'); // 보여지는 영역
-        const sliderInner = document.querySelector('.slider__inner'); // 움직이는 영역
-        const slider = document.querySelectorAll('.slider');
-        const sldierBtn = document.querySelector('.slider__btn'); // 버튼
-        const sldierBtnPrev = sldierBtn.querySelector('.prev'); // 왼쪽 버튼
-        const sldierBtnNext = sldierBtn.querySelector('.next'); // 오른쪽 버튼
-        const sldierDot = document.querySelector('.slider__dot'); // 오른쪽 버튼
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = document.querySelector(".slider__img"); // 보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner"); // 움직이는 영역
+        const slider = document.querySelectorAll(".slider");
+        const sldierBtn = document.querySelector(".slider__btn"); // 버튼
+        const sldierBtnPrev = sldierBtn.querySelector(".prev"); // 왼쪽 버튼
+        const sldierBtnNext = sldierBtn.querySelector(".next"); // 오른쪽 버튼
+        const sldierDot = document.querySelector(".slider__dot"); // 오른쪽 버튼
 
-        let currentIndex = 0; // 현재 이미지
+        let currentIndex = 1; // 현재 이미지
         let sliderCount = slider.length; // 이미지 갯수
         let sliderWidth = sliderImg.offsetWidth; // 이미지 가로 값
-        let dotIndex = '';
+        let dotIndex = "";
 
         function init() {
             slider.forEach(() => (dotIndex += "<a href='#'' class='dot'>이미지01</a>"));
             sldierDot.innerHTML = dotIndex;
             // 첫번째 닷 버튼에게 활성화 표시
-            sldierDot.firstChild.classList.add('active');
+            sldierDot.firstChild.classList.add("active");
         }
 
         init();
 
         // 이미지 이동
         function goToSlider(num) {
-            sliderInner.style.transition = 'all 600ms';
-            sliderInner.style.transform = 'translateX(' + -sliderWidth * num + 'px)';
+            sliderInner.style.transition = "all 600ms";
+            sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
 
             currentIndex = num;
 
             // 두번째 이미지 ==> 두번째 닷 클래스 추가
             // 1. 닷 메뉴 클래스 모두 삭제
             // 2. 해당 이미지에 해당 닷 메뉴 클래스(active) 추가
-            let dotActive = document.querySelectorAll('.slider__dot .dot');
+            let dotActive = document.querySelectorAll(".slider__dot .dot");
 
-            dotActive.forEach((el) => el.classList.remove('active'));
-            dotActive[num].classList.add('active');
+            dotActive.forEach((el) => el.classList.remove("active"));
+            dotActive[num].classList.add("active");
         }
 
         // 닷 버튼 클릭 했을 때 해당 순서 이미지로 이동
-        document.querySelectorAll('.slider__dot .dot').forEach((dot, index) => {
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
             // 닷 버튼을 클릭하면
-            dot.addEventListener('click', () => {
+            dot.addEventListener("click", () => {
                 // 해당 순서 이미지(index)로 이동
                 goToSlider(index);
             });
         });
 
         // 버튼 클릭 했을 때
-        document.querySelectorAll('.slider__btn a').forEach((btn, index) => {
-            btn.addEventListener('click', () => {
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+            btn.addEventListener("click", () => {
                 // 왼쪽 버튼
                 let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
                 // 오른쪽 버튼
                 let nextIndex = (currentIndex + 1) % sliderCount;
 
-                if (btn.classList.contains('prev')) {
+                if (btn.classList.contains("prev")) {
                     // prev 버튼을 누를 때 prevIndex 로 이동
                     goToSlider(prevIndex);
                 } else {
