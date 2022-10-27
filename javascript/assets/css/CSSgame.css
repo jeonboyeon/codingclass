@@ -15,7 +15,7 @@
 .CSSgame__wrap > .CSSgame__inner {
     text-align: center;
 }
-.play,.stop {
+.search__wrap > .play,.stop {
     margin-top: 10px;
 }
 .search__answers > span {
@@ -37,12 +37,17 @@
     margin-bottom: 10px;
 }
 .search__wrap > .desc {
+    display: block;
     font-size: 15px;
     color: rgb(148, 139, 185);
 }
 
 .search__wrap > .play {
+
     display: none;
+}
+.search__wrap > .stop {
+    display: inline-block;
 }
 
 .search__wrap > .time > span {

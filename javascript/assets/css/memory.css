@@ -1,0 +1,169 @@
+.memory__wrap {
+
+}
+.memory__inner {
+    overflow: hidden;
+    width: 700px;
+    height: 700px;
+    border: 3px solid rgb(93, 0, 255);
+    background: rgba(167, 138, 255, 0.5);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    border-radius: 20px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        box-shadow: 0 0 0.2rem #fff, inset 0 0 0.2rem #fff, 0 0 1rem rgb(93, 0, 255), inset 0 0 2rem rgb(115, 0, 255), 0 0 4rem rgb(98, 0, 255), inset 0 0 4rem rgb(81, 0, 255);
+    }
+}
+
+.memory__inner h3 {
+    background-color: rgba(167, 138, 255, 0.5);
+    font-size: 30px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(206, 190, 255, 0.5);
+    color: rgb(206, 190, 255);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.memory__inner .memoryTime {
+    text-align: center;
+}
+.memory__inner .memoryTime span {
+    font-size: 20px;
+    padding: 10px;
+    color: #fff;
+}
+
+.memory__wrap > .memory__inner > .memory__card {
+    overflow: hidden;
+}
+.memory__card > .cards {
+}
+.memory__card > .cards {
+    overflow: hidden;
+    padding: 30px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.memory__card > .cards > li {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100px;
+    height: 70px;
+    border: 2px solid #dcdcdc72;
+    background-color: rgba(104, 92, 199, 0.5);
+    padding: 20px;
+    position: relative;
+}
+.memory__card > .cards > li > div {
+}
+.memory__card > .cards > li > div > img {
+    width: 100%;
+}
+.memory__card > .cards > li > .view {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    /* padding: 10%; */
+    border-radius: 10px;
+    transition: all 0.3s;
+    top: 8px;
+    left: 35px;
+    /* transform: translate(-35%, -45%); */
+    width: 70%;
+    backface-visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+}
+.memory__card > .cards > li > .view > img {
+    object-position: center;
+    width: 70%;
+}
+.memory__card > .cards > li > .front {
+    transform: rotateY(0deg);
+}
+.memory__card > .cards > li.flip > .front {
+    transform: rotateY(180deg);
+}
+.memory__card > .cards > li > .back {
+    /* position: absolute; */
+    top: 20px;
+    transform: rotateY(-180deg);
+}
+.memory__card > .cards > li.flip > .back {
+    transform: rotateY(0deg);
+}
+
+.memory__card > .cards > li.shakeX {
+    animation: shakeX 1s 1;
+}
+
+.memory__card > .cards > li.ShakeY {
+    animation: ShakeY 1s 1;
+}
+
+@keyframes shakeX {
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+@keyframes shakeY {
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(0, 10px, 0);
+        transform: translate3d(0, 10px, 0);
+    }
+}

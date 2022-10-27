@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../assets/css/game.css" />
         <link rel="stylesheet" href="../assets/css/CSSgame.css" />
         <link rel="stylesheet" href="../assets/css/dracula.css" />
+        <link rel="stylesheet" href="../assets/css/memory.css" />
     </head>
 
     <body>
@@ -44,11 +45,11 @@
                 </div>
                 <div class="icon icon3">
                     <img src="../assets/img/folder03.png" alt="" />
-                    <span>게임 하기</span>
+                    <span>서치 게임</span>
                 </div>
                 <div class="icon icon4">
                     <img src="../assets/img/folder04.png" alt="" />
-                    <span>뮤직 듣기</span>
+                    <span>메몰 게임</span>
                 </div>
             </div>
         </main>
@@ -1139,6 +1140,7 @@ body {
                 </div>
             </div>
         </div>
+        <!-- //소스 보기 -->
 
         <!-- 게임하기 -->
         <div class="CSSgame__wrap">
@@ -1209,6 +1211,85 @@ body {
             </div>
         </div>
 
+        <!-- 메모리 게임 -->
+        <div class="memory__wrap">
+            <div class="memory__inner">
+                <h3>Memory Game</h3>
+                <div class="memoryTime">
+                    <span>남은 시간 | 30초 </span>
+                </div>
+                <div class="memory__card">
+                    <ul class="cards">
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg1.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg1.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg2.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg2.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg3.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg3.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg4.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg4.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg5.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg5.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg6.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg6.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg7.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg7.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg8.png" /></div>
+                        </li>
+                        <li>
+                            <div class="view front"><img src="../assets/img/Frame 2.png" /></div>
+                            <div class="view back"><img src="../assets/img/memoryImg8.png" /></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //memory__card -->
+            </div>
+        </div>
+        <!-- //메모리 게임 -->
         <!-- script link -->
         <script src="../assets/js/highlight.min.js"></script>
         <script>
@@ -1218,6 +1299,7 @@ body {
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script src="../assets/js/music.js"></script>
+        <script src="../assets/js/memory.js"></script>
         <script>
             $(".icon1").draggable({
                 drag: function () {
@@ -1247,6 +1329,7 @@ body {
             $(".music__wrap").draggable();
             $(".source__wrap").draggable();
             $(".CSSgame__wrap").draggable();
+            $(".memory__wrap").draggable();
 
             function printTime() {
                 const clock = document.querySelector(".time");
