@@ -8,16 +8,16 @@ html::before {
 
 :root {
     --c1: hsl(219, 79%, 66%);
-    --c2: hsl(319, 100%, 60%);
+    --c2: hsl(259, 100%, 60%);
     --c3: hsl(238, 41%, 39%);
-    --c4: hsl(43, 82%, 58%);
-    --c5: hsl(303, 100%, 50%);
+    --c4: hsl(43, 100%, 85%);
+    --c5: hsl(242, 100%, 73%);
     --c6: hsl(213, 96%, 11%);
-    --c2hsl: 319, 100%, 60%;
+    --c2hsl: 283, 100%, 60%;
 }
 
 @property --outrun {
-    syntax: '<number>';
+    syntax: "<number>";
     initial-value: 0;
     inherits: false;
 }
@@ -33,7 +33,7 @@ html {
 }
 
 html::before {
-    content: '';
+    content: "";
     position: fixed;
     bottom: 0px;
     left: 0px;

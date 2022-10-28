@@ -1,18 +1,20 @@
 code {
-    font-family: 'HBIOS-SYS' !important;
+    font-family: "HBIOS-SYS" !important;
 }
 
 .hljs {
-    background-color:rgb(48, 37, 86) !important;
+    background-color: rgba(42, 33, 123, 0.8) !important;
 }
 .source__wrap {
-    position: relative;
+    border-radius: 20px;
+    position: absolute;
     top: 80px;
     left: 150px;
     width: 80%;
     height: 600px;
-    background-color: #c4c4c4;
-    border: 10px solid rgb(30, 20, 69);
+    border: 3px solid rgb(93, 0, 255);
+    background: rgba(167, 138, 255, 0.5);
+    backdrop-filter: blur(5px);
     overflow: auto;
     display: none;
 }
@@ -46,9 +48,9 @@ code {
 }
 .source__header > h3 {
     color: #fff;
-    background-color: rgb(30, 20, 69);
-    padding-bottom: 10px;
-    padding-left: 10px;
+    background: rgba(167, 138, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 10px;
 }
 .source__header > nav {
 }

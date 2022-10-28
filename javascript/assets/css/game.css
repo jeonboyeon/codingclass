@@ -55,7 +55,9 @@ body {
     position: fixed;
     width: 100%;
     height: 40px;
-    background-color: rgb(52, 31, 102);
+    background-color: rgba(51, 48, 208, 0.609);
+    backdrop-filter: blur(5px);
+    /* box-shadow: 2px 0 30px rgba(0, 85, 155, 0.7); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -191,6 +193,9 @@ body {
 }
 /* //3번 아이콘 */
 #footer {
+    background-color: rgba(36, 34, 145, 0.609);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 0 10px rgba(187, 0, 255, 0.7);
 }
 #footer .agent {
 }

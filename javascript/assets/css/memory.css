@@ -1,5 +1,11 @@
 .memory__wrap {
-
+    display: none;
+    position: absolute;
+    left: 150px;
+    top: 80px;
+}
+.memory__wrap.show {
+    display: block;
 }
 .memory__inner {
     overflow: hidden;
@@ -8,9 +14,7 @@
     border: 3px solid rgb(93, 0, 255);
     background: rgba(167, 138, 255, 0.5);
     backdrop-filter: blur(5px);
-    position: absolute;
-    left: 300px;
-    top: 100px;
+
     border-radius: 20px;
     animation: flicker 1.5s infinite alternate;
 }
@@ -30,20 +34,23 @@
 
 .memory__inner h3 {
     background-color: rgba(167, 138, 255, 0.5);
-    font-size: 30px;
+    font-size: 25px;
     padding: 10px;
     border-bottom: 1px solid rgba(206, 190, 255, 0.5);
-    color: rgb(206, 190, 255);
+    color: rgb(233, 225, 255);
     text-align: center;
     margin-bottom: 20px;
 }
-.memory__inner .memoryTime {
+.memory__inner .memory__info {
+    display: block;
     text-align: center;
+    margin-bottom: 20px;
 }
-.memory__inner .memoryTime span {
-    font-size: 20px;
+.memory__inner .memory__info span {
+    font-size: 16px;
     padding: 10px;
     color: #fff;
+    border-bottom: 2px solid rgb(218 202 255);
 }
 
 .memory__wrap > .memory__inner > .memory__card {
@@ -53,8 +60,7 @@
 }
 .memory__card > .cards {
     overflow: hidden;
-    padding: 30px;
-    gap: 10px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -65,11 +71,19 @@
     margin-bottom: 10px;
     overflow: hidden;
     width: 100px;
-    height: 70px;
-    border: 2px solid #dcdcdc72;
-    background-color: rgba(104, 92, 199, 0.5);
+    height: 60px;
+    border: 2px solid #ffffff70;
+    background-color: rgba(92, 97, 199, 0.5);
     padding: 20px;
     position: relative;
+    transition: transform 0.3s;
+}
+.memory__card > .cards > li:hover {
+    transform: scale(1.04);
+}
+.memory__card > .cards > li.stop {
+    user-select: none;
+    pointer-events: none;
 }
 .memory__card > .cards > li > div {
 }
@@ -83,7 +97,7 @@
     /* padding: 10%; */
     border-radius: 10px;
     transition: all 0.3s;
-    top: 8px;
+    top: 7px;
     left: 35px;
     /* transform: translate(-35%, -45%); */
     width: 70%;
@@ -166,4 +180,53 @@
         -webkit-transform: translate3d(0, 10px, 0);
         transform: translate3d(0, 10px, 0);
     }
+}
+
+/* 개인적으로 설정 */
+.memory__inner .card__shuffle {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 80px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.187);
+    padding: 10px;
+    font-size: 15px;
+    border-bottom: 0;
+    transition: background-color 0.3s;
+}
+.memory__inner .card__shuffle:hover {
+    background-color: rgba(67, 42, 114, 0.187);
+}
+.memory__inner .card__shuffle.stop {
+    user-select: none;
+    pointer-events: none;
+}
+
+.shuffleEx {
+    position: absolute;
+    top: 125px;
+    right: 40px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.memory__inner .mStartBtn {
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgb(86, 68, 141);
+    background-color: rgba(255, 255, 255, 0.588);
+    margin: 0 auto;
+    width: 20%;
+    padding: 10px;
+    border: 0;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.memory__inner .mStartBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgb(69, 76, 214);
 }

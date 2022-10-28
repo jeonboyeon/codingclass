@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Data Effect</title>
+        <title>👾Game Effect👾</title>
 
         <link rel="stylesheet" href="../assets/css/bg.css" />
         <link rel="stylesheet" href="../assets/css/music.css" />
@@ -1215,9 +1215,13 @@ body {
         <div class="memory__wrap">
             <div class="memory__inner">
                 <h3>Memory Game</h3>
-                <div class="memoryTime">
+                <div class="memory__info">
                     <span>남은 시간 | 30초 </span>
                 </div>
+                <span class="card__shuffle">shuffle</span>
+                <button class="mStartBtn">게임시작</button>
+
+                <div class="shuffleEx">⇠ 셔플은 4초마다 클릭할 수 있습니다!:3</div>
                 <div class="memory__card">
                     <ul class="cards">
                         <li>
@@ -1329,7 +1333,6 @@ body {
             $(".music__wrap").draggable();
             $(".source__wrap").draggable();
             $(".CSSgame__wrap").draggable();
-            $(".memory__wrap").draggable();
 
             function printTime() {
                 const clock = document.querySelector(".time");
@@ -1392,6 +1395,7 @@ body {
             const musicIco = document.querySelector(".icon1");
             const musicIco2 = document.querySelector(".icon2");
             const musicIco3 = document.querySelector(".icon3");
+            // const musicIco4 = document.querySelector(".icon4");
             const sourceWrap = document.querySelector(".source__wrap");
             const sourceCodeBox = document.querySelector(".source__code");
             const JSCodeBtn = document.querySelector(".javascript");
@@ -1401,7 +1405,8 @@ body {
             const CSSCodeBtn = document.querySelector(".css");
             const CSSCode = document.querySelector(".source__CSSCode");
             const CSSGame = document.querySelector(".CSSgame__wrap");
-            console.log(CSSGame);
+            // const memoryGameWrap = document.querySelector(".memory__wrap");
+            console.log(musicIco2);
 
             musicListBtn.addEventListener("click", () => {
                 musicList.classList.add("show");
@@ -1425,6 +1430,10 @@ body {
 
             musicIco3.addEventListener("click", () => {
                 CSSGame.classList.toggle("show");
+            });
+
+            musicIco4.addEventListener("click", () => {
+                memoryWrap.classList.toggle("show");
             });
 
             JSCodeBtn.addEventListener("click", () => {
@@ -1453,8 +1462,7 @@ body {
                 JSCodeBtn.classList.remove("active");
                 JSCode.style.display = "none";
             });
-        </script>
-        <script>
+
             const cssProperty = [
                 { num: 1, name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
                 { num: 2, name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },

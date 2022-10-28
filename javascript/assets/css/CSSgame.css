@@ -1,11 +1,13 @@
 .CSSgame__wrap {
+    border-radius: 20px;
     position: absolute;
     top: 80px;
     left: 150px;
     width: 80%;
     height: 600px;
-    background-color: rgb(48, 37, 86);
-    border: 10px solid rgb(30, 20, 69);
+    border: 3px solid rgb(93, 0, 255);
+    background: rgba(167, 138, 255, 0.5);
+    backdrop-filter: blur(5px);
     overflow: auto;
     display: none;
 }
@@ -15,9 +17,9 @@
 .CSSgame__wrap > .CSSgame__inner {
     text-align: center;
 }
-.search__wrap > .play,.stop {
+/* .search__wrap > .play,.stop {
     margin-top: 10px;
-}
+} */
 .search__answers > span {
     display: inline-block;
     margin: 10px 5px;
@@ -29,17 +31,19 @@
 .search__wrap > h1 {
     font-size: 18px;
     text-align: left;
-    background-color: rgb(30, 20, 69);
+    border-bottom: 1px solid rgb(198, 164, 255);
+    background: rgba(167, 138, 255, 0.5);
+    backdrop-filter: blur(5px);
     display: block;
     color: #fff;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 .search__wrap > .desc {
     display: block;
     font-size: 15px;
-    color: rgb(148, 139, 185);
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
 }
 
 .search__wrap > .play {
@@ -58,16 +62,32 @@
     margin-bottom: 10px;
 }
 .search__result {
+    color: #fff;
+    border-radius: 20px;
     display: none;
     position: fixed;
     padding: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    border-bottom: 3px solid rgb(68, 61, 159);
+    background: rgba(73, 75, 173, 0.7);
+    backdrop-filter: blur(40px);
 }
 .search__result.show {
     display: block;
+}
+.search__result .result {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.restart {
+    color: rgba(214, 215, 255, 0.7);
+    border: 0;
+    border-bottom: 3px solid rgb(68, 61, 159);
+    background: rgba(73, 75, 173, 0.7);
+    backdrop-filter: blur(40px);
+    padding: 10px;
 }
 
 
@@ -82,6 +102,7 @@ label {
 }
 
 .search__box > input {
+    border-radius: 10px;
     display: block;
     position: relative;
     left: 50%;
@@ -91,20 +112,23 @@ label {
     width: 350px;
     height: 50px;
     padding: 5px 20px;
-    border: 5px ridge #fff;
+    border: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(40px);
     margin-bottom: 20px;
 }
 
 .search__box > .start {
+    color: rgba(228, 228, 255, 0.794);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     width: 300px;
-    padding: 5px 10px;
-    border: 5px solid #dcdcdc;
-    box-shadow: 5px 5px rgb(22, 15, 52);
-    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 3px solid rgb(68, 61, 159);
+    background: rgba(73, 75, 173, 0.7);
+    backdrop-filter: blur(40px);
 }
 
 .search__info {}

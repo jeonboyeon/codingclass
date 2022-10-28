@@ -1,7 +1,17 @@
 // 두개의 카드 뒤집기 확인(첫번째 두번째)
 
 const memoryWrap = document.querySelector(".memory__wrap");
+const memoryWrapShow = document.querySelector(".memory__wrap.show");
 const memoryCard = memoryWrap.querySelectorAll(".cards li");
+const musicIco4 = document.querySelector(".icon4");
+const memoryCardShuffle = document.querySelector(".card__shuffle");
+
+$(".memory__wrap").draggable();
+
+memoryCard.forEach((e) => {
+    e.style.userSelect = "none";
+    e.style.pointerEvents = "none";
+});
 
 let cardOne, cardTwo;
 let disableDeck = false;
@@ -11,26 +21,28 @@ let sound = ["../assets/audio/MP_롤 지목 핑.mp3", "../assets/audio/MP_롤 �
 
 let soundMatch = new Audio(sound[0]);
 let soundUnMatch = new Audio(sound[1]);
-let soundSuccess = new Audio(sound[2]);
+// let soundSuccess = new Audio(sound[2]);
 
 // 카드 뒤집기
 function flipCard(e) {
     let clickCard = e.target;
     // 클릭하면 flip 클래스 추가
-    clickCard.classList.add("flip");
+    if (clickCard !== cardOne && !disableDeck) {
+        clickCard.classList.add("flip");
 
-    if (!cardOne) {
-        return (cardOne = clickCard);
+        if (!cardOne) {
+            return (cardOne = clickCard);
+        }
+
+        cardTwo = clickCard;
+        disableDeck = true;
+
+        // back에 있는 img 경로를 가져온다.
+        let cardOneImg = cardOne.querySelector(".back img").src;
+        let cardTwoImg = cardTwo.querySelector(".back img").src;
+
+        matchCards(cardOneImg, cardTwoImg);
     }
-
-    cardTwo = clickCard;
-    disableDeck = true;
-
-    // back에 있는 img 경로를 가져온다.
-    let cardOneImg = cardOne.querySelector(".back img").src;
-    let cardTwoImg = cardTwo.querySelector(".back img").src;
-
-    matchCards(cardOneImg, cardTwoImg);
 }
 
 // 카드 확인
@@ -40,6 +52,11 @@ function matchCards(img1, img2) {
         matchedCard++;
 
         soundMatch.play();
+
+        setInterval(() => {
+            cardOne.classList.add("clickNone");
+            cardTwo.classList.add("clickNone");
+        }, 1000);
 
         if (matchedCard === 8) {
             alert("게임이 끝났도다!!!!!!!!");
@@ -55,13 +72,13 @@ function matchCards(img1, img2) {
         setTimeout(() => {
             cardOne.classList.add("shakeX");
             cardTwo.classList.add("shakeX");
-            cardOne = cardTwo = "";
-            disableDeck = false;
         }, 100);
 
         setTimeout(() => {
             cardOne.classList.remove("shakeX", "flip");
             cardTwo.classList.remove("shakeX", "flip");
+            cardOne = cardTwo = "";
+            disableDeck = false;
         }, 1000);
 
         soundUnMatch.play();
@@ -79,6 +96,7 @@ function shuffledCard() {
 
     memoryCard.forEach((card, index) => {
         card.classList.remove("flip");
+        card.classList.add("stop");
 
         setTimeout(() => {
             card.classList.add("flip");
@@ -86,6 +104,7 @@ function shuffledCard() {
 
         setTimeout(() => {
             card.classList.remove("flip");
+            card.classList.remove("stop");
         }, 4000);
 
         let imgTag = card.querySelector(".back img");
@@ -93,7 +112,19 @@ function shuffledCard() {
     });
 }
 
-shuffledCard();
+musicIco4.addEventListener("click", () => {
+    memoryWrap.classList.toggle("show");
+});
+
+memoryCardShuffle.addEventListener("click", () => {
+    shuffledCard();
+    memoryCardShuffle.classList.add("stop");
+
+    setTimeout(() => {
+        memoryCardShuffle.classList.remove("stop");
+    }, 4200);
+});
+
 // 카드 클릭
 memoryCard.forEach((card) => {
     card.addEventListener("click", flipCard);
