@@ -24,7 +24,7 @@ https://jeonboyeon.github.io/codingclass/html/alphabet.html
 https://jeonboyeon.github.io/codingclass/css/index.html
 
 ## 사이트 제작하기1
-https://jeonboyeon.github.io/codingclass/site/site1_res/index.html
+https://jeonboyeon.github.io/codingclass/site/site01/index.html
 
 ## 사이트 제작하기2
 https://jeonboyeon.github.io/codingclass/site/site2/index.html
