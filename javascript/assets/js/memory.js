@@ -5,10 +5,12 @@ const memoryWrapShow = document.querySelector(".memory__wrap.show");
 const memoryCard = memoryWrap.querySelectorAll(".cards li");
 const musicIco4 = document.querySelector(".icon4");
 const memoryCardShuffle = document.querySelector(".card__shuffle");
-
-$(".memory__wrap").draggable();
+const memoryStartBtn = document.querySelector(".mStartBtn");
+console.log(memoryStartBtn);
 
 memoryCard.forEach((e) => {
+    if (memoryStartBtn.addEventListener("click")) {
+    }
     e.style.userSelect = "none";
     e.style.pointerEvents = "none";
 });

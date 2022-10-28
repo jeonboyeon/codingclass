@@ -1305,34 +1305,14 @@ body {
         <script src="../assets/js/music.js"></script>
         <script src="../assets/js/memory.js"></script>
         <script>
-            $(".icon1").draggable({
-                drag: function () {
-                    $(".cursor img").attr("src", "../img/cursor.cluster01.png");
-                },
-            });
-            $(".icon2").draggable({
-                drag: function () {
-                    $(".cursor img").attr("src", "../img/cursor.cluster02.png");
-                },
-            });
-            $(".icon3").draggable({
-                drag: function () {
-                    $(".cursor img").attr("src", "../img/cursor.cluster03.png");
-                },
-            });
-            $(".icon4").draggable({
-                drag: function () {
-                    $(".cursor img").attr("src", "../img/cursor.cluster04.png");
-                },
-            });
-            $(".icon5").draggable({
-                drag: function () {
-                    $(".cursor img").attr("src", "../img/cursor.cluster05.png");
-                },
-            });
+            $(".icon1").draggable();
+            $(".icon2").draggable();
+            $(".icon3").draggable();
+            $(".icon4").draggable();
             $(".music__wrap").draggable();
             $(".source__wrap").draggable();
             $(".CSSgame__wrap").draggable();
+            $(".memory__wrap").draggable();
 
             function printTime() {
                 const clock = document.querySelector(".time");
@@ -1408,35 +1388,35 @@ body {
             // const memoryGameWrap = document.querySelector(".memory__wrap");
             console.log(musicIco2);
 
-            musicListBtn.addEventListener("click", () => {
+            musicListBtn.addEventListener("dblclick", () => {
                 musicList.classList.add("show");
             });
 
-            musicListClose.addEventListener("click", () => {
+            musicListClose.addEventListener("dblclick", () => {
                 musicList.classList.remove("show");
             });
 
-            musicIco.addEventListener("click", () => {
+            musicIco.addEventListener("dblclick", () => {
                 musicWrap.classList.toggle("show");
             });
 
-            musicWrapClose.addEventListener("click", () => {
+            musicWrapClose.addEventListener("dblclick", () => {
                 musicWrap.classList.remove("show");
             });
 
-            musicIco2.addEventListener("click", () => {
+            musicIco2.addEventListener("dblclick", () => {
                 sourceWrap.classList.toggle("show");
             });
 
-            musicIco3.addEventListener("click", () => {
+            musicIco3.addEventListener("dblclick", () => {
                 CSSGame.classList.toggle("show");
             });
 
-            musicIco4.addEventListener("click", () => {
+            musicIco4.addEventListener("dblclick", () => {
                 memoryWrap.classList.toggle("show");
             });
 
-            JSCodeBtn.addEventListener("click", () => {
+            JSCodeBtn.addEventListener("dblclick", () => {
                 JSCodeBtn.classList.add("active");
                 JSCode.style.display = "block";
                 HTMLCode.classList.remove("show");
@@ -1445,7 +1425,7 @@ body {
                 CSSCodeBtn.classList.remove("active");
             });
 
-            HTMLCodeBtn.addEventListener("click", () => {
+            HTMLCodeBtn.addEventListener("dblclick", () => {
                 HTMLCodeBtn.classList.add("active");
                 HTMLCode.classList.add("show");
                 CSSCodeBtn.classList.remove("active");
@@ -1454,7 +1434,7 @@ body {
                 JSCode.style.display = "none";
             });
 
-            CSSCodeBtn.addEventListener("click", () => {
+            CSSCodeBtn.addEventListener("dblclick", () => {
                 CSSCodeBtn.classList.add("active");
                 CSSCode.classList.add("show");
                 HTMLCodeBtn.classList.remove("active");
