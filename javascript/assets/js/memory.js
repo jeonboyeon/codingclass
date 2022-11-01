@@ -1,29 +1,50 @@
 // 두개의 카드 뒤집기 확인(첫번째 두번째)
 
-const memoryWrap = document.querySelector(".memory__wrap");
-const memoryWrapShow = document.querySelector(".memory__wrap.show");
-const memoryCard = memoryWrap.querySelectorAll(".cards li");
-const musicIco4 = document.querySelector(".icon4");
-const memoryCardShuffle = document.querySelector(".card__shuffle");
-const memoryStartBtn = document.querySelector(".mStartBtn");
+const memoryWrap = document.querySelector(".memory__wrap"); // 메모리 전체 박스
+const memoryWrapShow = document.querySelector(".memory__wrap.show"); // 메모리 전체 박스에 show가 붙었을 때
+const memoryCard = memoryWrap.querySelectorAll(".cards li"); // 각각의 카드
+const musicIco4 = document.querySelector(".icon4"); // 메모리 전체 박스를 보여줄 파일 아이콘
+const memoryStartBtn = document.querySelector(".mStartBtn"); // 메모리 게임 스타트 버튼
+const memoryTime = document.querySelector(".memory__info span"); // 메모리 게임 시간
 console.log(memoryStartBtn);
 
-memoryCard.forEach((e) => {
-    if (memoryStartBtn.addEventListener("click")) {
-    }
-    e.style.userSelect = "none";
-    e.style.pointerEvents = "none";
+// 파일 아이콘 클릭 시 메모리 박스 show 붙여주고 보여주기
+musicIco4.addEventListener("click", () => {
+    memoryWrap.classList.toggle("show");
 });
 
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0; // 매치된 카드
+let mTimeRemaining = 30, // 남은시간
+    mCount = 0, // 정답 갯수
+    mScore = 0; // 점수
+
+let remainingTime = 120, // 남은시간
+    memoryScore = 0, // 점수
+    memoryCount = 0; // 정답 갯수
+
+let startTime = 0;
+let endTime = 0;
 
 let sound = ["../assets/audio/MP_롤 지목 핑.mp3", "../assets/audio/MP_롤 미아 핑_ 적 사라짐.mp3", "../assets/audio/soundSuccess.mp3"];
 
 let soundMatch = new Audio(sound[0]);
 let soundUnMatch = new Audio(sound[1]);
-// let soundSuccess = new Audio(sound[2]);
+
+// 시작 전 카드 클릭 안되게 하기
+function lock() {
+    memoryCard.forEach((e) => {
+        e.style.userSelect = "none";
+        e.style.pointerEvents = "none";
+    });
+}
+
+function startMemory() {
+    memoryTime.innerHTML = "두구두구두구! 과연 점수는!?";
+    shuffledCard();
+    cardUnLock();
+}
 
 // 카드 뒤집기
 function flipCard(e) {
@@ -55,13 +76,20 @@ function matchCards(img1, img2) {
 
         soundMatch.play();
 
-        setInterval(() => {
-            cardOne.classList.add("clickNone");
-            cardTwo.classList.add("clickNone");
-        }, 1000);
-
         if (matchedCard === 8) {
-            alert("게임이 끝났도다!!!!!!!!");
+            endTime = new Date();
+            memoryScore = Math.floor(100 - (endTime - startTime) / 1000);
+
+            if (memoryScore <= 100 && memoryScore >= 70) {
+                memoryTime.innerHTML = memoryScore + "점! 넌 이겨라.";
+            } else if (memoryScore <= 69 && memoryScore >= 50) {
+                memoryTime.innerHTML = memoryScore + "점! 좀 치시네요.";
+            } else {
+                memoryTime.innerHTML = memoryScore + "점! 좀 많이 분발해야할지도 :/";
+            }
+            // alert(`(${100 - (endTime - startTime) / 1000}) 점 나왔습니다!!`);
+
+            lock();
         }
 
         cardOne.removeEventListener("click", flipCard);
@@ -101,33 +129,40 @@ function shuffledCard() {
         card.classList.add("stop");
 
         setTimeout(() => {
+            memoryCard.forEach((e) => {
+                e.style.userSelect = "none";
+                e.style.pointerEvents = "none";
+            });
             card.classList.add("flip");
         }, 200 * index);
 
         setTimeout(() => {
+            memoryCard.forEach((e) => {
+                e.style.userSelect = "unset";
+                e.style.pointerEvents = "unset";
+            });
             card.classList.remove("flip");
             card.classList.remove("stop");
+
+            startTime = new Date();
         }, 4000);
 
         let imgTag = card.querySelector(".back img");
         imgTag.src = `../assets/img/memoryImg${arr[index]}.png`;
     });
+
+    memoryStartBtn.addEventListener("click", shuffledCard);
+
+    memoryCard.forEach((card) => {
+        card.addEventListener("click", flipCard);
+    });
+}
+// 카드 클릭 풀기
+function cardUnLock() {
+    memoryCard.forEach((e) => {
+        e.style.userSelect = "unset";
+        e.style.pointerEvents = "unset";
+    });
 }
 
-musicIco4.addEventListener("click", () => {
-    memoryWrap.classList.toggle("show");
-});
-
-memoryCardShuffle.addEventListener("click", () => {
-    shuffledCard();
-    memoryCardShuffle.classList.add("stop");
-
-    setTimeout(() => {
-        memoryCardShuffle.classList.remove("stop");
-    }, 4200);
-});
-
-// 카드 클릭
-memoryCard.forEach((card) => {
-    card.addEventListener("click", flipCard);
-});
+memoryStartBtn.addEventListener("click", startMemory);

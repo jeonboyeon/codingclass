@@ -131,7 +131,11 @@
         <div class="source__wrap">
             <div class="source__inner">
                 <div class="source__header">
-                    <h3>👾👾 Source View</h3>
+                    <div>
+                        <h3>👾👾 Source View</h3>
+                        <span class="source__close">X</span>
+                    </div>
+
                     <nav>
                         <ul>
                             <li class="javascript active">JAVASCRIPT</li>
@@ -448,14 +452,14 @@ musicNextBtn.addEventListener('click', () => {
 });
 
 // 뮤직 리스트 구현
-for (let i = 0; i < allMusic.length; i++) {
+for (let i = 0; i &lt; allMusic.length; i++) {
     let li = `
-    <li data-index="${i + 1}">
-        <strong>${allMusic[i].name}</strong>
-        <em>${allMusic[i].artist}</em>
-        <audio class="${allMusic[i].audio}" src="../assets/audio/${allMusic[i].audio}.mp3"></audio>
-        <span class="audio-duration" id="${allMusic[i].audio}">재생시간</span>
-    </li>
+     &lt;li data-index="${i + 1}"&gt;
+         &lt;strong>${allMusic[i].name} &lt;/strong&gt;
+         &lt;em&gt;${allMusic[i].artist} &lt;/em&gt;
+         &lt;audio class="${allMusic[i].audio}" src="../assets/audio/${allMusic[i].audio}.mp3"&gt; &lt;/audio&gt;
+         &lt;span class="audio-duration" id="${allMusic[i].audio}"&gt;재생시간 &lt;/span&gt;
+     &lt;/li&gt;
     `;
 
     // musicListUl.innerHTML += li; li를 한번에 추가 시켜 값을 검색할 수 없었음. (한번에 로딩이 되어 아이디와 클래스 값을 하나밖에 인식 못함)
@@ -511,7 +515,7 @@ function clicked(el) {
     playListMusic(); //음악 리스트 업데이트
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', () =&gt; {
     loadMusic(musicIndex);
 });
 
@@ -1214,14 +1218,14 @@ body {
         <!-- 메모리 게임 -->
         <div class="memory__wrap">
             <div class="memory__inner">
-                <h3>Memory Game</h3>
-                <div class="memory__info">
-                    <span>남은 시간 | 30초 </span>
+                <div class="memory__title">
+                    <h3>Memory Game</h3>
+                    <span class="memory__close">X</span>
                 </div>
-                <span class="card__shuffle">shuffle</span>
+                <div class="memory__info">
+                    <span>두구두구두구! 과연 점수는!?</span>
+                </div>
                 <button class="mStartBtn">게임시작</button>
-
-                <div class="shuffleEx">⇠ 셔플은 4초마다 클릭할 수 있습니다!:3</div>
                 <div class="memory__card">
                     <ul class="cards">
                         <li>
@@ -1385,38 +1389,77 @@ body {
             const CSSCodeBtn = document.querySelector(".css");
             const CSSCode = document.querySelector(".source__CSSCode");
             const CSSGame = document.querySelector(".CSSgame__wrap");
+            const sourceClose = document.querySelector(".source__close");
+            const memoryClose = document.querySelector(".memory__close");
             // const memoryGameWrap = document.querySelector(".memory__wrap");
             console.log(musicIco2);
 
-            musicListBtn.addEventListener("dblclick", () => {
+            let zIndex = 20;
+
+            musicWrap.style.zIndex = "0";
+            sourceWrap.style.zIndex = "0";
+            CSSGame.style.zIndex = "0";
+            memoryWrap.style.zIndex = "0";
+
+            musicWrap.addEventListener("click", () => {
+                musicWrap.style.zIndex = zIndex++;
+            });
+            sourceWrap.addEventListener("click", () => {
+                sourceWrap.style.zIndex = zIndex++;
+            });
+            CSSGame.addEventListener("click", () => {
+                CSSGame.style.zIndex = zIndex++;
+            });
+            memoryWrap.addEventListener("click", () => {
+                memoryWrap.style.zIndex = zIndex++;
+            });
+
+            musicListBtn.addEventListener("click", () => {
                 musicList.classList.add("show");
             });
 
-            musicListClose.addEventListener("dblclick", () => {
+            musicListClose.addEventListener("click", () => {
                 musicList.classList.remove("show");
             });
 
-            musicIco.addEventListener("dblclick", () => {
-                musicWrap.classList.toggle("show");
+            musicIco.addEventListener("click", () => {
+                musicWrap.classList.add("show");
+                musicWrap.style.zIndex = zIndex++;
             });
 
-            musicWrapClose.addEventListener("dblclick", () => {
+            musicWrapClose.addEventListener("click", () => {
                 musicWrap.classList.remove("show");
+                memoryWrap.style.zIndex = zIndex++;
+                musicAudio.pause();
             });
 
-            musicIco2.addEventListener("dblclick", () => {
-                sourceWrap.classList.toggle("show");
+            musicIco2.addEventListener("click", () => {
+                sourceWrap.classList.add("show");
+                sourceWrap.style.zIndex = zIndex++;
             });
 
-            musicIco3.addEventListener("dblclick", () => {
+            sourceClose.addEventListener("click", () => {
+                sourceWrap.classList.remove("show");
+                memoryWrap.style.zIndex = zIndex++;
+            });
+
+            musicIco3.addEventListener("click", () => {
                 CSSGame.classList.toggle("show");
+                searchAudio.pause();
+                CSSGame.style.zIndex = zIndex++;
             });
 
             musicIco4.addEventListener("dblclick", () => {
-                memoryWrap.classList.toggle("show");
+                memoryWrap.classList.add("show");
+                memoryWrap.style.zIndex = zIndex++;
             });
 
-            JSCodeBtn.addEventListener("dblclick", () => {
+            memoryClose.addEventListener("click", () => {
+                memoryWrap.classList.remove("show");
+                memoryWrap.style.zIndex = zIndex++;
+            });
+
+            JSCodeBtn.addEventListener("click", () => {
                 JSCodeBtn.classList.add("active");
                 JSCode.style.display = "block";
                 HTMLCode.classList.remove("show");
@@ -1425,7 +1468,7 @@ body {
                 CSSCodeBtn.classList.remove("active");
             });
 
-            HTMLCodeBtn.addEventListener("dblclick", () => {
+            HTMLCodeBtn.addEventListener("click", () => {
                 HTMLCodeBtn.classList.add("active");
                 HTMLCode.classList.add("show");
                 CSSCodeBtn.classList.remove("active");
@@ -1434,7 +1477,7 @@ body {
                 JSCode.style.display = "none";
             });
 
-            CSSCodeBtn.addEventListener("dblclick", () => {
+            CSSCodeBtn.addEventListener("click", () => {
                 CSSCodeBtn.classList.add("active");
                 CSSCode.classList.add("show");
                 HTMLCodeBtn.classList.remove("active");
@@ -1856,10 +1899,13 @@ body {
                     searchList.innerHTML += `<span>${data.num}. ${data.name} : ${data.desc}</span>`;
                 });
             }
-            // updateList();
+
+            // 시작 전 input 입력 막기
+            searchInput.readOnly = true;
 
             // 게임 시작하기
             function startQuiz() {
+                searchInput.readOnly = false;
                 // 시작 버튼 없애기 & 속성 리스트 없애기
                 searchStart.style.display = "none";
                 searchList.style.display = "none";
@@ -1894,7 +1940,7 @@ body {
             searchAudioPause.addEventListener("click", () => {
                 searchAudioPlay.style.display = "block";
                 searchAudioPause.style.display = "none";
-                // searchAudio.play();
+                searchAudio.play();
             });
 
             // 인풋 체크하기

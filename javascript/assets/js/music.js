@@ -1,55 +1,55 @@
 const allMusic = [
     {
-        name: 'Circle',
-        artist: 'Netrum & Halvorsen',
-        img: 'gameEffect_view01',
-        audio: 'music_audio01',
+        name: "Circle",
+        artist: "Netrum & Halvorsen",
+        img: "gameEffect_view01",
+        audio: "music_audio01",
     },
     {
-        name: 'For You',
-        artist: 'CHENDA',
-        img: 'gameEffect_view02',
-        audio: 'music_audio02',
+        name: "For You",
+        artist: "CHENDA",
+        img: "gameEffect_view02",
+        audio: "music_audio02",
     },
     {
-        name: 'Unforgivable',
-        artist: 'Jim Yosef & Shiah Maisel',
-        img: 'gameEffect_view03',
-        audio: 'music_audio03',
+        name: "Unforgivable",
+        artist: "Jim Yosef & Shiah Maisel",
+        img: "gameEffect_view03",
+        audio: "music_audio03",
     },
     {
-        name: 'Electric (feat. Robbie Rosen)',
-        artist: 'VAANCE & Deerock',
-        img: 'gameEffect_view04',
-        audio: 'music_audio04',
+        name: "Electric (feat. Robbie Rosen)",
+        artist: "VAANCE & Deerock",
+        img: "gameEffect_view04",
+        audio: "music_audio04",
     },
     {
         name: "Can't You Feel It",
-        artist: 'MIDNIGHT CVLT & Wiguez',
-        img: 'gameEffect_view05',
-        audio: 'music_audio05',
+        artist: "MIDNIGHT CVLT & Wiguez",
+        img: "gameEffect_view05",
+        audio: "music_audio05",
     },
 ];
 
-const musicWrap = document.querySelector('.music__wrap');
-const musicView = musicWrap.querySelector('.music__view .img img');
-const musicName = musicWrap.querySelector('.music__view .title h3');
-const musicArtist = musicWrap.querySelector('.music__view .title p');
-const musicAudio = musicWrap.querySelector('#main-audio'); // 음악
-const musicPlay = musicWrap.querySelector('#control-play'); // 재생 버튼
-const musicPrevBtn = musicWrap.querySelector('#control-prev'); // 이전 버튼
-const musicNextBtn = musicWrap.querySelector('#control-next'); // 다음 버튼
-const musicProgress = musicWrap.querySelector('.progress'); // 뮤직 프로그래스
-const musicProgressBar = musicWrap.querySelector('.progress .bar'); // 진행 바
-const musicProgressCurrent = musicWrap.querySelector('.progress .timer .current');
-const musicProgressDuration = musicWrap.querySelector('.progress .timer .duration');
-const musicRepeat = musicWrap.querySelector('#control-repeat'); // 뮤직 전체 반복 재생
-const musicListBtn = musicWrap.querySelector('#control-list'); // 뮤직 리스트
-const musicList = musicWrap.querySelector('.music__list'); // 뮤직 리스트
-const musicListUl = musicWrap.querySelector('.music__list ul'); // 뮤직 리스트
-const volumeBar = document.getElementById('volume_control');
+const musicWrap = document.querySelector(".music__wrap");
+const musicView = musicWrap.querySelector(".music__view .img img");
+const musicName = musicWrap.querySelector(".music__view .title h3");
+const musicArtist = musicWrap.querySelector(".music__view .title p");
+const musicAudio = musicWrap.querySelector("#main-audio"); // 음악
+const musicPlay = musicWrap.querySelector("#control-play"); // 재생 버튼
+const musicPrevBtn = musicWrap.querySelector("#control-prev"); // 이전 버튼
+const musicNextBtn = musicWrap.querySelector("#control-next"); // 다음 버튼
+const musicProgress = musicWrap.querySelector(".progress"); // 뮤직 프로그래스
+const musicProgressBar = musicWrap.querySelector(".progress .bar"); // 진행 바
+const musicProgressCurrent = musicWrap.querySelector(".progress .timer .current");
+const musicProgressDuration = musicWrap.querySelector(".progress .timer .duration");
+const musicRepeat = musicWrap.querySelector("#control-repeat"); // 뮤직 전체 반복 재생
+const musicListBtn = musicWrap.querySelector("#control-list"); // 뮤직 리스트
+const musicList = musicWrap.querySelector(".music__list"); // 뮤직 리스트
+const musicListUl = musicWrap.querySelector(".music__list ul"); // 뮤직 리스트
+const volumeBar = document.getElementById("volume_control");
 
-volumeBar.addEventListener('change', function () {
+volumeBar.addEventListener("change", function () {
     musicAudio.volume = volumeBar.value / 100;
 });
 
@@ -64,16 +64,16 @@ function loadMusic(num) {
 }
 // 재생 버튼
 function playMusic() {
-    musicWrap.classList.add('paused');
-    musicPlay.setAttribute('title', '정지');
-    musicPlay.setAttribute('class', 'stop');
+    musicWrap.classList.add("paused");
+    musicPlay.setAttribute("title", "정지");
+    musicPlay.setAttribute("class", "stop");
     musicAudio.play();
 }
 // 정지 버튼
 function pauseMusic() {
-    musicWrap.classList.remove('paused');
-    musicPlay.setAttribute('title', '재생');
-    musicPlay.setAttribute('class', 'play');
+    musicWrap.classList.remove("paused");
+    musicPlay.setAttribute("title", "재생");
+    musicPlay.setAttribute("class", "play");
     musicAudio.pause();
 }
 // 이전 곡 듣기 버튼
@@ -95,14 +95,14 @@ function nextMusic() {
 // 볼륨 조절 버튼
 
 // 뮤직 진행바
-musicAudio.addEventListener('timeupdate', (e) => {
+musicAudio.addEventListener("timeupdate", (e) => {
     // console.log(e)
     const currentTime = e.target.currentTime; //현재 재생되는 시간
     const duration = e.target.duration; //오디오의 총 길이
     let progressWidth = (currentTime / duration) * 100; //전체 길에이서 현재 진행되는 시간을 백분위로 나눔
     musicProgressBar.style.width = `${progressWidth}%`;
     // 전체시간
-    musicAudio.addEventListener('loadeddata', () => {
+    musicAudio.addEventListener("loadeddata", () => {
         let audioDuration = musicAudio.duration;
         let totalMin = Math.floor(audioDuration / 60); //전체 시간(초)을 분단위로 쪼갬
         let totalSec = Math.floor(audioDuration % 60); //남은 초를 저장
@@ -117,7 +117,7 @@ musicAudio.addEventListener('timeupdate', (e) => {
 });
 
 // 진행버튼 클릭
-musicProgress.addEventListener('click', (e) => {
+musicProgress.addEventListener("click", (e) => {
     let progressWidth = musicProgress.clientWidth; // 진행바 전체 길이
     let clickedOffsetX = e.offsetX; // 진행바 기준으로 측정되는 X값 좌표
     let songDuration = musicAudio.duration; // 오디오 전체 길이
@@ -126,41 +126,41 @@ musicProgress.addEventListener('click', (e) => {
 });
 
 // 반복 버튼 클릭
-musicRepeat.addEventListener('click', () => {
-    let getAttr = musicRepeat.getAttribute('class');
+musicRepeat.addEventListener("click", () => {
+    let getAttr = musicRepeat.getAttribute("class");
 
     switch (getAttr) {
-        case 'repeat':
-            musicRepeat.setAttribute('class', 'repeat_one');
-            musicRepeat.setAttribute('title', '한곡 반복');
+        case "repeat":
+            musicRepeat.setAttribute("class", "repeat_one");
+            musicRepeat.setAttribute("title", "한곡 반복");
             break;
 
-        case 'repeat_one':
-            musicRepeat.setAttribute('class', 'shuffle');
-            musicRepeat.setAttribute('title', '랜덤 재생');
+        case "repeat_one":
+            musicRepeat.setAttribute("class", "shuffle");
+            musicRepeat.setAttribute("title", "랜덤 재생");
             break;
 
-        case 'shuffle':
-            musicRepeat.setAttribute('class', 'repeat');
-            musicRepeat.setAttribute('title', '전체 반복');
+        case "shuffle":
+            musicRepeat.setAttribute("class", "repeat");
+            musicRepeat.setAttribute("title", "전체 반복");
             break;
     }
 });
 
 // 오디오가 끝날 때 설정
-musicAudio.addEventListener('ended', () => {
-    let getAttr = musicRepeat.getAttribute('class');
+musicAudio.addEventListener("ended", () => {
+    let getAttr = musicRepeat.getAttribute("class");
 
     switch (getAttr) {
-        case 'repeat':
+        case "repeat":
             nextMusic();
             break;
 
-        case 'repeat_one':
+        case "repeat_one":
             playMusic();
             break;
 
-        case 'shuffle':
+        case "shuffle":
             let randomIndex = Math.floor(Math.random() * allMusic.length + 1); // 랜덤 인덱스 생성
 
             do {
@@ -178,21 +178,21 @@ musicAudio.addEventListener('ended', () => {
 });
 
 // 뮤직 리스트 버튼
-musicListBtn.addEventListener('click', () => {
-    musicList.classList.add('show');
+musicListBtn.addEventListener("click", () => {
+    musicList.classList.add("show");
 });
 
 // 플레이 버튼 클릭
-musicPlay.addEventListener('click', () => {
-    const isMusicPaused = musicWrap.classList.contains('paused'); //음악이 재생중
+musicPlay.addEventListener("click", () => {
+    const isMusicPaused = musicWrap.classList.contains("paused"); //음악이 재생중
     isMusicPaused ? pauseMusic() : playMusic();
 });
 // 이전곡 버튼 클릭
-musicPrevBtn.addEventListener('click', () => {
+musicPrevBtn.addEventListener("click", () => {
     prevMusic();
 });
 // 다음곡 버튼 클릭
-musicNextBtn.addEventListener('click', () => {
+musicNextBtn.addEventListener("click", () => {
     nextMusic();
 });
 
@@ -208,44 +208,44 @@ for (let i = 0; i < allMusic.length; i++) {
     `;
 
     // musicListUl.innerHTML += li; li를 한번에 추가 시켜 값을 검색할 수 없었음. (한번에 로딩이 되어 아이디와 클래스 값을 하나밖에 인식 못함)
-    musicListUl.insertAdjacentHTML('beforeend', li); // ul 자식으로 (마지막 자리에) 하나씩 차곡차곡 쌓아준다.
+    musicListUl.insertAdjacentHTML("beforeend", li); // ul 자식으로 (마지막 자리에) 하나씩 차곡차곡 쌓아준다.
 
     // 리스트 음악시간 불러오기
     let liAudioDuration = musicListUl.querySelector(`#${allMusic[i].audio}`); // 리스트에서 시간을 표시할 선택자를 가져온다.
     let liAudio = musicListUl.querySelector(`.${allMusic[i].audio}`);
 
-    liAudio.addEventListener('loadeddata', () => {
+    liAudio.addEventListener("loadeddata", () => {
         let audioDuration = liAudio.duration; // 오디오 전체 길이
         let totalMin = Math.floor(audioDuration / 60); // 전체 길이를 분 단위로 쪼갠다.
         let totalSec = Math.floor(audioDuration % 60); // 초 계산
 
         if (totalSec < 10) totalSec = `0${totalSec}`; // 앞자리에 0 추가
         liAudioDuration.innerText = `${totalMin}:${totalSec}`; // 문자열 출력
-        liAudioDuration.setAttribute('data-duration', `${totalMin}:${totalSec}`); // 속성에 오디오 길이 기록
+        liAudioDuration.setAttribute("data-duration", `${totalMin}:${totalSec}`); // 속성에 오디오 길이 기록
     });
 }
 
 // 뮤직 리스트 클릭 시 클릭한 노래 재생
 function playListMusic() {
-    const musicListAll = musicListUl.querySelectorAll('li'); //뮤직 리스트 목록
+    const musicListAll = musicListUl.querySelectorAll("li"); //뮤직 리스트 목록
     for (let i = 0; i < musicListAll.length; i++) {
-        let audioTag = musicListAll[i].querySelector('.audio-duration');
+        let audioTag = musicListAll[i].querySelector(".audio-duration");
 
-        if (musicListAll[i].classList.contains('playing')) {
-            musicListAll[i].classList.remove('playing'); // playing 클래스가 존재할 시 삭제
+        if (musicListAll[i].classList.contains("playing")) {
+            musicListAll[i].classList.remove("playing"); // playing 클래스가 존재할 시 삭제
 
-            let adDuration = audioTag.getAttribute('data-duration'); // 오디오 길이 값을 가져온다.
+            let adDuration = audioTag.getAttribute("data-duration"); // 오디오 길이 값을 가져온다.
             audioTag.innerText = adDuration; // 가져온 오디오 길이 값을 audioTag 에 텍스트로 넣어준다.
         }
 
         // 현재 뮤직인덱스와 리스트 인덱스 값이 같을 때
-        if (musicListAll[i].getAttribute('data-index') == musicIndex) {
-            musicListAll[i].classList.add('playing'); // 클래스 playing 추가
+        if (musicListAll[i].getAttribute("data-index") == musicIndex) {
+            musicListAll[i].classList.add("playing"); // 클래스 playing 추가
 
-            audioTag.innerText = '재생중'; // 재생중일 경우 재생중 멘트 추가
+            audioTag.innerText = "재생중"; // 재생중일 경우 재생중 멘트 추가
         }
 
-        musicListAll[i].setAttribute('onclick', 'clicked(this)');
+        musicListAll[i].setAttribute("onclick", "clicked(this)");
     }
 }
 
@@ -253,13 +253,13 @@ playListMusic();
 
 // 뮤직 리스트를 클릭했을 때 발생
 function clicked(el) {
-    let getLiIndex = el.getAttribute('data-index'); //클릭한 리스트의 인덱스값을 저장
+    let getLiIndex = el.getAttribute("data-index"); //클릭한 리스트의 인덱스값을 저장
     musicIndex = getLiIndex; //클릭한 인덱스 값을 뮤직 인덱스 저장
     loadMusic(musicIndex); //해당 인덱스 뮤직 로드
     playMusic(); //음악 재생
     playListMusic(); //음악 리스트 업데이트
 }
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
     loadMusic(musicIndex);
 });

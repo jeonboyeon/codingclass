@@ -6,7 +6,10 @@ code {
     background-color: rgba(42, 33, 123, 0.8) !important;
 }
 .source__wrap {
-    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     position: absolute;
     top: 80px;
     left: 150px;
@@ -46,11 +49,17 @@ code {
     left: 0;
     right: 0;
 }
-.source__header > h3 {
+.source__header > div {
+    display: flex;
+    justify-content: space-between;
     color: #fff;
     background: rgba(167, 138, 255, 0.1);
     backdrop-filter: blur(5px);
     padding: 10px;
+}
+.source__header > div > .source__close {
+    cursor: pointer;
+    color: #fff;
 }
 .source__header > nav {
 }
