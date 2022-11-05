@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'NexonLv1Gothic';
+    font-family: "NexonLv1Gothic";
     color: var(--htmlColor);
 }
 *,
@@ -42,7 +42,7 @@ li {
     display: inline-block;
     text-align: center;
     line-height: 30px;
-    font-family: 'NexonLv1Gothic';
+    font-family: "NexonLv1Gothic";
 }
 #header nav li.active a {
     background-color: var(--htmlColor);
@@ -70,6 +70,7 @@ li {
     margin: 50px 10px;
 }
 .search__wrap {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
     border: 3px solid var(--htmlColor);
@@ -84,7 +85,7 @@ li {
     display: inline-block;
 }
 .search__wrap > h1 a {
-    font-family: 'Tmon';
+    font-family: "Tmon";
     color: var(--htmlColor);
     font-size: 5vw;
     margin-bottom: 10px;
@@ -268,7 +269,7 @@ li {
 }
 #footer a {
     color: #000;
-    font-family: 'NexonLv1Gothic';
+    font-family: "NexonLv1Gothic";
     padding-bottom: 50px;
 }
 #footer a:hover {

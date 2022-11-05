@@ -57,6 +57,13 @@ code {
     backdrop-filter: blur(5px);
     padding: 10px;
 }
+.source__header > div > h3 > a {
+    background-color: rgba(255,255,255,0.2);
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 5px;
+    color: #fff;
+}
 .source__header > div > .source__close {
     cursor: pointer;
     color: #fff;

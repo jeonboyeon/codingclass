@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <!-- 폰트 링크 -->
+        <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet" />
+
+        <!-- 스타일 -->
+        <style>
+            * {
+                font-family: "SUIT";
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: #fff;
+            }
+
+            .fixed {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+            }
+
+            .scroll {
+                position: fixed;
+                left: 10px;
+                top: 10px;
+                width: 60px;
+                height: 40px;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.3);
+                text-align: center;
+                line-height: 40px;
+                border-radius: 5px;
+                z-index: 10000;
+            }
+            #contents {
+            }
+            #section1 {
+                height: 30000px;
+            }
+            #section2 {
+            }
+            #section3 {
+            }
+            #section4 {
+            }
+            #section5 {
+            }
+            #section6 {
+            }
+
+            /* sec1 */
+            .sec1_text1 {
+                overflow: hidden;
+                width: 0;
+                animation: wide 1.3s ease-in-out forwards;
+            }
+            @keyframes wide {
+                0% {
+                    width: 0;
+                }
+                100% {
+                    width: 25%;
+                }
+            }
+            .sec1_text1 > span {
+                display: inline-block;
+                color: #fff;
+                padding: 10px 20px;
+                background-color: rgba(255, 255, 255, 0.3);
+                font-size: 2vw;
+                margin-bottom: 10px;
+            }
+            .sec1_text1 > h1 {
+                color: #fff;
+                text-align: center;
+                font-size: 6vw;
+            }
+
+            .sec1_text2 {
+                z-index: 2;
+            }
+            .sec1_text2 > h3 {
+                color: #f5f5f5;
+                font-size: 3vw;
+                margin-bottom: 10px;
+            }
+            .sec1_text2 > p {
+                color: #f5f5f5;
+                font-size: 1.2vw;
+                line-height: 1.4;
+            }
+
+            .sec1_text3 {
+                width: 300px;
+                height: 400px;
+                background-image: url("../assets/img/apple_bg01.jpg");
+                background-size: cover;
+                background-position: center;
+                z-index: 1;
+            }
+
+            .sec1_text4 {
+                width: 90%;
+                height: 70%;
+                background: linear-gradient(-45deg, #eb663d, #e73c7e, #1b79de, #17eae3);
+                background-size: 400% 400%;
+                animation: AnimationName 5s ease infinite;
+                z-index: -1;
+            }
+
+            @keyframes AnimationName {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .sec1_text5 {
+                display: block;
+                overflow: hidden;
+                color: #555;
+                font-size: 2vw;
+                font-weight: 600;
+                padding-bottom: 10px;
+            }
+            .sec1_text5 > span {
+            }
+
+            .level {
+                color: #fff;
+                padding: 5px 10px;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .sec1_text7 {
+                width: 70px;
+                height: 70px;
+                background-image: url("../assets/img/photoshop.png");
+                background-size: cover;
+                background-position: center;
+            }
+            .sec1_text9 {
+                width: 70px;
+                height: 70px;
+                background-image: url("../assets/img/free-icon-illustrator-5968472.png");
+                background-size: cover;
+                background-position: center;
+            }
+            .sec1_text11 {
+                width: 70px;
+                height: 70px;
+                background-image: url("../assets/img/free-icon-css-3-5968242.png");
+                background-size: cover;
+                background-position: center;
+            }
+            .sec1_text13 {
+                width: 70px;
+                height: 70px;
+                background-image: url("../assets/img/html-5.png");
+                background-size: cover;
+                background-position: center;
+            }
+            .sec1_text15 {
+                width: 70px;
+                height: 70px;
+                border-radius: 10px;
+                background-image: url("../assets/img/js.png");
+                background-size: cover;
+                background-position: center;
+            }
+
+            .sec1_bar1 {
+                height: 8px;
+                width: 65%;
+                background: rgb(31, 24, 88);
+                /* border: 1px solid #dcdcdc; */
+            }
+            .sec1_bar2 {
+                height: 8px;
+                width: 30%;
+                background: rgb(88, 30, 24);
+                /* border: 1px solid #dcdcdc; */
+            }
+            .sec1_bar3 {
+                height: 8px;
+                width: 70%;
+                background: rgb(33, 111, 255);
+                /* border: 1px solid #dcdcdc; */
+            }
+            .sec1_bar4 {
+                height: 8px;
+                width: 50%;
+                background: rgb(255, 88, 33);
+                /* border: 1px solid #dcdcdc; */
+            }
+            .sec1_bar5 {
+                height: 8px;
+                width: 17%;
+                background: rgb(255, 152, 17);
+                /* border: 1px solid #dcdcdc; */
+            }
+
+            .sec1_text16 {
+                width: 100%;
+                height: 100%;
+                background-color: #f5f5f5;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="scroll">0</div>
+        <main class="contents">
+            <section id="section1">
+                <div class="sec1">
+                    <div class="sec1_text1 fixed" data-0="opacity:1; transform: translate(-50%, -50%) scale(1);" data-500="opacity:0; transform: translate(-50%, -50%) scale(0);">
+                        <span>Jeon Boyeon</span>
+                        <h1>Portfolio</h1>
+                    </div>
+                    <div>
+                        <div class="sec1_text2 fixed" data-500="opacity:0; transform: translate(-50%, -300%);" data-1000="opacity:1; transform: translate(-50%, -55%);" data-1250="opacity:1; transform: translate(-50%, -55%);" data-1300="opacity:0; transform: translate(-50%, 20%);">
+                            <h3>self-introduction</h3>
+                            <p>
+                                이름: 전보연<br />
+                                나이: (1997년생) 26살<br />
+                                취미: 노래듣기, CSS 만지기, 컴퓨터 포멧<br />
+                                특기: 그림그리기<br />
+                                목표: 웹디자이너, 웹퍼블리셔
+                            </p>
+                        </div>
+                        <div>
+                            <div class="sec1_text5 fixed" data-1800="opacity: 0; transform: translate(-500%, -540%)" data-1900="opacity: 1; transform: translate(-590%, -540%)">My Skill</div>
+                            <!-- 내 수준 -->
+                            <div class="sec1_text6 fixed level" data-2200="opacity:0; transform: translate(-600%, -590%)" data-2300="opacity:1; transform: translate(-620%, -590%)">Photoshop</div>
+                            <div class="sec1_text7 fixed" data-2000="opacity:0; transform: translate(-1000%, -280%)" data-2100="opacity:1; transform: translate(-1000%, -280%)"></div>
+                            <div class="sec1_bar1 bar fixed" data-2400="opacity:0; transform: translate(-40%, -2060%)" data-2500="opacity:1; transform: translate(-45%, -2060%)"></div>
+
+                            <div class="sec1_text8 fixed level" data-2800="opacity:0; transform: translate(-615%, -280%)" data-2900="opacity:1; transform: translate(-635%, -280%)">Illustration</div>
+                            <div class="sec1_text9 fixed" data-2600="opacity:0; transform: translate(-1000%, -150%)" data-2700="opacity:1; transform: translate(-1000%, -150%)"></div>
+                            <div class="sec1_bar2 bar fixed" data-2900="opacity:0; transform: translate(-94.5%, -910%)" data-3000="opacity:1; transform: translate(-97.5%, -910%)"></div>
+
+                            <div class="sec1_text10 fixed level" data-3300="opacity:0; transform: translate(-1150%, 30%)" data-3400="opacity:1; transform: translate(-1170%, 30%)">CSS</div>
+                            <div class="sec1_text11 fixed" data-3100="opacity:0; transform: translate(-1000%, -20%)" data-3200="opacity:1; transform: translate(-1000%, -20%)"></div>
+                            <div class="sec1_bar3 bar fixed" data-3500="opacity:0; transform: translate(-39%, 240%)" data-3600="opacity:1; transform: translate(-41.6%, 240%)"></div>
+
+                            <div class="sec1_text12 fixed level" data-3900="opacity:0; transform: translate(-932%, 330%)" data-4000="opacity:1; transform: translate(-952%, 330%)">HTML</div>
+                            <div class="sec1_text13 fixed" data-3700="opacity:0; transform: translate(-1000%, 110%)" data-3800="opacity:1; transform: translate(-1000%, 110%)"></div>
+                            <div class="sec1_bar4 bar fixed" data-4100="opacity:0; transform: translate(-56%, 1360%)" data-4200="opacity:1; transform: translate(-58.2%, 1360%)"></div>
+
+                            <div class="sec1_text14 fixed level" data-4500="opacity:0; transform: translate(-605%, 655%)" data-4600="opacity:1; transform: translate(-625%, 655%)">Javascript</div>
+                            <div class="sec1_text15 fixed" data-4300="opacity:0; transform: translate(-1000%, 250%)" data-4400="opacity:1; transform: translate(-1000%, 250%)"></div>
+                            <div class="sec1_bar5 bar fixed" data-4700="opacity:0; transform: translate(-160%, 2600%)" data-4800="opacity:1; transform: translate(-171.5%, 2600%)"></div>
+                        </div>
+                    </div>
+
+                    <div class="sec1_text3 fixed" data-600="opacity:0; transform: translate(-300%, -50%);" data-1100="opacity:1; transform: translate(-150%, -50%);" data-1300="opacity:1; transform: translate(-150%, -50%);" data-1400="opacity:0; transform: translate(-150%, -100%);"></div>
+                    <!-- 프로필 이미지 -->
+
+                    <div
+                        class="sec1_text4 fixed"
+                        data-500="opacity:0; transform: translate(-50%, -50%); width: 0%;  height: 70%;"
+                        data-1000="opacity:1; transform: translate(-50%, -50%); width: 100%;  height: 70%;"
+                        data-1400="opacity:1; transform: translate(-50%, -50%); width: 100%;  height: 70%;"
+                        data-1500="opacity:1; transform: translate(-50%, -50%); height: 0%;"
+                    ></div>
+                    <!-- 그라데이션 백그라운드 -->
+
+                    <div class="sec1_text16 fixed" data-1600="transform: translate(-50%, -50%) scale(0); border-radius:100%; width:50%;" data-1800="transform: translate(-50%, -50%) scale(1); border-radius:0; width:100%;"></div>
+                </div>
+            </section>
+            <!-- section1 -->
+
+            <section id="section2"></section>
+            <!-- section2 -->
+
+            <section id="section3"></section>
+            <!-- section3 -->
+
+            <section id="section4"></section>
+            <!-- section4 -->
+
+            <section id="section5"></section>
+            <!-- section5 -->
+
+            <section id="section6"></section>
+            <!-- section6 -->
+        </main>
+
+        <!-- 스크롤 플러그인 -->
+        <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+        <script>
+            // 스크롤 플러그인 실행 함수
+            const s = skrollr.init();
+
+            // 스크롤 값 구하기
+            function scroll() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                document.querySelector(".scroll").innerText = Math.round(scrollTop);
+
+                // document.querySelector(".sec1_text1").style.margiTop = -scrollTop + "px";
+
+                if (scrollTop > 1300) {
+                    document.querySelector(".sec1_text2").style.opacity = "0";
+                }
+                requestAnimationFrame(scroll); // 브라우저에 최적화 되어 있어 움직임이 부드럽고 부담이 덜 하다. (1분에 60번)
+            }
+
+            scroll();
+        </script>
+    </body>
+</html>

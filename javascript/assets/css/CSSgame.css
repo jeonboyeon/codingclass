@@ -11,6 +11,15 @@
     overflow: auto;
     display: none;
 }
+
+.search__wrap > h1 > em {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-style: normal;
+
+}
 .CSSgame__wrap.show {
     display: block;
 }
