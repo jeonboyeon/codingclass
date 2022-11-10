@@ -192,6 +192,31 @@ body {
     white-space: nowrap;
 }
 /* //3번 아이콘 */
+/* //3번 아이콘 */
+
+.icon5 {
+    position: absolute;
+    left: 50px;
+    top: 500px;
+    width: 50px;
+}
+.icon5 img {
+    width: 100%;
+}
+.icon5 img {
+    width: 100%;
+}
+
+.icon5 span {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    white-space: nowrap;
+}
+/* //3번 아이콘 */
 #footer {
     background-color: rgba(36, 34, 145, 0.609);
     backdrop-filter: blur(5px);

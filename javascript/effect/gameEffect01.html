@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="../assets/css/CSSgame.css" />
         <link rel="stylesheet" href="../assets/css/dracula.css" />
         <link rel="stylesheet" href="../assets/css/memory.css" />
+        <link rel="stylesheet" href="../assets/css/tetris.css" />
     </head>
 
     <body>
@@ -50,6 +51,10 @@
                 <div class="icon icon4">
                     <img src="../assets/img/folder04.png" alt="" />
                     <span>메몰 게임</span>
+                </div>
+                <div class="icon icon5">
+                    <img src="../assets/img/folder04.png" alt="" />
+                    <span>테트 게임</span>
                 </div>
             </div>
         </main>
@@ -1331,6 +1336,34 @@ body {
             </div>
         </div>
         <!-- //메모리 게임 -->
+
+        <!-- 테트리스 게임 -->
+        <div class="tetris__wrap">
+            <div class="tetris__inner">
+                <h3>👾 TETRIS GAME 👾</h3>
+
+                <div class="tetris__play">
+                    <div class="playground">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tetris__side">
+                <div class="tetris__score">
+                    <h5>SCORE</h5>
+                    <p class="tetris_score">0</p>
+                </div>
+            </div>
+            <div class="tetris__btn">
+                <div class="tetris__start">게임 시작</div>
+                <div class="tetris__restart">다시 시작</div>
+            </div>
+            <div class="tetris__close">
+                <span>X</span>
+            </div>
+        </div>
+        <!-- //테트리스 게임 -->
+
         <!-- script link -->
         <script src="../assets/js/highlight.min.js"></script>
         <script>
@@ -1341,6 +1374,7 @@ body {
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script src="../assets/js/music.js"></script>
         <script src="../assets/js/memory.js"></script>
+        <script src="../assets/js/tetris.js"></script>
         <script>
             $(".icon1").draggable();
             $(".icon2").draggable();
