@@ -11,8 +11,8 @@
     border-radius: 20px;
     padding: 0 10px 10px 10px;
     width: 500px;
-    border: 3px solid rgb(93, 0, 255);
-    background: rgba(167, 138, 255, 0.5);
+    border: 3px solid #222;
+    background: rgba(255,255,255,0.3);
     backdrop-filter: blur(5px);
     position: absolute;
     left: 150px;
@@ -32,7 +32,8 @@
 
 .music__contents {
     border-radius: 10px;
-    background-color: #c4c4c476;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px #444;
     width: 100%;
 }
 
@@ -58,7 +59,7 @@
 }
 .music__view .title p {
     font-size: 16px;
-    color: rgb(102, 70, 137);
+    color: #aaa;
     margin-bottom: 5px;
 }
 .music__footer .music__list {
@@ -75,13 +76,15 @@
 .music__control .progress {
     width: 100%;
     height: 10px;
-    border-radius: px;
-    background-color: rgba(30, 20, 69,0.7);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255,0.3);
 }
 .music__control .progress .bar {
     width: 0%;
     height: 10px;
-    background-color: rgba(181, 150, 255, 0.7);
+    border-radius: 20px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .music__control .progress .timer {
     display: flex;
@@ -162,7 +165,8 @@
 .music__footer {
     border-radius: 10px;
     margin-top: 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0,0,0,0.5);
+        box-shadow: rgb(68 68 68) 0px 0px 10px;
     backdrop-filter: blur(5px);
 }
 .music__footer .music__list {
@@ -171,7 +175,7 @@
 }
 .music__footer .music__list h3 {
     display: flex;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
     justify-content: space-between;
 }
@@ -187,6 +191,7 @@
     overflow-y: scroll;
 }
 .music__list .close {
+    transform: scale(0.6);
     margin-left: 250px;
     display: inline-block;
     width: 7%;
@@ -195,20 +200,23 @@
     vertical-align: -3.5px;
 }
 .music__list .playing {
-    color: rgb(93, 48, 197);
+    color: #bbb;
 }
 .music__list ul {
     margin-bottom: 10px;
 }
 .music__list li {
+    border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
     position: relative;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #aaa;
     list-style: none;
+    color: #333;
+    margin-bottom: 5px;
 }
 .music__list li:hover {
-    background-color: rgba(93, 48, 197, 0.141);
+    background-color: rgba(177, 177, 177, 0.141);
 }
 .music__list li strong {
     font-size: 18px;

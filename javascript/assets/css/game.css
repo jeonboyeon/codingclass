@@ -1,6 +1,13 @@
 @font-face {
-    font-family: 'HBIOS-SYS';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2') format('woff2');
+    font-family: "HBIOS-SYS";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DungGeunMo";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -11,7 +18,7 @@
     top: 0;
     width: 10px;
     height: 18px;
-    background: url('../img/cursor.cluster.png') no-repeat;
+    background: url("../img/cursor.cluster.png") no-repeat;
     z-index: 555;
 }
 
@@ -24,7 +31,7 @@
     /* cursor: none; */
     margin: 0;
     padding: 0;
-    font-family: 'HBIOS-SYS';
+    font-family: "DungGeunMo";
 }
 /* a 태그 링크 초기화 */
 a {
@@ -55,7 +62,7 @@ body {
     position: fixed;
     width: 100%;
     height: 40px;
-    background-color: rgba(51, 48, 208, 0.609);
+    background-color: rgba(29, 29, 29, 0.609);
     backdrop-filter: blur(5px);
     /* box-shadow: 2px 0 30px rgba(0, 85, 155, 0.7); */
     display: flex;
@@ -82,7 +89,9 @@ body {
     bottom: 0;
     width: 100%;
     height: 40px;
-    background-color: rgb(52, 31, 102);
+    background-color: rgba(33, 33, 33, 0.609);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -218,9 +227,6 @@ body {
 }
 /* //3번 아이콘 */
 #footer {
-    background-color: rgba(36, 34, 145, 0.609);
-    backdrop-filter: blur(5px);
-    box-shadow: 2px 0 10px rgba(187, 0, 255, 0.7);
 }
 #footer .agent {
 }
@@ -281,7 +287,6 @@ body {
 
 .modal__close.show {
     visibility: visible;
-
 }
 
 .modal__cont {
@@ -334,7 +339,7 @@ body {
 }
 
 .modal__box .title .dot::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 25px;
     top: 0;
@@ -353,7 +358,7 @@ body {
 }
 
 .modal__box .title .dot::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 25px;
     top: 0;
@@ -418,7 +423,7 @@ body {
     height: 100%;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
     display: none;
 }
 
