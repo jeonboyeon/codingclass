@@ -3,15 +3,25 @@ const playground = tetrisWrap.querySelector(".playground > ul");
 const tetrisStartBtn = tetrisWrap.querySelector(".tetris__start");
 const tetrisReStartBtn = tetrisWrap.querySelector(".tetris__restart");
 const tetrisScores = tetrisWrap.querySelector(".tetris_score");
+const tetrisScores2 = tetrisWrap.querySelector(".tetris_score2");
 const tetrisClose = tetrisWrap.querySelector(".tetris__close");
 const tetrisIco = document.querySelector(".icon5");
+const tetrisAudio = document.querySelector("#tetrisAudio");
+const tetrisClear = document.querySelector("#tetrisClear");
+const tetrisOut = document.querySelector("#tetrisOut");
 
-tetrisIco.addEventListener('click', ()=> {
-    tetrisWrap.classList.add('show')
-})
-tetrisClose.addEventListener('click',()=>{
-    tetrisWrap.classList.remove('show')
-})
+// 토탈 스코어
+const totalScore = document.querySelector(".total__score");
+// 다시 시작 버튼
+const tetrisRestartBtn = document.querySelector(".tetris__restart");
+
+tetrisIco.addEventListener("click", () => {
+    tetrisWrap.classList.add("show");
+});
+tetrisClose.addEventListener("click", () => {
+    tetrisWrap.classList.remove("show");
+    tetrisOver();
+});
 
 // variables
 let rows = 20;
@@ -237,10 +247,6 @@ function prependNewLine() {
 
 // 블록 출력하기
 function renderBlocks(moveType = "") {
-    // const ty = tempMovingItem.type;
-    // const di = tempMovingItem.direction;
-    // const to = tempMovingItem.top;
-    // const le = tempMovingItem.left;
     const { type, direction, top, left } = tempMovingItem;
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach((moving) => {
@@ -255,16 +261,21 @@ function renderBlocks(moveType = "") {
             target.classList.add(type, "moving");
         } else {
             tempMovingItem = { ...movingItem };
+            if (moveType === "retry") {
+                clearInterval(downInterval);
+                tetrisOver();
 
+                return;
+            }
             setTimeout(() => {
-                renderBlocks();
+                renderBlocks("retry");
                 if (moveType === "top") {
                     seizeBlock();
                 }
             }, 0);
             return true;
         }
-        // console.log({ playground });
+        // console.log({ playground })
     });
     movingItem.left = left;
     movingItem.top = top;
@@ -296,8 +307,11 @@ function checkMatch() {
             child.remove();
             prependNewLine();
             tetrisScore += 10;
+            tetrisClear.play();
 
             tetrisScores.innerHTML = tetrisScore;
+            tetrisScores2.innerHTML = tetrisScore;
+            duration -= 30;
         }
     });
 
@@ -387,8 +401,33 @@ document.addEventListener("keydown", (e) => {
 // 시작 버튼 누르기
 tetrisStartBtn.addEventListener("click", () => {
     generateNewBlock(); //블록 만들기
+    tetrisScore = 0;
+    tetrisAudio.play();
 });
 
-// 게임 시작 버튼 막기
+function tetrisOver() {
+    totalScore.style.display = "block";
+    tetrisAudio.pause();
+    tetrisAudio.currentTime = 0;
+    tetrisOut.play();
+}
+
+// 테트리스 다시 시작
+tetrisRestartBtn.addEventListener("click", () => {
+    tetrisRestart();
+});
+
+function tetrisRestart() {
+    totalScore.style.display = "none";
+    generateNewBlock(); //블록 만들기
+    duration = 500;
+    tetrisScores.innerHTML = 0;
+    tetrisScores2.innerHTML = 0;
+    const tetrisMinos = playground.querySelectorAll("li > ul > li");
+    tetrisMinos.forEach((minos) => {
+        minos.className = "";
+    });
+    tetrisAudio.play();
+}
 
 init();

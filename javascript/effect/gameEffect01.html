@@ -1342,6 +1342,12 @@ body {
             <div class="tetris__inner">
                 <h3>👾 TETRIS GAME 👾</h3>
 
+                <div class="tetris__audio">
+                    <audio id="tetrisAudio" src="../assets/audio/tetrisMusic.mp3" loop="loop"></audio>
+                    <audio id="tetrisClear" src="../assets/audio/Bboing.mp3"></audio>
+                    <audio id="tetrisOut" src="../assets/audio/Laser Gun Sound.mp3"></audio>
+                </div>
+
                 <div class="tetris__play">
                     <div class="playground">
                         <ul></ul>
@@ -1356,10 +1362,17 @@ body {
             </div>
             <div class="tetris__btn">
                 <div class="tetris__start">게임 시작</div>
-                <div class="tetris__restart">다시 시작</div>
             </div>
             <div class="tetris__close">
                 <span>X</span>
+            </div>
+
+            <div class="total__score">
+                <div>
+                    <h5>TOTAL SCORE</h5>
+                    <p class="tetris_score2">0</p>
+                    <button class="tetris__restart">다시시작</button>
+                </div>
             </div>
         </div>
         <!-- //테트리스 게임 -->
