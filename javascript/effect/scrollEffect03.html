@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🍑 SCROLL EFFECT 03</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .horizontalWrap {
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .horizontalSection {
+                overscroll-behavior: none;
+                width: 500%;
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
+            .section {
+                width: 100%;
+                height: 100vh;
+            }
+
+            .section1 {
+                background-image: linear-gradient(to left, #df89b5 0%, #bfd9fe 100%);
+            }
+            .section2 {
+                background-image: linear-gradient(to left, #2cd8d5 0%, #c5c1ff 56%, #df89b5 100%);
+            }
+            .section3 {
+                background-image: linear-gradient(to left, #20e2d7 0%, #2cd8d5 100%);
+            }
+            .section4 {
+                background-image: linear-gradient(to left, #ffe29f 0%, #ffa99f 48%, #20e2d7 100%);
+            }
+            .section5 {
+                background-image: linear-gradient(to left, #e3fdf5 0%, #ffe29f 100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="horizontalWrap">
+            <div class="horizontalSection">
+                <section class="section section1"></section>
+                <section class="section section2"></section>
+                <section class="section section3"></section>
+                <section class="section section4"></section>
+                <section class="section section5"></section>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            // gsap 다중 선택
+            const sections = gsap.utils.toArray(".section");
+
+            gsap.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".horizontalWrap",
+                    pin: true,
+                    scrub: 1,
+                    snap: 1 / (sections.length - 1),
+                    end: "+=3500",
+                    markers: true,
+                },
+            });
+        </script>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+            // gsap 다중 선택방법
+            const sections = gsap.utils.toArray(".section");
+            gsap.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".horizontalWrap",
+                    pin: true,
+                    scrub: 1,
+                    end: "+=3500",
+                    snap: 1 / (sections.length - 1),
+                    markers: true,
+                },
+            });
+        </script> -->
+    </body>
+</html>

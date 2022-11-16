@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🍑 SCROLL EFFECT</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            /* #contents > section {
+                    min-height: 100vh;
+                }
+                #section01 {
+                    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+                }
+                #section02 {
+                    background-image: linear-gradient(to top, #abecd6 0%, #a8edea 100%);
+                }
+                #section03 {
+                    background-image: linear-gradient(to top, #9890e3 0%, #abecd6 100%);
+                }
+                #section04 {
+                    background-image: linear-gradient(to top, #feada6 0%, #9890e3 100%);
+                }
+                #section05 {
+                    background-image: linear-gradient(to top, #74ebd5 0%, #feada6 100%);
+                }
+                #section06 {
+                    background-image: linear-gradient(to top, #abecd6 0%, #74ebd5 100%);
+                }
+
+                .square {
+                    position: relative;
+                    width: 200px;
+                    height: 200px;
+                    background-image: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+
+                    border-radius: 50%;
+                }
+                .square::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    background-color: #fff;
+                }
+                .square.green {
+                    background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+                } */
+
+            .panel {
+                height: 100vh;
+                background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-image: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+
+                transition: all 0.5s;
+            }
+
+            .box-green {
+                background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+                border-radius: 50%;
+            }
+
+            nav {
+                position: sticky;
+                top: 0;
+                transition: all 600ms ease-in-out;
+                background-color: #fff;
+                color: #f794a4;
+                text-align: center;
+                padding: 20px;
+            }
+
+            li {
+                display: inline-block;
+                margin: 0 20px;
+            }
+            .not-active {
+                background-color: rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(5px);
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>about</li>
+                <li>work</li>
+                <li>contact</li>
+            </ul>
+        </nav>
+        <div class="panel">The road to success and the road to failure are almost exactly the same.</div>
+        <!-- <div class="box"></div> -->
+        <!-- <div class="panel"></div> -->
+
+        <!-- gsap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            ScrollTrigger.create({
+                trigger: ".panel",
+                start: "top 6%",
+                markers: true,
+                toggleClass: { targets: "nav", className: "not-active" },
+                onEnter: () => console.log("onEnter"),
+                onLeave: () => console.log("onLeave"),
+                onEnterBack: () => console.log("onEnterBack"),
+                onLeaveBack: () => console.log("onLeaveBack"),
+            });
+        </script>
+        <script>
+            // 일반 예시
+            // gsap.registerPlugin(ScrollTrigger);
+
+            // gsap.to(".square", {
+            //     x: 1000, // x 축으로 1000 만큼 이동
+            //     duration: 3, // 애니메이션 총 시간
+            //     scrollTrigger: {
+            //         trigger: ".square", // 움직이는 기준
+            //         start: "top 70%", // 움직이는 시작 지점
+            //         end: () => `+=${document.querySelector(".square").offsetHeight}`, // 가로 모드 필수 (구한 값만큼 end 지점이 늘어납니다.) | 움직이는 끝 지점
+            //         markers: true, // 스크롤 시작점과 끝나는 지점을 마커해줍니다.
+            //         toggleClass: "green", // 스타트 지점에서 클래스 값을 붙여주는 속성입니다.
+            //     },
+            // });
+
+            // 자동 애니메이션을 없애고 스크롤에 따라 수동으로 움직입니다. (true: 스크롤 속도에 맞춰서 움직임, 숫자: transition 효과)
+            //  scrub: 5,
+
+            // 토글 액션 예시
+            // toggleActions: "restart reverse  resume reset", // onEnter, onLeave, onEnterBack, onLeaveBack | paly, pause, resume, reset, restart, complete, reverse, none
+
+            // 요소 고정
+            // pin: true,
+            // pinSpacing: false, // true: 다음요소 바로 위치에서 끝이 난다. |  false: 다음 요소를 무시하고 넘어간다.
+
+            // // 딜레이를 적어주지않아도 알아서 딜레이를 자동적으로 잡아줍니다.
+            // const tl = gsap.timeline({ repeat: 2, yoyo: true });
+            // tl.to(".square01", { x: 1000, duration: 2, rotation: 100, borderRadius: 10, ease: "elastic" })
+            //     .to(".square01", { y: 500, duration: 2, rotation: 0, borderRadius: 50 })
+            //     .to(".square01", { x: 0, duration: 2, rotation: 300, borderRadius: 10 })
+            //     .to(".square01", { y: 0, duration: 2, rotation: 0, borderRadius: 50 });
+
+            // 타임라인 예시
+            // const tl = gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: ".square01",
+            //         markers: true,
+            //         start: "top 80%",
+            //         end: "top 20%",
+            //         scrub: 1,
+            //     },
+            // });
+
+            // tl.to(".square01", { x: 1000, duration: 2, rotation: 180, borderRadius: 10, ease: "elastic" })
+            //     .to(".square01", { y: 300, duration: 2, rotation: 0, borderRadius: 50, ease: "elastic" })
+            //     .to(".square01", { x: 0, duration: 2, rotation: 360, borderRadius: 10, ease: "elastic" })
+            //     .to(".square01", { y: 0, duration: 2, rotation: 0, borderRadius: 50, ease: "elastic" });
+        </script>
+    </body>
+</html>
