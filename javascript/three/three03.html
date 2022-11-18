@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>three 03</title>
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background: #222;
+            }
+            #webgl {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: radial-gradient(circle farthest-corner at center center, #271137, #70398b);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="webgl"></canvas>
+        <!-- 캔버스 -->
+
+        <script src="three.min.js"></script>
+        <script>
+            console.log(THREE);
+
+            class Stage {
+                constructor() {
+                    this.renderParam = {
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    };
+
+                    this.cameraParm = {
+                        fov: 75,
+                        near: 1,
+                        far: 1000,
+                    };
+
+                    this.scene = null;
+                    this.render = null;
+                    this.camera = null;
+                    this.mesh = null;
+                    this.init();
+                }
+
+                init() {
+                    this._setScene();
+                    this._setRender();
+                    this._setCamera();
+                    this._setMesh();
+                    this._setFog();
+
+                    this._update();
+                    this._render();
+
+                    onresize = this._resize.bind(this);
+                }
+
+                _setScene() {
+                    this.scene = new THREE.Scene(); // 화면 설정을 시작 하겠다 선언해준다.
+                }
+                _setRender() {
+                    this.renderer = new THREE.WebGLRenderer({
+                        canvas: document.getElementById("webgl"),
+                        antialias: true,
+                        alpha: true,
+                    });
+                    this.renderer.setSize(this.renderParam.width, this.renderParam.height); // 화면 사이즈 설정 (윈도우 사이즈)
+                    this.renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1); // 화면 픽셀(해상도) 설정
+                }
+                _setCamera() {
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.fov,
+                        this.renderParam.width / this.renderParam.height,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+
+                    // 정면
+                    this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+                }
+                _setMesh() {
+                    const geometry = new THREE.BoxGeometry(3, 3, 3, 4, 4, 4);
+                    const material = new THREE.MeshStandardMaterial({ color: 0xfbc2eb }); // 메쉬 색 설정
+                    // 합치기
+                    this.mesh = new THREE.Mesh(geometry, material);
+                    this.mesh.position.set(-3, 0, 0);
+                    this.scene.add(this.mesh);
+                }
+                _setFog() {}
+                _update() {}
+                _render() {
+                    this._update();
+                    this.renderer.render(this.scene, this.camera);
+                    requestAnimationFrame(this._render.bind(this));
+                }
+                _resize() {
+                    this.camera.aspect = window.innerWidth / window.innerHeight;
+                    this.camera.updateProjectionMatrix();
+                    this.renderer.setSize(window.innerWidth, window.innerHeight);
+                    this.renderer.render(this.scene, this.camera);
+                }
+            }
+
+            (() => {
+                const stage = new Stage();
+            })();
+
+            // 기본 세팅
+            //     console.log(THREE);
+
+            // class Stage {
+            //     constructor() {
+            //         this.renderParam = {
+            //             width: window.innerWidth,
+            //             height: window.innerHeight,
+            //         };
+
+            //         this.cameraParm = {
+            //             fov: 75,
+            //             near: 1,
+            //             far: 1000,
+            //         };
+
+            //         this.scene = null;
+            //         this.render = null;
+            //         this.camera = null;
+            //         this.mesh = null;
+            //         this.init();
+            //     }
+
+            //     init() {
+            //         this._setScene();
+            //         this._setRender();
+            //         this._setCamera();
+            //         this._setMesh();
+            //         this._setFog();
+
+            //         this._update();
+            //         this._render();
+
+            //         onresize = this._resize.bind(this);
+            //     }
+            // }
+
+            // (() => {
+            //     const stage = new Stage();
+            // })();
+        </script>
+    </body>
+</html>

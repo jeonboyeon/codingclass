@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>three 01</title>
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background: #fff;
+            }
+            #canvas {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="three.min.js"></script>
+        <script>
+            console.log(THREE);
+
+            // 화면 설정
+            const scene = new THREE.Scene(); // 화면 설정을 시작 하겠다 선언해준다.
+
+            // 렌더러 설정
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight); // 화면 사이즈 설정 (윈도우 사이즈)
+            renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1); // 화면 픽셀(해상도) 설정
+
+            document.body.appendChild(renderer.domElement); // 바디에 렌더러 설정을 뿌려준다.
+
+            // 카메라 설정
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000); // 각도, 비율, 가까운 거리, 먼 거리 순
+            camera.position.set(0, 0, 7); // x, y, z
+
+            // 메쉬 설정 (geometry + material) | 표면 설정
+            const geometry = new THREE.TorusGeometry(2, 0.5, 16, 100);
+            const material = new THREE.MeshLambertMaterial({ color: 0xfbc2eb }); // 메쉬 색 설정
+            // 합치기
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            // 조명 설정
+            const light = new THREE.DirectionalLight(0xffffff, 1.5);
+            light.position.y = 300;
+            scene.add(light);
+
+            const light2 = new THREE.DirectionalLight(0xffffff, 0.5);
+            light2.position.set(-60, -100, -10);
+            scene.add(light2);
+
+            // 업데이트 설정
+            function update() {
+                requestAnimationFrame(update);
+
+                mesh.rotation.x += 0.02;
+                mesh.rotation.y += 0.01;
+                mesh.rotation.z += 0.05;
+                renderer.render(scene, camera);
+            }
+            update();
+
+            // 화면 사이즈 설정 (반응형)
+            function resize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+
+            window.addEventListener("resize", resize);
+        </script>
+    </body>
+</html>
