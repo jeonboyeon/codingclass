@@ -1,12 +1,11 @@
 .CSSgame__wrap {
-    border-radius: 20px;
     position: absolute;
     top: 80px;
     left: 150px;
     width: 80%;
     height: 600px;
-    border: 3px solid rgb(93, 0, 255);
-    background: rgba(167, 138, 255, 0.5);
+    border: 3px solid #ffffff;
+    background: #ffaebe79;
     backdrop-filter: blur(5px);
     overflow: auto;
     display: none;
@@ -18,7 +17,6 @@
     top: 12px;
     right: 20px;
     font-style: normal;
-
 }
 .CSSgame__wrap.show {
     display: block;
@@ -40,8 +38,7 @@
 .search__wrap > h1 {
     font-size: 18px;
     text-align: left;
-    border-bottom: 1px solid rgb(198, 164, 255);
-    background: rgba(167, 138, 255, 0.5);
+    background: #ff89a1ae;
     backdrop-filter: blur(5px);
     display: block;
     color: #fff;
@@ -56,7 +53,6 @@
 }
 
 .search__wrap > .play {
-
     display: none;
 }
 .search__wrap > .stop {
@@ -99,8 +95,6 @@
     padding: 10px;
 }
 
-
-
 label {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -128,19 +122,20 @@ label {
 }
 
 .search__box > .start {
-    color: rgba(228, 228, 255, 0.794);
+    color: #fff;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     width: 300px;
     padding: 10px 20px;
-    border-bottom: 3px solid rgb(68, 61, 159);
-    background: rgba(73, 75, 173, 0.7);
+    border-bottom: 3px solid rgba(255, 127, 127, 0.648);
+    background: #ff718e79;
     backdrop-filter: blur(40px);
 }
 
-.search__info {}
+.search__info {
+}
 .search__info > div {
     margin-top: 80px;
     margin-bottom: 10px;
@@ -158,5 +153,5 @@ label {
     margin: 5px;
 }
 .search__missAnswers > span:hover {
-    background-color: #aaa; 
+    background-color: #aaa;
 }

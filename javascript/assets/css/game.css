@@ -56,13 +56,15 @@ body {
     overflow: hidden;
 }
 
+/* 시작 */
+
 #header {
     box-sizing: border-box;
     padding: 5px 10px;
     position: fixed;
     width: 100%;
     height: 40px;
-    background-color: rgba(29, 29, 29, 0.609);
+    background-color: rgba(255, 255, 255, 0.609);
     backdrop-filter: blur(5px);
     /* box-shadow: 2px 0 30px rgba(0, 85, 155, 0.7); */
     display: flex;
@@ -73,28 +75,26 @@ body {
 
 #header h1 {
     font-size: 20px;
-    color: #fff;
+    color: rgb(255, 138, 162);
 }
 #header .time {
-    color: #fff;
+    color: rgb(255, 138, 162);
 }
 
 #footer {
     box-sizing: border-box;
-    text-align: center;
     position: fixed;
     padding: 5px 10px;
-    color: #fff;
+    color: rgb(255, 138, 162);
     left: 0;
     bottom: 0;
     width: 100%;
     height: 40px;
-    background-color: rgba(33, 33, 33, 0.609);
+    background-color: rgba(255, 255, 255, 0.609);
     backdrop-filter: blur(5px);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 10;
 }
 
@@ -117,11 +117,12 @@ body {
 .icon1 span {
     width: 100%;
     display: block;
-    background-color: #000;
+    background-color: #ff89a0;
     color: #fff;
     font-size: 11px;
     padding: 3px;
     white-space: nowrap;
+    margin-top: 5px;
 }
 .icon1 {
     position: absolute;
@@ -146,11 +147,12 @@ body {
 .icon2 span {
     width: 100%;
     display: block;
-    background-color: #000;
+    background-color: #ff89a0;
     color: #fff;
     font-size: 11px;
     padding: 3px;
     white-space: nowrap;
+    margin-top: 5px;
 }
 /* //2번 아이콘 */
 
@@ -170,11 +172,12 @@ body {
 .icon3 span {
     width: 100%;
     display: block;
-    background-color: #000;
+    background-color: #ff89a0;
     color: #fff;
     font-size: 11px;
     padding: 3px;
     white-space: nowrap;
+    margin-top: 5px;
 }
 /* //3번 아이콘 */
 
@@ -194,11 +197,12 @@ body {
 .icon4 span {
     width: 100%;
     display: block;
-    background-color: #000;
+    background-color: #ff89a0;
     color: #fff;
     font-size: 11px;
     padding: 3px;
     white-space: nowrap;
+    margin-top: 5px;
 }
 /* //3번 아이콘 */
 /* //3번 아이콘 */
@@ -219,16 +223,20 @@ body {
 .icon5 span {
     width: 100%;
     display: block;
-    background-color: #000;
+    background-color: #ff89a0;
     color: #fff;
     font-size: 11px;
     padding: 3px;
     white-space: nowrap;
+    margin-top: 5px;
 }
 /* //3번 아이콘 */
 #footer {
 }
 #footer .agent {
+    font-size: 14px;
+    display: block;
+    text-align: center;
 }
 /* 윈도우 푸터 */
 .window #footer {

@@ -2,28 +2,27 @@ code {
     font-family: "HBIOS-SYS" !important;
 }
 
+pre code.hljs {
+    border-radius: 0 !important;
+} 
+
 .hljs {
-    background-color: rgba(42, 33, 123, 0.8) !important;
+    background-color: #69696986 !important;
 }
 .source__wrap {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
     position: absolute;
     top: 80px;
     left: 150px;
     width: 80%;
     height: 600px;
-    border: 3px solid rgb(93, 0, 255);
-    background: rgba(167, 138, 255, 0.5);
+    border: 3px solid #ffffff;
+    background: #ffaebe79;
     backdrop-filter: blur(5px);
     overflow: auto;
     display: none;
 }
 .source__wrap::-webkit-scrollbar {
     width: 5px;
-    background-color: rgb(30, 20, 69);
 }
 .source__wrap::-webkit-scrollbar-thumb {
     height: 20%;
@@ -31,7 +30,6 @@ code {
 }
 .source__wrap::-webkit-scrollbar-button:horizontal:decrement {
     width: 5px;
-    background-color: rgb(30, 20, 69);
     height: 20%;
     background-color: #fff;
 }
@@ -53,12 +51,12 @@ code {
     display: flex;
     justify-content: space-between;
     color: #fff;
-    background: rgba(167, 138, 255, 0.1);
+    background: #ff89a0;
     backdrop-filter: blur(5px);
     padding: 10px;
 }
 .source__header > div > h3 > a {
-    background-color: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.3);
     font-size: 16px;
     margin-left: 10px;
     padding: 5px;
@@ -71,7 +69,7 @@ code {
 .source__header > nav {
 }
 .source__header > nav > ul {
-    background-color: #fff;
+    background: rgb(255, 215, 215);
     padding: 5px 10px;
     display: flex;
     justify-content: start;
@@ -80,9 +78,10 @@ code {
     padding: 0 5px;
     margin-right: 20px;
     cursor: pointer;
+    color: #ff89a0;
 }
 .source__header > nav > ul > li.active {
-    background-color: rgb(48, 37, 86);
+    background: #ff819a79;
     color: #fff;
 }
 

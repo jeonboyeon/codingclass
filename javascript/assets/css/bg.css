@@ -1,5 +1,7 @@
 html {
-    background-image: url('../img/1606a17b0ec15f7b9.gif');
+    background-image: url('https://i.pinimg.com/originals/cb/a4/74/cba4748b414b383204e80a992e705a2f.gif');
     background-size: cover;
-    background-position: top;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
 }
